@@ -1,0 +1,20 @@
+
+.go-btn {
+    width: 70% !important;
+    margin-top: 20px;
+    padding: 2px !important;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.part1 h2 {
+    line-height: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    .go-btn {
+        width: 80% !important;
+        font-size: 14px !important;
+      }
+  }
