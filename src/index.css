@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica&family=Work+Sans:ital,wght@0,200;0,300;1,200&display=swap");
+:root {
+  --main-color: #0066ff ;
+  --second-color: #252e36;
+  --paragraph-color: #002233;
+  --font-family1: "Work Sans", sans-serif;
+  --font-family2: "Geologica", sans-serif;
+  --header1-size: 25px;
+  --header2-size: 18px;
+  --paragraph-size: 14px;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: var(--font-family2) !important;
 }
