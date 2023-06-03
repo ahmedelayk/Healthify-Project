@@ -1,20 +1,18 @@
-
 .go-btn {
-    width: 70% !important;
-    margin-top: 20px;
-    padding: 2px !important;
-    font-weight: 500;
-    letter-spacing: 1px;
+  margin-top: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: var(--main-color);
 }
 .part1 h2 {
-    line-height: 50px;
-    font-weight: 700;
-    margin-top: 20px;
+  line-height: 60px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: var(--paragraph-color) ;
 }
 
 @media screen and (max-width: 992px) {
-    .go-btn {
-        width: 80% !important;
-        font-size: 14px !important;
-      }
+  .go-btn {
+    font-size: var(--paragraph-size) !important;
   }
+}
