@@ -1,5 +1,5 @@
 import React from "react";
-import Macro from "../../assets/images/macro.png";
+import Macro from "../../../assets/images/macro.png";
 import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./section1.css";

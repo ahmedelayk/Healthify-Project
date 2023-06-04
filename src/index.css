@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Geologica&family=Work+Sans:ital,wght@0,200;0,300;1,200&display=swap");
 :root {
   --main-color: #0066ff ;
+  --main-background-color: #F9F9F9;
   --second-color: #252e36;
   --paragraph-color: #002233;
   --font-family1: "Work Sans", sans-serif;
@@ -12,4 +13,38 @@
 body {
   margin: 0;
   font-family: var(--font-family2) !important;
+}
+.bg-main-color {
+  background-color: var(--main-color);
+}
+.bg-main-color {
+  background-color: var(--main-background-color);
+}
+.bg-second-color {
+  background-color: var(--main-color);
+}
+.text-paragraph-color {
+  color: var(--paragraph-color);
+}
+.font-family1 {
+  font-family: var(--font-family1);
+}
+.font-family2 {
+  font-family: var(--font-family2);
+}
+.header1-size {
+  font-size: var(--header1-size);
+}
+.header2-size {
+  font-size: var(--header2-size);
+}
+.paragraph-size {
+  font-size: var(--paragraph-size);
+}
+
+
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
