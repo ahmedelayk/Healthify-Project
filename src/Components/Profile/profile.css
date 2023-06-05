@@ -1,0 +1,16 @@
+.profile{
+    background-color: #F9F9F9;
+    
+}
+.right-side,.middle,.left-side{
+    background-color: #FFFFFF;
+}
+.date-picker{
+    height: 20vh;
+}
+.middle{
+    height: 25vh;
+    box-shadow: 1px 1px 6px 1px #6f6767;
+    margin-top: 10vh !important;
+    margin-bottom: 2vh;
+}
