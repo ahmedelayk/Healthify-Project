@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import Medatation from "./Components/Medatation/Medatation";
 import Nutration from "./Components/Nutration/Nutration";
 import Workouts from "./Components/Workouts/Workouts";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/medatation" element={<Medatation />} />
             <Route path="/nutration" element={<Nutration />} />
             <Route path="/workouts" element={<Workouts />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       </div>
