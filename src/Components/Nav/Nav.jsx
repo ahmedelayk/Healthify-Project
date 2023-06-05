@@ -1,35 +1,40 @@
 import { Button, Navbar, Nav, Container } from "react-bootstrap";
 import Logo from "../assets/images/logo.jpg";
 import "./nav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 function Navbarr() {
+  const navigate=useNavigate()
+  const handleLoginClick = () => {
+   navigate('/login');
+  };
+
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
-        <NavLink to="/" className="col-3 navbar-brand">
-          <div className="d-flex">
+        <div className="col-3">
+          <NavLink to="/" className="d-flex logo col-1">
             <h2 className="logo-text mt-1">Healthify</h2>
             <img src={Logo} alt="logo" className="logo-img" />
-          </div>
-        </NavLink>
+          </NavLink>
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav ">
           <Nav className="me-auto col-6 d-flex justify-content-between ms-lg-0 ms-md-0 nav-collapse">
-            <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
+            <NavLink to="/nutration" className="navs">
               Nutration
             </NavLink>
-            <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
+            <NavLink to="/medatation" className="navs">
               Medatation
             </NavLink>
-            <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
+            <NavLink to="/workouts" className="navs">
               Workouts
             </NavLink>
           </Nav>
-          <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
-            <Button variant="primary" className="login-btn nav-collapse">
+          <div className="login-btn" onClick={handleLoginClick}>
+            <Button variant="primary" className="nav-collapse px-3 py-0">
               Login
             </Button>
-          </NavLink>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
