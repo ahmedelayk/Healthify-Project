@@ -9,14 +9,22 @@
   --header1-size: 25px;
   --header2-size: 18px;
   --paragraph-size: 14px;
+  --section-padding: 50px;
 }
 body {
   margin: 0;
   font-family: var(--font-family2) !important;
 }
-.bg-main-color {
-  background-color: var(--main-color);
+.section-padding {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
 }
+.section-padding-bottom {
+  padding-bottom: var(--section-padding);
+}
+/* .bg-main-color {
+  background-color: var(--main-color);
+} */
 .bg-main-color {
   background-color: var(--main-background-color);
 }

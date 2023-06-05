@@ -3,7 +3,7 @@ import { Container, Row } from "react-bootstrap";
 export default function Section2() {
   return (
     <>
-        <Container id="about" className="p-5">
+        <Container id="about" className="section-padding">
             <Row  className="col-12">
                 <h1 className="text-center text-paragraph-color">What is a Healthify?</h1>
             </Row>

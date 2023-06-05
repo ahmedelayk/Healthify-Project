@@ -11,8 +11,13 @@
   color: var(--paragraph-color) ;
 }
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
   .go-btn {
     font-size: var(--paragraph-size) !important;
+  }
+} */
+@media screen and (max-width: 992px) {
+  .macro-image {
+    display: none;
   }
 }
