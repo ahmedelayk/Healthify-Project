@@ -13,7 +13,7 @@
 }
 .logo-text {
   color: var(--main-color);
-  font-size: var(--header2-size) !important;
+  font-size: var(--header1-size) !important;
   font-weight: 700;
 }
 .logo-img {
@@ -21,7 +21,7 @@
   height: 22px;
 }
 .nav-collapse {
-  margin-left: 50%;
+  /* margin-left: 50%; */
   line-height: 40px;
 }
 .navs {

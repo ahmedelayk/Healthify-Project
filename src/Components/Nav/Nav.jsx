@@ -7,14 +7,15 @@ function Navbarr() {
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
         <NavLink to="/" className="col-3 navbar-brand">
-          <div className="d-flex">
+          <div className="d-flex align-items-center gap-1">
             <h2 className="logo-text mt-1">Healthify</h2>
             <img src={Logo} alt="logo" className="logo-img" />
           </div>
         </NavLink>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav ">
-          <Nav className="me-auto col-6 d-flex justify-content-between ms-lg-0 ms-md-0 nav-collapse">
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
             <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
               Nutration
             </NavLink>
