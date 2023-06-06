@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Nutration = () => {
-  return (
-    <div>Nutration</div>
-  )
-}
+  return <div></div>;
+};
 
-export default Nutration
+export default Nutration;
