@@ -7,6 +7,7 @@ import Nutration from "./Components/Nutration/Nutration";
 import Workouts from "./Components/Workouts/Workouts";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
+import MeditationDetails from "./Components/Medatation/MeditationDetails/MeditationDetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/medatation" element={<Medatation />} />
+            <Route path="/medatation/:id" element={<MeditationDetails />} />
             <Route path="/nutration" element={<Nutration />} />
             <Route path="/workouts" element={<Workouts />} />
             <Route path="/profile" element={<Profile />} />

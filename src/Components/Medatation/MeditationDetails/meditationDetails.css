@@ -1,0 +1,21 @@
+.rating-size {
+    max-width: 100px;
+}
+
+.color {
+    color: var(--second-color);
+}
+
+.details-btns:last-child div{
+    background-color: #0066ff;
+    color: white;
+}
+
+.another-meditations .swiper {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+  }
+
+  .another-meditations .swiper-pagination {
+    bottom: -8% !important;
+  }
