@@ -2,8 +2,9 @@
 :root {
   --main-color: #0066ff ;
   --main-background-color: #F9F9F9;
-  --second-color: #252e36;
+  --second-color: #63717d;
   --paragraph-color: #002233;
+  --box-shadow: 1px 1px 6px 1px #6f6767;
   --font-family1: "Work Sans", sans-serif;
   --font-family2: "Geologica", sans-serif;
   --header1-size: 25px;
