@@ -1,16 +1,81 @@
-.profile{
-    background-color: #F9F9F9;
-    
+@media screen and ( max-width:768px){
+  .right-side{
+    }
 }
-.right-side,.middle,.left-side{
-    background-color: #FFFFFF;
+.row > * {
 }
-.date-picker{
-    height: 20vh;
+.sized-box{
+  width: 5% !important;
 }
-.middle{
-    height: 25vh;
-    box-shadow: 1px 1px 6px 1px #6f6767;
-    margin-top: 10vh !important;
-    margin-bottom: 2vh;
+.profile {
+  background-color: #f9f9f9;
+}
+.right-side,
+.middle,
+.left-side {
+  background-color: #ffffff;
+  margin-top: 10vh !important;
+
+}
+
+.date-picker {
+  height: 20vh;
+}
+.middle {
+  height: 25vh;
+  box-shadow: 1px 1px 6px 1px #6f6767;
+  margin-top: 10vh !important;
+  margin-bottom: 2vh;
+  padding-left: 0 !important;
+
+}
+.middle h5 {
+  font-size: 18px ;
+}
+.middle h6 {
+  font-size: 14px;
+  color: #858080;
+}
+.middle p {
+font-size: 10px;
+color: #613df1;
+
+}
+.icon-img {
+  width: 33px;
+  height: 33px;
+  margin: 0 5px 0 0;
+}
+.icon-fire {
+  width: 15px;
+  height: 20px;
+  margin: 3px 5px 0 0;
+}
+.type-food span {
+  font-size: 10px;
+  color: #878181;
+}
+.type-food h6 {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 15px !important;
+}
+.days h5 {
+  font-size: 15px;
+}
+.days h6 {
+  font-size: 10px;
+  font-weight: 900;
+  color: blue;
+}
+
+.days button {
+  width: 40px;
+  background-color: transparent;
+  border: 0;
+}
+.active-day {
+  background-color: rgb(12, 12, 30) !important;
+  color: white;
+  border-radius: 10px;
 }
