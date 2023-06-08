@@ -21,6 +21,21 @@
 .lower-part {
     padding-bottom: 80px;
 }
+@media (max-width: 991px) {
+    .higher-part {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+    .higher-part h2 {
+        font-size: 1.1rem;
+    }
+    .lower-part {
+        padding-bottom: 20px;
+        font-size: 1.1rem;
+    }
+}
+
 
 .left-50 {
     left: 50% !important;

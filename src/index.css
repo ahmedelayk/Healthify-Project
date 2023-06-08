@@ -4,6 +4,7 @@
   --main-background-color: #F9F9F9;
   --second-color: #63717d;
   --paragraph-color: #002233;
+  --btn-hover-color: #0b5ed7;
   --box-shadow: 1px 1px 6px 1px #6f6767;
   --font-family1: "Work Sans", sans-serif;
   --font-family2: "Geologica", sans-serif;
@@ -23,9 +24,9 @@ body {
 .section-padding-bottom {
   padding-bottom: var(--section-padding);
 }
-/* .bg-main-color {
-  background-color: var(--main-color);
-} */
+.section-padding-top {
+  padding-top: var(--section-padding);
+}
 .bg-main-color {
   background-color: var(--main-background-color);
 }
