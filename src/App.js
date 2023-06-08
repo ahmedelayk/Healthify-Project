@@ -7,6 +7,7 @@ import Nutration from "./Components/Nutration/Nutration";
 import Workouts from "./Components/Workouts/Workouts";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
+import Login from "./Components/SignInUp/Login";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/workouts" element={<Workouts />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </div>
