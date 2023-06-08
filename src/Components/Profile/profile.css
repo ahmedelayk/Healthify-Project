@@ -1,45 +1,38 @@
-@media screen and ( max-width:768px){
-  .right-side{
-    }
-}
-.row > * {
-}
-.sized-box{
+.sized-box {
   width: 5% !important;
 }
-.profile {
-  background-color: #f9f9f9;
-}
+
 .right-side,
 .middle,
 .left-side {
-  background-color: #ffffff;
+  background-color: #fff;
   margin-top: 10vh !important;
-
+}
+.right-side {
+  margin-top: 0 !important;
+  
 }
 
 .date-picker {
-  height: 20vh;
+  margin:  35px 10px ;
 }
 .middle {
   height: 25vh;
-  box-shadow: 1px 1px 6px 1px #6f6767;
+  box-shadow: var(--box-shadow);
   margin-top: 10vh !important;
   margin-bottom: 2vh;
   padding-left: 0 !important;
-
 }
 .middle h5 {
-  font-size: 18px ;
+  font-size: var(--header2-size);
 }
 .middle h6 {
-  font-size: 14px;
-  color: #858080;
+  font-size: var(--paragraph-size);
+  color: var(--second-color);
 }
 .middle p {
-font-size: 10px;
-color: #613df1;
-
+  font-size: 10px;
+  color: var(--main-color);
 }
 .icon-img {
   width: 33px;
@@ -53,7 +46,7 @@ color: #613df1;
 }
 .type-food span {
   font-size: 10px;
-  color: #878181;
+  color: var(--second-color);
 }
 .type-food h6 {
   padding: 0 !important;
@@ -66,7 +59,6 @@ color: #613df1;
 .days h6 {
   font-size: 10px;
   font-weight: 900;
-  color: blue;
 }
 
 .days button {
@@ -75,7 +67,10 @@ color: #613df1;
   border: 0;
 }
 .active-day {
-  background-color: rgb(12, 12, 30) !important;
+  background-color: var(--main-color) !important;
   color: white;
-  border-radius: 10px;
+  border-radius: 25px;
+  text-align: center !important;
+  width: 30px !important;
+  padding-right: 0 !important;
 }

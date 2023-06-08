@@ -7,8 +7,8 @@
   }
 }
 .main-container {
-  background: var(--second-color);
-  color: #abafc6;
+  background: var(--paragraph-color);
+  color: var(--second-color);
   border-radius: 5px;
   padding: 20px;
   width: 104% ;
@@ -32,11 +32,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #444e80;
+  background: var(--main-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #abafc6;
+  background: var(--second-color);
   border-radius: 10px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .bar {
-  background-color: #abafc6;
+  background-color: var(--second-color);
   width: 20px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -134,13 +134,6 @@
 
 .info span {
   color: #fff;
-}
-body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #222;
 }
 .area-chart {
   /* Reset */
