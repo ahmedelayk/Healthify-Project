@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import fitnessImg from '../../../assets/images/fitness.jpg'
 import './Section5.css';
 
@@ -16,9 +16,9 @@ export default function Section5() {
                                 <h1 className="text-center">Workouts</h1>
                             </Row>
                             <div className=" d-flex justify-content-evenly">
-                                <h2 className='fs-2'>Train</h2>
-                                <h2 className='fs-2'>Transform</h2>
-                                <h2 className='fs-2'>Triumph</h2>
+                                <h2>Train</h2>
+                                <h2>Transform</h2>
+                                <h2>Triumph</h2>
                             </div>
                         </div>
                         <div className=" h-60 d-flex flex-column-reverse align-items-center ">
