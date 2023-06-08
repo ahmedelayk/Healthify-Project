@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@media only screen and (max-width: 992px) {
+  .main-container {
+    margin-top: 120vh !important;
+    width: 100% !important;
+
+  }
+}
+.main-container {
+  background: var(--second-color);
+  color: #abafc6;
+  border-radius: 5px;
+  padding: 20px;
+  width: 104% ;
+  height: auto;
+  margin-top: 5vh;
+  
+}
+
+.year-stats {
+  white-space: nowrap;
+  max-height: 170px;
+  overflow: hidden;
+}
+
+.year-stats:hover {
+  overflow-x: auto;
+}
+::-webkit-scrollbar {
+  height: 5px;
+  width: 100%;
+}
+
+::-webkit-scrollbar-track {
+  background: #444e80;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #abafc6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+.month-group {
+  cursor: pointer;
+  max-width: 400px;
+  height: 110px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.bar {
+  background-color: #abafc6;
+  width: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.month-group:hover .bar,
+.selected .bar {
+  background: #fff;
+}
+
+.month-group:hover p,
+.selected p {
+  color: #fff;
+}
+
+.h-25 {
+  height: 25%;
+}
+.h-50 {
+  height: 50%;
+}
+.h-75 {
+  height: 75%;
+}
+.h-100 {
+  height: 100%;
+}
+
+.stats-info {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.graph-container {
+  position: relative;
+}
+
+.percent {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+.circle {
+  stroke: #915db1;
+  fill: none;
+  stroke-width: 3;
+}
+
+.circle:nth-child(2) {
+  stroke: #e59f3c;
+}
+
+.circle:nth-child(3) {
+  stroke: #5397d6;
+}
+
+.circle:nth-child(4) {
+  stroke: #4cc790;
+}
+
+.graph-container p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+.info p {
+  margin-bottom: 10px;
+}
+
+.info span {
+  color: #fff;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
+}
+.area-chart {
+  /* Reset */
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  /* Dimensions */
+  width: 100%;
+  max-width: var(--chart-width, 600px);
+  height: var(--chart-height, 300px);
+}
+.area-chart tbody {
+  width: 100%;
+  height: var(--chart-height, 300px);
+
+  /* Layout */
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-direction: row;
+}
+.area-chart tr {
+  position: relative;
+
+  /* Even size items */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+.area-chart td {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Color */
+  background: var(--color, rgba(240, 50, 50, 0.75));
+  clip-path: polygon(
+    0% calc(100% * (1 - var(--start))),
+    100% calc(100% * (1 - var(--end))),
+    100% 100%,
+    0% 100%
+  );
+}
+.area-chart td:nth-of-type(1) {
+  --color: rgba(240, 50, 50, 0.75);
+}
+.area-chart td:nth-of-type(2) {
+  --color: rgba(255, 180, 50, 0.75);
+}
+.area-chart td:nth-of-type(3) {
+  --color: rgba(255, 220, 90, 0.75);
+}
+
+/*weekly graph*/
+@property --p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.pie {
+  --p: 20;
+  --b: 22px;
+  --c: darkred;
+  --w: 150px;
+
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  margin: 5px;
+  place-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.pie:before,
+.pie:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.pie:before {
+  inset: 0;
+  background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b)
+      var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
+  mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
+}
+.pie:after {
+  inset: calc(50% - var(--b) / 2);
+  background: var(--c);
+  transform: rotate(calc(var(--p) * 3.6deg))
+    translateY(calc(50% - var(--w) / 2));
+}
+.animate {
+  animation: p 1s 0.5s both;
+}
+.no-round:before {
+  background-size: 0 0, auto;
+}
+.no-round:after {
+  content: none;
+}
+@keyframes p {
+  from {
+    --p: 0;
+  }
+}

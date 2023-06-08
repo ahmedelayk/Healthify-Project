@@ -1,57 +1,61 @@
 import React from "react";
 import "../profile.css";
-import { FcPodiumWithoutSpeaker } from "react-icons/fc";
-import { FcPodiumWithSpeaker } from "react-icons/fc";
-import { FcPodiumWithAudience } from "react-icons/fc";
 import { FcFlashOn } from "react-icons/fc";
-
+import breakfast from "../../assets/images/Icons/breakfast.png";
+import dinner from "../../assets/images/Icons/dinner.png";
+import launch from "../../assets/images/Icons/launch.png";
+import fire from "../../assets/images/Icons/fire.png";
 
 const TodayReport = () => {
   return (
-    <div>
-      <div className="col-12 row">
+    <>
+      <div className="col-12 row mb-3">
         <div className="col-8 row p-0">
           <div className="col-2 icon-food">
-            <FcFlashOn />
+            <img src={breakfast} alt="breakfast" className="icon-img " />
           </div>
-          <div className="col-8 type-food">jiuuu</div>
+          <div className="col-8 type-food">
+            <h6>Breakfast</h6> <span>08:00 AM</span>
+          </div>
         </div>
         <div className="col-4 row p-0">
           <div className="col-2 icon-food">
-            <FcFlashOn />
+            <img src={fire} alt="breakfast" className="icon-fire " />
           </div>
-          <div className="col-8 type-food">jiuuu</div>
-        </div>
-          </div>
-          <div className="col-12 row">
-        <div className="col-8 row p-0">
-          <div className="col-2 icon-food">
-            <FcPodiumWithSpeaker />
-          </div>
-          <div className="col-8 type-food">jiuuu</div>
-        </div>
-        <div className="col-4 row p-0">
-          <div className="col-2 icon-food">
-            <FcFlashOn />
-          </div>
-          <div className="col-8 type-food">jiuuu</div>
-        </div>
-          </div>
-          <div className="col-12 row">
-        <div className="col-8 row p-0">
-          <div className="col-2 icon-food">
-            <FcPodiumWithAudience />
-          </div>
-          <div className="col-8 type-food">jiuuu</div>
-        </div>
-        <div className="col-4 row p-0">
-          <div className="col-2 icon-food">
-            <FcFlashOn />
-          </div>
-          <div className="col-8 type-food">jiuuu</div>
+          <div className="col-8 type-food">100 kal</div>
         </div>
       </div>
-    </div>
+      <div className="col-12 row mb-3">
+        <div className="col-8 row p-0">
+          <div className="col-2 icon-food">
+            <img src={launch} alt="launch" className="icon-img" />
+          </div>
+          <div className="col-8 type-food">
+            <h6>Launch</h6> <span>08:00 AM</span>
+          </div>        </div>
+        <div className="col-4 row p-0">
+          <div className="col-2 icon-food">
+            <img src={fire} alt="breakfast" className="icon-fire " />
+          </div>
+          <div className="col-8 type-food">100 kal</div>
+        </div>
+      </div>
+      <div className="col-12 row mb-3">
+        <div className="col-8 row p-0">
+          <div className="col-2 icon-food">
+            <img src={dinner} alt="dinner" className="icon-img " />
+          </div>
+          <div className="col-8 type-food">
+            <h6>Dinner</h6> <span>08:00 AM</span>
+          </div>        </div>
+        <div className="col-4 row p-0">
+          <div className="col-2 icon-food">
+            <img src={fire} alt="breakfast" className="icon-fire " />
+          </div>
+          <div className="col-8 type-food">100 kal</div>
+        </div>
+      </div>
+    </>
   );
 };
 
