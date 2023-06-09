@@ -55,7 +55,7 @@ function SignUp() {
               <FaLock className="icon" />
             </div>
             <div className="d-grid mt-4">
-              <button className="btn btn-primary">Sign in</button>
+              <button className="btn btn-primary">Sign Up</button>
             </div>
             <p className="mt-2 paragraph-size ">
               Already have an account?&nbsp;
