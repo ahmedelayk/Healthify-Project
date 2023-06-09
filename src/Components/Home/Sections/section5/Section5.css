@@ -1,0 +1,49 @@
+
+
+.fitness-overlay {
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.workouts-content {
+    height: 100%;
+}
+.higher-part {
+    margin-top: 60px;
+    padding-top: 61px;
+    padding-bottom: 15px;
+}
+.lower-part {
+    padding-bottom: 80px;
+}
+@media (max-width: 991px) {
+    .higher-part {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+    .higher-part h2 {
+        font-size: 1.1rem;
+    }
+    .lower-part {
+        padding-bottom: 20px;
+        font-size: 1.1rem;
+    }
+}
+
+
+.left-50 {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+.h-30 {
+    height: 30%;
+}
+.h-60 {
+    height: 60%;
+}

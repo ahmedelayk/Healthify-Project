@@ -1,0 +1,12 @@
+.footer-container {
+    border-top: 1px solid #232323;
+}
+.logo-text {
+    color: var(--main-color);
+    font-size: var(--header1-size) !important;
+    font-weight: 700;
+}
+.logo-img {
+    width: 27px;
+    height: 27px;
+}
