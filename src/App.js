@@ -10,6 +10,8 @@ import Settings from "./Components/Settings/Settings";
 import MeditationDetails from "./Components/Medatation/MeditationDetails/MeditationDetails";
 import Fitness from "./Components/Workouts/Fitness/Fitness";
 import Cardio from "./Components/Workouts/Cardio/Cardio";
+import Login from "./Components/SignInUp/Login";
+import SignUp from "./Components/SignInUp/SignUp";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="/workouts/cardio" element={<Cardio />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
       </div>
