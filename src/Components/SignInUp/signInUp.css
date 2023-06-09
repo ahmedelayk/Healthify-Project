@@ -54,10 +54,18 @@ form h2::after {
 .inputDiv {
   position: relative;
 }
+.form-select,
+.form-control {
+  text-indent: 30px;
+}
+.form-select:has(option:disabled:checked),
+.form-control::placeholder {
+  color: var(--second-color) !important;
+}
 .icon {
   position: absolute;
   top: 50%;
-  right: 10px;
+  left: 10px;
   transform: translateY(-50%);
   color: var(--main-color);
 }
