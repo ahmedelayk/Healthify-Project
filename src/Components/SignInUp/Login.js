@@ -14,7 +14,7 @@ function Login() {
         </div>
         <div className="form_container p-5 rounded bg-white">
           <form>
-            <h2 className="text-start">Sign In</h2>
+            <h2 className="text-start mb-4">Sign In</h2>
             <div className="mb-2 inputDiv">
               <input
                 type="email"

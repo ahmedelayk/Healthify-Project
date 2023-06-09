@@ -38,6 +38,19 @@ img {
 .form_container {
   flex: 1;
 }
+form h2 {
+  font-weight: 900;
+  position: relative;
+}
+form h2::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 5px;
+  bottom: -10px;
+  left: 0;
+  background-color: var(--main-color);
+}
 .inputDiv {
   position: relative;
 }
