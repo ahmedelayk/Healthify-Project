@@ -8,6 +8,8 @@ import Workouts from "./Components/Workouts/Workouts";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
 import MeditationDetails from "./Components/Medatation/MeditationDetails/MeditationDetails";
+import Fitness from "./Components/Workouts/Fitness/Fitness";
+import Cardio from "./Components/Workouts/Cardio/Cardio";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/medatation/:id" element={<MeditationDetails />} />
             <Route path="/nutration" element={<Nutration />} />
             <Route path="/workouts" element={<Workouts />} />
+            <Route path="/workouts/fitness" element={<Fitness />} />
+            <Route path="/workouts/cardio" element={<Cardio />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
