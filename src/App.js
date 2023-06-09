@@ -8,6 +8,7 @@ import Workouts from "./Components/Workouts/Workouts";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
 import Login from "./Components/SignInUp/Login";
+import SignUp from "./Components/SignInUp/SignUp";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
       </div>

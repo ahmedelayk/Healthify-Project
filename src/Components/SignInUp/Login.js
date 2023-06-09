@@ -1,45 +1,62 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./signInUp.css";
+import loginImg from "../assets/images/loginImg.png";
+import { MdEmail } from "react-icons/md";
+import { FaLock } from "react-icons/fa";
 
 function Login() {
   return (
-    <div className="login template d-flex justify-content-center align-items-center 100-w 100-vh bg-primary">
-      <div className="40-w p-5 rounded">
-        <form>
-          <h3>Sign In</h3>
-          <div className="mb-2">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              placeholder="Enter Email"
-              className="form-control"
-            ></input>
-          </div>
-          <div className="mb-2">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              className="form-control"
-            ></input>
-          </div>
-          <div className="mb-2">
-            <input
-              type="checkbox"
-              className="custom-control custom-checkbox"
-              id="check"
-            ></input>
-            <label htmlFor="check" className="custom-input-label">
-              Remember me
-            </label>
-          </div>
-          <div className="d-grid">
-            <button className="btn btn-primary">Sign in</button>
-          </div>
-          <p className="text-right">
-            Forgot <a href="">Password?</a>
-            <a href="">Sign Up</a>
-          </p>
-        </form>
+    <div className="sec_container d-flex justify-content-center align-items-center">
+      <div className="signInUp_container login template d-flex justify-content-center align-items-center bg-white rounded">
+        <div className="img_container">
+          <img src={loginImg} alt="loginImg" />
+        </div>
+        <div className="form_container p-5 rounded bg-white">
+          <form>
+            <h2 className="text-start">Sign In</h2>
+            <div className="mb-2 inputDiv">
+              <input
+                type="email"
+                placeholder="Enter Email"
+                className="form-control"
+              ></input>
+              <MdEmail className="icon" />
+            </div>
+            <div className="mb-2 inputDiv">
+              <input
+                type="password"
+                placeholder="Enter Password"
+                className="form-control"
+              ></input>
+              <FaLock className="icon" />
+            </div>
+            <p className="text-start mt-2 paragraph-size">
+              <a href="" className="text-decoration-none ">
+                Forgot Password?
+              </a>
+            </p>
+            <div className="mb-2">
+              <input
+                type="checkbox"
+                className="custom-control custom-checkbox"
+                id="check"
+              ></input>
+              <label htmlFor="check" className="custom-input-label ms-2">
+                Remember me
+              </label>
+            </div>
+            <div className="d-grid">
+              <button className="btn btn-primary">Sign in</button>
+            </div>
+            <p className="mt-2 paragraph-size ">
+              Don't have an account?&nbsp;
+              <Link to="/signup" className="text-decoration-none">
+                Register Now!
+              </Link>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,50 @@
+.sec_container {
+  height: calc(100vh - 70.78px);
+}
+.signInUp_container {
+  box-shadow: var(--box-shadow);
+}
+.signInUp_container {
+  width: 60vw;
+  max-width: 800px;
+}
+@media screen and (max-width: 1000px) {
+  .signInUp_container {
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 700px) {
+  .signInUp_container {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .signInUp_container {
+    width: 90vw;
+  }
+}
+img {
+  max-width: 100%;
+}
+.img_container {
+  flex: 1;
+  overflow: hidden;
+}
+@media screen and (max-width: 800px) {
+  .img_container {
+    display: none;
+  }
+}
+.form_container {
+  flex: 1;
+}
+.inputDiv {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--main-color);
+}
