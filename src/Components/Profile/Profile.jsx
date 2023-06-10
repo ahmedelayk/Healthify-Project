@@ -16,8 +16,7 @@ function Profile() {
             <WeekGraph />
           </div>
         </Col>
-        {/* empty column */}
-        <Col lg={1} xs={12} className="sized-box"></Col>
+        <Col lg={1} xs={12} className="sized-box-profile"></Col>
 
         {/* middle */}
         <Col lg={4} xs={12} className="middle text-center">
@@ -34,8 +33,7 @@ function Profile() {
           </div>
         </Col>
 
-        {/* empty column */}
-        <Col lg={1} xs={12} className="sized-box"></Col>
+        <Col lg={1} xs={12} className="sized-box-profile"></Col>
         {/* right side bar */}
         <Col lg={4} xs={12} className="right-side">
           <Row className="date-picker mt-4">

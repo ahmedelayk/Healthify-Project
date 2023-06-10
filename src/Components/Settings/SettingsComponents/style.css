@@ -1,0 +1,84 @@
+.pen-icon {
+  text-align: right;
+}
+.profile-pic {
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.profile-pic input {
+  display: none;
+}
+.profile-pic img {
+  position: absolute;
+  object-fit: cover;
+  height: 9vw;
+  width: 9vw;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  z-index: 0;
+}
+.profile-pic .label {
+  cursor: pointer;
+  height: 9vw;
+  width: 9vw;
+}
+.profile-pic:hover .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9000;
+  color: rgb(250, 250, 250);
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+.profile-pic span {
+  display: inline-flex;
+  padding: 0.2em;
+  height: 2em;
+}
+.notifications h5 {
+  font-size: var(--header2-size);
+}
+.notifications-icon {
+  width: 30px;
+  height: 30px;
+}
+@media screen and (max-width: 992px) {
+  .notifications h5 {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .notifications-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .notifications {
+    padding: 0 !important;
+    margin-left: 10px;
+  }
+  .image-txt{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 657px) {
+  .notifications h5 {
+    padding-left: 0 !important;
+  }
+ 
+  .notifications {
+    margin-left: 10px;
+  }
+  .notifications .row > * {
+    flex-shrink: 0;
+    padding-right: 0 !important;
+  }
+  .image-txt{
+    font-size: 10px;
+  }
+}
