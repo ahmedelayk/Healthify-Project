@@ -7,7 +7,7 @@ export const WaterTrack = () => {
   return (
     <Col xs={12} md={6} lg={3} className="card-n mt-0">
       <h4 className="font-family1 text-paragraph-color mb-2">Water</h4>
-      <Row className="justify-content-center mt-4">
+      <Row className="justify-content-center align-items-center mt-4">
         <img className="w-25 " src={water} alt="water"></img>
       </Row>
       <div className="my-3 progress" style={{ height: "6px" }}>
