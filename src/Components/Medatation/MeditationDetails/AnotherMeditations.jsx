@@ -12,6 +12,6 @@ export default function AnotherMeditations() {
         <span className="color">Devid Procyshyn</span>
         <Rating className="rating-size" value={2} readOnly />
       </div>
-        </div>
+    </div>
   )
 }
