@@ -8,9 +8,9 @@ import cardio2 from "../../assets/images/cardio2.jpg";
 
 // Components
 import { Col, Container, Row } from "react-bootstrap";
-import WorkoutCard from "../WorkoutCard";
-import VideoSection from "../VideoSection";
-import Subscription from "../Subscription";
+import WorkoutCard from "../CommonComponents/WorkoutCard";
+import VideoSection from "../CommonComponents/VideoSection";
+import Subscription from "../CommonComponents/Subscription";
 
 const Cardio = () => {
     const Cardios = [

@@ -18,3 +18,32 @@
 .form-control:focus {
     box-shadow: none !important;
 }
+
+.wourkouts-header {
+    background-image: url("../assets/images/fitnessGym1.jpg");
+    height: calc(100vh - 68.8px);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.wourkouts-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000087;
+}
+
+.wourkouts-header h1 {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
