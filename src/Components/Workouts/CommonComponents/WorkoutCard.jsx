@@ -1,6 +1,6 @@
 
 // Style
-import "./workout.css"
+import "../workout.css"
 
 // Components
 import { Card, Col, Row } from "react-bootstrap";

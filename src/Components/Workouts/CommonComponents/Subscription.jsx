@@ -1,5 +1,5 @@
 // Style
-import "./workout.css";
+import "../workout.css";
 
 // Components
 import { Button, Form, InputGroup } from "react-bootstrap";
