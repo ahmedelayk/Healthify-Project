@@ -1,6 +1,5 @@
 import React from "react";
 import "../profile.css";
-import { FcFlashOn } from "react-icons/fc";
 import breakfast from "../../assets/images/Icons/breakfast.png";
 import dinner from "../../assets/images/Icons/dinner.png";
 import launch from "../../assets/images/Icons/launch.png";

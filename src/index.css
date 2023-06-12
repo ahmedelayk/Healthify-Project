@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Geologica&family=Work+Sans:ital,wght@0,200;0,300;1,200&display=swap");
 :root {
-  --main-color: #0066ff ;
-  --main-background-color: #F9F9F9;
+  --main-color: #0066ff;
+  --main-background-color: #fff;
+  --second-background-color: #BECEF4;
   --second-color: #63717d;
   --paragraph-color: #002233;
   --btn-hover-color: #0b5ed7;
@@ -51,8 +52,6 @@ body {
 .paragraph-size {
   font-size: var(--paragraph-size);
 }
-
-
 
 .grid-3 {
   display: grid;
