@@ -1,0 +1,97 @@
+.card-n {
+  background-color: white;
+  padding: 30px 50px !important;
+  margin: 20px 0px !important;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.card-n h4 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.bolder {
+  font-weight: 900;
+}
+
+h6 span {
+  background-color: #0066ff;
+  color: white;
+  font-weight: 800;
+  font-size: 10px;
+  padding: 3px;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.grey {
+  color: #babbb8;
+}
+
+.fs-8 {
+  font-size: 12px;
+}
+.fs-7 {
+  font-size: 14px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.pt-9 {
+  padding-top: 120px;
+}
+
+.min-w-100 {
+  min-width: 150px !important;
+}
+
+p {
+  margin: 0 !important;
+}
+
+.bg-add {
+  background-color: #0066ff60;
+}
+
+.text-primary-color {
+  color: #0066ff;
+}
+
+.bg-water-color {
+  background-color: #7ec6de;
+}
+
+/* @media screen and (min-width: 992px) {
+  .padding {
+    width: 2% !important;
+  }
+  .result-sec {
+    width: 48% !important;
+  }
+
+  .progress-sec {
+    width: 21% !important;
+  }
+} */
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .ruler {
+    font-size: 10px;
+  }
+}
+/* @media screen and (min-width: 1199px) and (max-width: 1399px) {
+  .result-sec {
+    width: 47% !important;
+  }
+} */
+
+@media screen and (max-width: 770px) {
+  .ruler {
+    font-size: 9px !important;
+  }
+}
