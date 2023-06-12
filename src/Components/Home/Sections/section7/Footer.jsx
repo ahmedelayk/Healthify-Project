@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.css";
+import "./Footer.css";
 import { BsFacebook } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
@@ -69,7 +69,7 @@ function Footer() {
                 </h5>
                 <p>Subscribe now to be in touch </p>
                 <div className="emailfield">
-                  <input type="text" name="email" defaultValue="Email" />
+                  <input className="input-email" type="text" name="email" defaultValue="Email" />
                   <input name="uri" type="hidden" value="arabiantheme" />
                   <input name="loc" type="hidden" value="en_US" />
 

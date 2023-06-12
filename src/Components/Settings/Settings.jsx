@@ -30,8 +30,8 @@ const Settings = () => {
 
   return (
     <Row className="settings ">
-      {/* The first settings sidebar */}
-      <Col xs={1} className="first-sidebar">
+      {/* The first settings sidebar */ }
+      <Col xs={ 1 } className="first-sidebar">
         <Row className="icons-row">
           <div className="icon">
             <GiStrong />
@@ -50,20 +50,20 @@ const Settings = () => {
           <AiFillSetting />
         </div>
       </Col>
-      {/* The second settings sidebar */}
-      <Col lg={2} xs={4} className="second-sidebar">
+      {/* The second settings sidebar */ }
+      <Col lg={ 2 } xs={ 4 } className="second-sidebar">
         <Row>
-          <Col xs={3}>
+          <Col xs={ 3 }>
             <MdArrowBackIosNew />
           </Col>
-          <Col xs={9}>
+          <Col xs={ 9 }>
             <h5>Settings</h5>
           </Col>
         </Row>
         <div className="setting-nav">
           <Row>
             <NavLink
-              onClick={() => handleNavLinkClick(<EditProfile />, "EditProfile")}
+              onClick={ () => handleNavLinkClick(<EditProfile />, "EditProfile") }
               className={
                 activeNavLink === "EditProfile"
                   ? "active-settings  setting-item"
@@ -71,16 +71,16 @@ const Settings = () => {
               }
             >
               <Row>
-                <Col xs={1}>
+                <Col xs={ 1 }>
                   <BsFillPencilFill />
                 </Col>
-                <Col xs={10} className="pt-1">
+                <Col xs={ 10 } className="pt-1">
                   <h6>Edit Profile</h6>
                 </Col>
               </Row>
             </NavLink>
             <NavLink
-              onClick={() =>
+              onClick={ () =>
                 handleNavLinkClick(<Notifications />, "Notifications")
               }
               className={
@@ -90,16 +90,16 @@ const Settings = () => {
               }
             >
               <Row>
-                <Col xs={1}>
+                <Col xs={ 1 }>
                   <GrNotification />
                 </Col>
-                <Col xs={10} className="pt-1">
+                <Col xs={ 10 } className="pt-1">
                   <h6>Notifications</h6>
                 </Col>
               </Row>
             </NavLink>
             <NavLink
-              onClick={() => handleNavLinkClick(<BMI />, "BMI")}
+              onClick={ () => handleNavLinkClick(<BMI />, "BMI") }
               className={
                 activeNavLink === "BMI"
                   ? "active-settings setting-item"
@@ -107,16 +107,16 @@ const Settings = () => {
               }
             >
               <Row>
-                <Col xs={1}>
+                <Col xs={ 1 }>
                   <BsCalculatorFill />
                 </Col>
-                <Col xs={10} className="pt-1">
+                <Col xs={ 10 } className="pt-1">
                   <h6>BMI Test</h6>
                 </Col>
               </Row>
             </NavLink>
             <NavLink
-              onClick={() => handleNavLinkClick(<Languages />, "Languages")}
+              onClick={ () => handleNavLinkClick(<Languages />, "Languages") }
               className={
                 activeNavLink === "Languages"
                   ? "active-settings setting-item"
@@ -124,16 +124,16 @@ const Settings = () => {
               }
             >
               <Row>
-                <Col xs={1}>
+                <Col xs={ 1 }>
                   <LuLanguages />
                 </Col>
-                <Col xs={10} className="pt-1">
+                <Col xs={ 10 } className="pt-1">
                   <h6>Languages</h6>
                 </Col>
               </Row>
             </NavLink>
             <NavLink
-              onClick={() => handleNavLinkClick(<Help />, "Help")}
+              onClick={ () => handleNavLinkClick(<Help />, "Help") }
               className={
                 activeNavLink === "Help"
                   ? "active-settings setting-item"
@@ -141,10 +141,10 @@ const Settings = () => {
               }
             >
               <Row>
-                <Col xs={1}>
+                <Col xs={ 1 }>
                   <BiHelpCircle />
                 </Col>
-                <Col xs={10} className="pt-1">
+                <Col xs={ 10 } className="pt-1">
                   <h6>Help</h6>
                 </Col>
               </Row>
@@ -152,9 +152,9 @@ const Settings = () => {
           </Row>
         </div>
       </Col>
-      <Col lg={1} xs={2} className="sized-box"></Col>
-      <Col lg={8} xs={5} className="edit-area ">
-        {selectedComponent}
+      <Col lg={ 1 } xs={ 2 } className="sized-box"></Col>
+      <Col lg={ 8 } xs={ 5 } className="edit-area ">
+        { selectedComponent }
       </Col>
     </Row>
   );

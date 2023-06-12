@@ -10,7 +10,7 @@ function Login() {
     <div className="sec_container d-flex justify-content-center align-items-center">
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
         <div className="img_container">
-          <img src={loginImg} alt="loginImg" />
+          <img src={ loginImg } alt="loginImg" class='login-img' />
         </div>
         <div className="form_container rounded bg-white">
           <form>
@@ -21,7 +21,7 @@ function Login() {
                 placeholder="Enter Email"
                 className="form-control"
               ></input>
-              <MdEmail className="icon" />
+              <MdEmail className="icon-login" />
             </div>
             <div className="mb-2 inputDiv">
               <input
@@ -29,7 +29,7 @@ function Login() {
                 placeholder="Enter Password"
                 className="form-control"
               ></input>
-              <FaLock className="icon" />
+              <FaLock className="icon-login" />
             </div>
             <p className="text-start mt-2 paragraph-size">
               <a href="" className="text-decoration-none ">

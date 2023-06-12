@@ -202,7 +202,7 @@ ul.social-footer2 li a {
   margin: auto;
 }
 
-input[type="text"] {
+.input-email {
   background: rgba(255, 255, 255, 0.075);
   padding: 10px 15px;
   color: #aaa;
