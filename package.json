@@ -17,6 +17,7 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "swiper": "^9.3.2",
+    "toolcool-range-slider": "^4.0.27",
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },

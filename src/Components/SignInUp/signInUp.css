@@ -23,7 +23,7 @@
     width: 90vw;
   }
 }
-img {
+.login-img {
   max-width: 100%;
 }
 .img_container {
@@ -62,7 +62,7 @@ form h2::after {
 .form-control::placeholder {
   color: var(--second-color) !important;
 }
-.icon {
+.icon-login {
   position: absolute;
   top: 50%;
   left: 10px;

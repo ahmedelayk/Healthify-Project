@@ -18,7 +18,7 @@ function SignUp() {
                 placeholder="Enter your name"
                 className="form-control"
               ></input>
-              <FaUser className="icon" />
+              <FaUser className="icon-login" />
             </div>
             <div className="mb-2 inputDiv">
               <input
@@ -26,7 +26,7 @@ function SignUp() {
                 placeholder="Enter Email"
                 className="form-control"
               ></input>
-              <MdEmail className="icon" />
+              <MdEmail className="icon-login" />
             </div>
             <div className="mb-2 inputDiv">
               <input
@@ -34,7 +34,7 @@ function SignUp() {
                 placeholder="Enter Phone"
                 className="form-control"
               ></input>
-              <FaPhoneAlt className="icon" />
+              <FaPhoneAlt className="icon-login" />
             </div>
             <div className="mb-2 inputDiv">
               <select className="form-select" id="gender">
@@ -44,7 +44,7 @@ function SignUp() {
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
-              <FaUsers className="icon" />
+              <FaUsers className="icon-login" />
             </div>
             <div className="mb-2 inputDiv">
               <input
@@ -52,7 +52,7 @@ function SignUp() {
                 placeholder="Enter Password"
                 className="form-control"
               ></input>
-              <FaLock className="icon" />
+              <FaLock className="icon-login" />
             </div>
             <div className="d-grid mt-4">
               <button className="btn btn-primary">Sign Up</button>
@@ -66,7 +66,7 @@ function SignUp() {
           </form>
         </div>
         <div className="img_container">
-          <img src={signUpImg} alt="signUpImg" />
+          <img src={ signUpImg } alt="signUpImg" className="login-img" />
         </div>
       </div>
     </div>
