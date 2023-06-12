@@ -54,8 +54,8 @@ form h2::after {
 .inputDiv {
   position: relative;
 }
-.form-select,
-.form-control {
+.form-select-login,
+.form-control-login {
   text-indent: 30px;
 }
 .form-select:has(option:disabled:checked),

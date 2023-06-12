@@ -37,7 +37,7 @@ function SignUp() {
               <FaPhoneAlt className="icon" />
             </div>
             <div className="mb-2 inputDiv">
-              <select className="form-select" id="gender">
+              <select className="form-select form-select-login" id="gender">
                 <option value="" disabled selected hidden>
                   Select Gender
                 </option>
