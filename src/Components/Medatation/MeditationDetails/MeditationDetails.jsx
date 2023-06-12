@@ -9,7 +9,7 @@ import { v4 as uuid } from "uuid";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import { Rating } from "@smastrom/react-rating";
-import AnotherMeditations from "./AnotherMeditations";
+import MeditationCard from "./MeditaionCard";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -21,6 +21,8 @@ import {
   AiOutlineShareAlt,
   AiOutlineHeart,
   AiOutlineStar,
+  AiFillHeart,
+  AiFillStar
 } from "react-icons/ai";
 import { MdAttachMoney } from "react-icons/md";
 
@@ -28,22 +30,31 @@ import { MdAttachMoney } from "react-icons/md";
 import meditation from "../../assets/images/meditation.jpg";
 
 const MeditationDetails = () => {
+  const [btnsAction, setBtnsAction] = useState({save: false, rate:false, share: false, purches: false})
+
+  const handleBtnsAction = (name) => {
+    setBtnsAction({...btnsAction, [name]: !btnsAction[name]})
+  }
   const btns = [
     {
       name: "Save",
       icon: <AiOutlineHeart />,
+      icon2: <AiFillHeart color="red" />
     },
     {
       name: "Rate",
       icon: <AiOutlineStar />,
+      icon2: <AiFillStar color="orange" />
     },
     {
       name: "Share",
       icon: <AiOutlineShareAlt />,
+      icon2: <AiOutlineShareAlt />,
     },
     {
       name: "Purches",
       icon: <MdAttachMoney />,
+      icon2: <MdAttachMoney />,
     },
   ];
 
@@ -79,9 +90,9 @@ const MeditationDetails = () => {
       <Row className="mb-4">
         {btns.map((btn) => (
           <Col className="details-btns" key={uuid()} xs={12} md={6} lg={3}>
-            <div className="d-flex justify-content-between align-items-center p-3 border border-secondary-subtle rounded-5 mb-2">
+            <div onClick={()=>handleBtnsAction(btn.name.toLowerCase())} className="btns-action d-flex justify-content-between align-items-center p-3 border border-secondary-subtle rounded-5 mb-2">
               <div>{btn.name}</div>
-              {btn.icon}
+              {!btnsAction[btn.name.toLowerCase()]? btn.icon : btn.icon2}
             </div>
           </Col>
         ))}
@@ -119,16 +130,16 @@ const MeditationDetails = () => {
             onSlideChange={() => console.log("slide change")}
           >
             <SwiperSlide>
-              <AnotherMeditations />
+              <MeditationCard />
             </SwiperSlide>
             <SwiperSlide>
-              <AnotherMeditations />
+              <MeditationCard />
             </SwiperSlide>
             <SwiperSlide>
-              <AnotherMeditations />
+              <MeditationCard />
             </SwiperSlide>
             <SwiperSlide>
-              <AnotherMeditations />
+              <MeditationCard />
             </SwiperSlide>
           </Swiper>
         </div>

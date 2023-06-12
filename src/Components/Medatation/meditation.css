@@ -1,0 +1,17 @@
+.filter-meditation {
+    background-color: var(--paragraph-color);
+    color: white;
+}
+
+@media (min-width: 992px) {
+    .meditaion-select {
+        width: 25% !important;
+    }
+}
+
+.result-header {
+    color: var(--second-color);
+}
+.results-number {
+    color: var(--main-color);
+}
