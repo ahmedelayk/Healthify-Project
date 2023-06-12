@@ -19,7 +19,7 @@ function Login() {
               <input
                 type="email"
                 placeholder="Enter Email"
-                className="form-control"
+                className="form-control form-control-login"
               ></input>
               <MdEmail className="icon-login" />
             </div>
@@ -27,7 +27,7 @@ function Login() {
               <input
                 type="password"
                 placeholder="Enter Password"
-                className="form-control"
+                className="form-control form-control-login"
               ></input>
               <FaLock className="icon-login" />
             </div>

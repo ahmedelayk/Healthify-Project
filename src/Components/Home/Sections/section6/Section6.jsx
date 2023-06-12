@@ -14,19 +14,19 @@ export default function Section6() {
                 <form className="contact-us-form" action="POST">
                     <div className="form-field-container">
                         <label className="label-field" htmlFor="name">Name</label>
-                        <input className="input-field" type="text" name="name" id="name" />
+                        <input className="form-control" type="text" name="name" id="name" />
                     </div>
                     <div className="form-field-container">
                         <label className="label-field" htmlFor="email">E-mail</label>
-                        <input className="input-field" type="email" name="email" id="email" />
+                        <input className="form-control" type="email" name="email" id="email" />
                     </div>
                     <div className="form-field-container">
                         <label className="label-field" htmlFor="mobile">Mobile</label>
-                        <input className="input-field" type="tel" name="mobile" id="mobile" />
+                        <input className="form-control" type="tel" name="mobile" id="mobile" />
                     </div>
                     <div className="form-field-container">
                         <label className="label-area-field" htmlFor="message">Message</label>
-                        <textarea className="text-area-field" name="message" id="message" cols="30" rows="5"></textarea>
+                        <textarea className="text-area-field form-control" name="message" id="message" cols="30" rows="5"></textarea>
                     </div>
                     <div className="d-flex justify-content-center">
                         <input className="submit-btn" type="submit" value="Send" />

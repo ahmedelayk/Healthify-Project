@@ -11,32 +11,24 @@
 
 .form-field-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
 .label-field, .label-area-field {
-    font-size: 1.5rem;
+    font-size: 1rem;
+}
+@media (max-width:767px) {
+    .label-field, .label-area-field {
+        font-size: .9rem;
+    }
 }
 .label-area-field {
     align-self: flex-start;
 }
-.input-field, .text-area-field {
-    padding: 10px;
-    border: none;
-    width: 85%;
-    border-radius: 6px;
-    background-color: rgba(166, 166, 166, 0.276);
-    transition: .3s;
-}
-
-.input-field:focus-visible, .text-area-field:focus-visible {
-    outline: none;
-    border: 1px solid var(--main-color);
-}
-
 .text-area-field {
     resize: none;
 }
@@ -53,3 +45,8 @@
 .submit-btn:hover {
     background-color: var(--btn-hover-color);
 }
+
+
+/* .form-control-contact {
+    width: 83% !important;
+} */
