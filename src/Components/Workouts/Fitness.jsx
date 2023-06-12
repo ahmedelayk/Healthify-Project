@@ -10,6 +10,7 @@ import "swiper/css/autoplay";
 
 // uuid
 import { v4 as uuid } from "uuid";
+import { NavLink } from "react-router-dom";
 
 const Fitness = ({ fitnesses }) => {
   return (
@@ -19,7 +20,9 @@ const Fitness = ({ fitnesses }) => {
         <Row className="py-5 ps-5 pe-5 pe-md-0 bg-white">
           <Col className="mb-3" xs={12} md={4} lg={4}>
             <h1>Fitness Categories</h1>
+            <NavLink to="fitness">
             <Button variant="primary">View all</Button>
+            </NavLink>
           </Col>
           <Col xs={12} md={8} lg={8}>
             <Swiper
