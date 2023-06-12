@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbarr from "./Components/Nav/Nav";
 import Home from "./Components/Home/Home";
-import Medatation from "./Components/Medatation/Medatation";
+import Medatation from "./Components/Medatation/Meditation";
 import Nutration from "./Components/Nutration/Nutration";
 import Workouts from "./Components/Workouts/Workouts";
 import Profile from "./Components/Profile/Profile";

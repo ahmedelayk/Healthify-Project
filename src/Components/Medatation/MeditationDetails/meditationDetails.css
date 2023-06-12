@@ -19,3 +19,7 @@
   .another-meditations .swiper-pagination {
     bottom: -8% !important;
   }
+
+  .btns-action {
+    cursor: pointer;
+  }
