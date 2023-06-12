@@ -31,6 +31,11 @@ function Profile() {
           <div>
             <MonthGraph />
           </div>
+          <Col xs={6}>
+            <Button variant="primary" className="mt-5 ms-5">
+              Reset graph
+            </Button>
+          </Col>
         </Col>
 
         <Col lg={1} xs={12} className="sized-box-profile"></Col>

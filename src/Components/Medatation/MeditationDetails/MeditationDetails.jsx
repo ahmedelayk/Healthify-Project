@@ -73,20 +73,30 @@ const MeditationDetails = () => {
         <Rating className="rating-size" value={rating} readOnly />
         <span className="color">(3 Reviews)</span>
       </div>
-      <Row className="mb-4">
+      <Row className="mb-4" data-aos="zoom-in-left">
         <img src={meditation} className=" w-100" alt="meditation" />
       </Row>
-      <Row className="mb-4">
+      <Row className="mb-4" data-aos="zoom-in">
         {btns.map((btn) => (
-          <Col className="details-btns" key={uuid()} xs={12} md={6} lg={3}>
-            <div className="d-flex justify-content-between align-items-center p-3 border border-secondary-subtle rounded-5 mb-2">
+          <Col
+            className="details-btns"
+            key={uuid()}
+            xs={12}
+            md={6}
+            lg={3}
+            data-aos="zoom-in"
+          >
+            <div
+              className="d-flex justify-content-between align-items-center p-3 border border-secondary-subtle rounded-5 mb-2"
+              data-aos="zoom-in"
+            >
               <div>{btn.name}</div>
               {btn.icon}
             </div>
           </Col>
         ))}
       </Row>
-      <div className="content mb-5">
+      <div className="content mb-5" data-aos="zoom-in">
         {detailsSections.map((section, idx) => (
           <div key={uuid()} className={`section-${idx + 1}`}>
             <h2 className="header2-size">{section.title}</h2>
@@ -95,9 +105,9 @@ const MeditationDetails = () => {
         ))}
       </div>
 
-      <div className="pt-4">
+      <div className="pt-4" data-aos="zoom-in"> 
         <h1 className="header1-size text-center">Another Meditaions</h1>
-        <div className="another-meditations">
+        <div className="another-meditations" data-aos="flip-up">
           <Swiper
             className="mt-5"
             modules={[Pagination]}
@@ -118,8 +128,8 @@ const MeditationDetails = () => {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
           >
-            <SwiperSlide>
-              <AnotherMeditations />
+            <SwiperSlide >
+              <AnotherMeditations  />
             </SwiperSlide>
             <SwiperSlide>
               <AnotherMeditations />

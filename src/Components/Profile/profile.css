@@ -1,27 +1,29 @@
+
 .sized-box-profile {
   width: 5% !important;
 }
 
 .right-side,
-.middle,
+.middle {
+  background-color: #fff;
+  padding: 0 0 10vh 5vw !important;
+}
+
 .left-side {
+  margin-left: 0 !important;
   background-color: #fff;
   margin-top: 10vh !important;
 }
-.right-side {
-  margin-top: 0 !important;
-  
-}
 
 .date-picker {
-  margin:  35px 10px ;
+  margin: 35px 10px;
 }
 .middle {
-  height: 25vh;
   box-shadow: var(--box-shadow);
-  margin-top: 10vh !important;
-  margin-bottom: 2vh;
+  margin-bottom: 10vh;
   padding-left: 0 !important;
+  margin-top: 10vh !important;
+
 }
 .middle h5 {
   font-size: var(--header2-size);

@@ -66,8 +66,20 @@ const Workouts = () => {
       <div className="wourkouts-header">
         <h1>Fitness & Cardio</h1>
       </div>
-      <Fitness fitnesses={fitnesses} />
-      <Cardio cardios={cardios} />
+      <div
+        data-aos="flip-right"
+        data-aos-easing="ease-in-cubic"
+        data-aos-duration="2000"
+      >
+        <Fitness fitnesses={fitnesses} />
+      </div>
+      <div
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
+        <Cardio cardios={cardios} />
+      </div>
     </div>
   );
 };

@@ -33,16 +33,16 @@ const Settings = () => {
       {/* The first settings sidebar */ }
       <Col xs={ 1 } className="first-sidebar">
         <Row className="icons-row">
-          <div className="icon">
+          <div className="icon-sidebar">
             <GiStrong />
           </div>
-          <div className="icon">
+          <div className="icon-sidebar">
             <MdOutlineFitnessCenter />
           </div>
-          <div className="icon">
+          <div className="icon-sidebar">
             <BsGraphUp />
           </div>
-          <div className="icon">
+          <div className="icon-sidebar">
             <GiBurningEye />
           </div>
         </Row>

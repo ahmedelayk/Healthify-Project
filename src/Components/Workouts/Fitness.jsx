@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 
 const Fitness = ({ fitnesses }) => {
   return (
-    <div className="section-padding">
+    <div className="section-padding" >
       <div className="fitness overflow-hidden">
         <h1 className="header1-size ps-4 mb-3">Fitness</h1>
         <Row className="py-5 ps-5 pe-5 pe-md-0 bg-white">
