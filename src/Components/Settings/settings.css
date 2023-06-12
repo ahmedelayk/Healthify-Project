@@ -1,0 +1,55 @@
+@media screen and (max-width: 1175px) {
+  .setting-nav {
+    margin: 10vh 10px !important;
+    font-size: var(--header2-size);
+  }
+}
+@media screen and (max-width: 992px) {
+  .first-sidebar {
+    margin-left: 20px;
+  }
+}
+
+.sized-box {
+  width: 5% !important;
+}
+.sized-box,
+.first-sidebar,
+.second-sidebar,
+.edit-area {
+  height: 100vh;
+  padding: 20px;
+}
+.edit-area {
+  color: var(--paragraph-color);
+}
+.first-sidebar {
+  background-color: var(--paragraph-color);
+  text-align: center;
+  padding-top: 15%;
+  color: var(--main-background-color);
+}
+.second-sidebar {
+  background-color: var(--second-background-color);
+  color: var(--paragraph-color);
+}
+.sized-box {
+  background-color: var(--main-background-color);
+  border-right: 1px solid var(--paragraph-color);
+}
+.icon {
+  margin-bottom: 4vh;
+}
+.settings-icon {
+  margin-top: 15vh !important;
+}
+.setting-nav {
+  margin: 10vh 40px;
+  color: var(--second-color);
+}
+.active-settings {
+  color: var(--paragraph-color) !important;
+}
+.setting-item {
+  margin-bottom: 30px;
+}

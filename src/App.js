@@ -12,6 +12,7 @@ import Fitness from "./Components/Workouts/Fitness/Fitness";
 import Cardio from "./Components/Workouts/Cardio/Cardio";
 import Login from "./Components/SignInUp/Login";
 import SignUp from "./Components/SignInUp/SignUp";
+import Footer from "./Components/Home/Sections/section7/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
+        <Footer/>
       </div>
     </>
   );
