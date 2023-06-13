@@ -7,36 +7,47 @@ import { FaLock, FaUser, FaPhoneAlt, FaUsers } from "react-icons/fa";
 
 function SignUp() {
   return (
-    <div className="sec_container d-flex justify-content-center align-items-center">
+    <div className="sec_container_signup d-flex justify-content-center align-items-center">
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
-        <div className="form_container rounded bg-white" >
+        <div className="form_container rounded bg-white" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <form>
             <h2 className="text-start mb-4">Register</h2>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
               <input
                 type="text"
-                placeholder="Enter your name"
-                className="form-control"
+                placeholder="Enter your first name"
+                className="form-control form-control-login"
               ></input>
               <FaUser className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+              <input
+                type="text"
+                placeholder="Enter your last name"
+                className="form-control form-control-login"
+              ></input>
+              <FaUser className="icon-login" />
+            </div>
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="email"
                 placeholder="Enter Email"
-                className="form-control"
+                className="form-control form-control-login"
               ></input>
               <MdEmail className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="tel"
                 placeholder="Enter Phone"
-                className="form-control"
+                className="form-control form-control-login"
               ></input>
               <FaPhoneAlt className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <select className="form-select form-select-login" id="gender">
                 <option value="" disabled selected hidden>
                   Select Gender
@@ -46,18 +57,20 @@ function SignUp() {
               </select>
               <FaUsers className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="password"
                 placeholder="Enter Password"
-                className="form-control"
+                className="form-control form-control-login"
               ></input>
               <FaLock className="icon-login" />
             </div>
             <div className="d-grid mt-4">
               <button className="btn btn-primary">Sign Up</button>
             </div>
-            <p className="mt-2 paragraph-size ">
+            <p className="mt-2 paragraph-size " data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               Already have an account?&nbsp;
               <Link to="/login" className="text-decoration-none">
                 Login Now!
@@ -65,7 +78,8 @@ function SignUp() {
             </p>
           </form>
         </div>
-        <div className="img_container">
+        <div className="img_container" data-aos="flip-up"
+     data-aos-anchor-placement="top-bottom">
           <img src={signUpImg} alt="signUpImg" className="login-img" />
         </div>
       </div>
