@@ -75,14 +75,14 @@ const Workouts = () => {
         <h1>Fitness & Cardio</h1>
       </div>
       <div
-        data-aos="flip-right"
+        data-aos="fade-left"
         data-aos-easing="ease-in-cubic"
         data-aos-duration="2000"
       >
         <Fitness fitnesses={fitnesses} />
       </div>
       <div
-        data-aos="flip-left"
+        data-aos="fade-right"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
       >

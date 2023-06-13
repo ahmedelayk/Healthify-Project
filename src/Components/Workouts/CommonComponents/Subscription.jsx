@@ -9,12 +9,12 @@ const Subscription = () => {
     <div className="p-5 newsletter-subscription" data-aos="zoom-in">
       <h1 className="header1-size text-center">Newsletter Subscription</h1>
       <div className="p-3" data-aos="zoom-out">
-        <form className="d-flex flex-column flex-lg-row" action="POST">
-          <InputGroup className="mb-2 mb-lg-0">
+        <form className="d-flex flex-column flex-lg-row w-75 gap-3 justify-content-center m-auto" action="POST">
+          {/* <InputGroup className="mb-2 mb-lg-0">
             <Form.Control placeholder="Enter Name" />
-          </InputGroup>
+          </InputGroup> */}
           <InputGroup className="mb-2 mb-lg-0">
-            <Form.Control placeholder="Enter Email" />
+            <Form.Control placeholder="Enter Email for subscription" />
           </InputGroup>
           <Button variant="primary">Subscribe</Button>
         </form>
