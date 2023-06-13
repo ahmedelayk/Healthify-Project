@@ -9,8 +9,7 @@ function SignUp() {
   return (
     <div className="sec_container_signup d-flex justify-content-center align-items-center">
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
-        <div className="form_container rounded bg-white" data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom">
+        <div className="form_container rounded bg-white" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <form>
             <h2 className="text-start mb-4">Register</h2>
             <div className="mb-2 inputDiv" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
