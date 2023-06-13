@@ -1,5 +1,10 @@
-.sec_container {
-  height: calc(100vh - 70.78px);
+.sec_container_signup {
+  /* height: calc(100vh - 70.78px); */
+  padding: 36px 0;
+}
+.sec_container_login {
+  /* height: calc(100vh - 70.78px); */
+  padding: 110px 0;
 }
 .signInUp_container {
   box-shadow: var(--box-shadow);
