@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { BsCalculatorFill } from "react-icons/bs";
+import { BMICalculator } from '../../Nutration/BMICalculator'
+import { BMIResult } from '../../Nutration/BMIResult'
 
 const BMI = () => {
   return (
@@ -13,7 +15,11 @@ const BMI = () => {
           <h6>BMI Calculation</h6>
         </Col>
       </Row>
-    
+      <Row >
+      <BMICalculator />
+      <BMIResult />
+      </Row>
+
     </div>
   );
 };
