@@ -1,0 +1,41 @@
+.page-height {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* height: 300px; */
+}
+
+.header {
+    background-image: url("../../../assets/images/aa.jpg");
+    height: calc(100vh - 68.8px);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.56);
+}
+
+.header .header-content {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .header .header-text {
+        font-size: 1.3rem;
+    }
+}

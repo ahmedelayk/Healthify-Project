@@ -60,6 +60,14 @@ const Workouts = () => {
       img: cardio2,
       title: "Total Body Stretching",
     },
+    {
+      img: cardio1,
+      title: "Strength Upper Body",
+    },
+    {
+      img: cardio2,
+      title: "Total Body Stretching",
+    },
   ];
   return (
     <div className="workouts" data-aos="zoom-in-left">
