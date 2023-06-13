@@ -11,11 +11,14 @@ const Section1 = () => {
           <h2 className="macro-text">
             Unlock Your Potential. Empowering Health and Wellness for All!
           </h2>
+          <div>
+
           <NavLink to="/login">
             <Button className="go-btn">
               Start your journey
             </Button>
           </NavLink>
+          </div>
         </div>
         <div className="col-md-6 col-12  d-flex align-items-center mt-1">
           <img src={Macro} className="w-100 macro-image" alt="macro"/>
