@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Medatation = () => {
   return (
     <>
-      <div className="filter-meditation p-5" data-aos="fade-left">
+      <div className="filter-meditation p-5">
         <h1 className="header1-size mb-3">Filter</h1>
         <Form className="d-flex flex-row flex-wrap flex-md-nowrap">
           <Form.Select
@@ -30,7 +30,7 @@ const Medatation = () => {
           <Button className="mx-md-2">Apply</Button>
         </Form>
       </div>
-      <Container data-aos="flip-left">
+      <Container>
         <div
           className="results-section section-padding"
           data-aos="flip-left"
@@ -38,23 +38,23 @@ const Medatation = () => {
           <h2 className="header2-size result-header mb-4">
             <span className="results-number">5</span> Result(s)
           </h2>
-          <Row className="Results" data-aos="flip-right" >
+          <Row className="Results">
             <Col xs={12} md={6} lg={4} data-aos="flip-left">
               <Link to="1" className="text-decoration-none">
                 <MeditationCard />
               </Link>
             </Col>
-            <Col xs={12} md={6} lg={4} data-aos="flip-left">
+            <Col xs={12} md={6} lg={4}>
               <Link to="1" className="text-decoration-none">
                 <MeditationCard />
               </Link>
             </Col>
-            <Col xs={12} md={6} lg={4} data-aos="flip-left">
+            <Col xs={12} md={6} lg={4}>
               <Link to="1" className="text-decoration-none">
                 <MeditationCard />
               </Link>
             </Col>
-            <Col xs={12} md={6} lg={4} data-aos="flip-left">
+            <Col xs={12} md={6} lg={4}>
               <Link to="1" className="text-decoration-none">
                 <MeditationCard />
               </Link>
