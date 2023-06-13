@@ -7,7 +7,7 @@ import { FaLock } from "react-icons/fa";
 
 function Login() {
   return (
-    <div className="sec_container d-flex justify-content-center align-items-center">
+    <div className="sec_container_login d-flex justify-content-center align-items-center">
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
         <div className="img_container" data-aos="flip-up"
      data-aos-anchor-placement="top-bottom">

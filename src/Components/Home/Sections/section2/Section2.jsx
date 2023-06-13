@@ -85,7 +85,7 @@ export default function Section2() {
                 >
                     { features.map((feature, index) => (
                         <SwiperSlide key={ uuid() }>
-                            <Card data-aos="fade-left">
+                            <Card data-aos="fade-left" className='h-300'>
                                 <Card.Img variant="top" src={ feature.img } loading="lazy" className="image-size" />
                                 <Card.Body>
                                     <Card.Title className="header1-size">
