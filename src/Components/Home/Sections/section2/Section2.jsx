@@ -1,9 +1,10 @@
 import { Container, Row } from "react-bootstrap";
+import { useEffect } from "react";
 
 // Aos Library
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from "react";
+
 
 // Components
 import { Card } from "react-bootstrap";
