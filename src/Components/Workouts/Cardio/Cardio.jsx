@@ -60,12 +60,12 @@ const Cardio = () => {
   return (
     <div>
       <VideoSection source={cardio} header="Cardio Video Workout" description="Fall in love with cardio" />
-      <Container className="section-padding">
+      <Container className="section-padding" data-aos="zoom-in-left">
         <h1 className="header1-size text-center">Cardio of the day</h1>
-        <Row className="my-5">
+        <Row className="my-5" data-aos="zoom-in-left">
           {Cardios.map((cardio)=>(
-            <Col className="mb-3" key={uuid()} xs={12} md={6} lg={4}>
-                <WorkoutCard img={cardio.img} title={cardio.title} description={cardio.description} numOfSteps={cardio.numOfSteps} muscleGroup={cardio.muscleGroup}/>
+            <Col className="mb-3" key={uuid()} xs={12} md={6} lg={4} data-aos="flip-down">
+                <WorkoutCard img={cardio.img} title={cardio.title} description={cardio.description} numOfSteps={cardio.numOfSteps} muscleGroup={cardio.muscleGroup} data-aos="flip-up"/>
             </Col>
           ))}
           

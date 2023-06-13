@@ -7,13 +7,13 @@ import { Card, Col, Row } from "react-bootstrap";
 
 const WorkoutCard = ({ img, title, description, numOfSteps, muscleGroup }) => {
   return (
-    <Card className="h-100">
+    <Card className="h-100" data-aos="flip-left">
       <Card.Img variant="top" src={img} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text className="text-paragraph-color">
           {description}
-          <Row className="mt-3">
+          <Row className="mt-3" data-aos="zoom-in-left">
             <Col
               className="d-flex align-items-md-center flex-wrap flex-column"
               xs={6}

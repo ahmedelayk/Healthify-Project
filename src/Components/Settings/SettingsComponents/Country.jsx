@@ -5,7 +5,7 @@ const Country = () => {
   const [value, setValue] = useState(null);
 
   return (
-    <div>
+    <div data-aos="zoom-in-right">
       <CountrySelect value={value} onChange={setValue} />
     </div>
   );

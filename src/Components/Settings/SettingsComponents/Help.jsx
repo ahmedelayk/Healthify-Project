@@ -5,7 +5,7 @@ import { GiHelp } from "react-icons/gi";
 
 const Help = () => {
   return (
-    <div className="notifications p-lg-3 p-xs-0">
+    <div className="notifications p-lg-3 p-xs-0" data-aos="zoom-in-left">
       <Row>
         <Col xs={1} className="pen-icon">
           <GiHelp />

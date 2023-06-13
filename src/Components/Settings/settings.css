@@ -37,7 +37,7 @@
   background-color: var(--main-background-color);
   border-right: 1px solid var(--paragraph-color);
 }
-.icon {
+.icon-sidebar {
   margin-bottom: 4vh;
 }
 .settings-icon {

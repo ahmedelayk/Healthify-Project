@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 @media only screen and (max-width: 992px) {
   .main-container {
-    margin-top: 120vh !important;
-    width: 100% !important;
+    position: relative;
 
   }
 }
@@ -11,7 +10,7 @@
   color: var(--second-color);
   border-radius: 5px;
   padding: 20px;
-  width: 104% ;
+  width: 100% ;
   height: auto;
   margin-top: 5vh;
   

@@ -31,15 +31,33 @@ const Medatation = () => {
         </Form>
       </div>
       <Container>
-      <div className="results-section section-padding">
-        <h2 className="header2-size result-header mb-4"><span className="results-number">5</span> Result(s)</h2>
-        <Row className="Results">
-          <Col xs={12} md={6} lg={4}><Link to='1' className="text-decoration-none"><MeditationCard /></Link></Col>
-          <Col xs={12} md={6} lg={4}><Link to='1' className="text-decoration-none"><MeditationCard /></Link></Col>
-          <Col xs={12} md={6} lg={4}><Link to='1' className="text-decoration-none"><MeditationCard /></Link></Col>
-          <Col xs={12} md={6} lg={4}><Link to='1' className="text-decoration-none"><MeditationCard /></Link></Col>
-        </Row>
-      </div>
+        <div className="results-section section-padding">
+          <h2 className="header2-size result-header mb-4">
+            <span className="results-number">5</span> Result(s)
+          </h2>
+          <Row className="Results">
+            <Col xs={12} md={6} lg={4}>
+              <Link to="1" className="text-decoration-none">
+                <MeditationCard />
+              </Link>
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Link to="1" className="text-decoration-none">
+                <MeditationCard />
+              </Link>
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Link to="1" className="text-decoration-none">
+                <MeditationCard />
+              </Link>
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Link to="1" className="text-decoration-none">
+                <MeditationCard />
+              </Link>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </>
   );

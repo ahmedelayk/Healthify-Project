@@ -66,7 +66,7 @@ function SignUp() {
           </form>
         </div>
         <div className="img_container">
-          <img src={ signUpImg } alt="signUpImg" className="login-img" />
+          <img src={signUpImg} alt="signUpImg" className="login-img" />
         </div>
       </div>
     </div>

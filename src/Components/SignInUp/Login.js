@@ -9,13 +9,16 @@ function Login() {
   return (
     <div className="sec_container d-flex justify-content-center align-items-center">
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
-        <div className="img_container">
+        <div className="img_container" data-aos="flip-up"
+     data-aos-anchor-placement="top-bottom">
           <img src={ loginImg } alt="loginImg" class='login-img' />
         </div>
-        <div className="form_container rounded bg-white">
+        <div className="form_container rounded bg-white" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
           <form>
             <h2 className="text-start mb-4">Sign In</h2>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="email"
                 placeholder="Enter Email"
@@ -23,7 +26,8 @@ function Login() {
               ></input>
               <MdEmail className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="password"
                 placeholder="Enter Password"
@@ -36,7 +40,8 @@ function Login() {
                 Forgot Password?
               </a>
             </p>
-            <div className="mb-2">
+            <div className="mb-2" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="checkbox"
                 className="custom-control custom-checkbox"
@@ -46,7 +51,8 @@ function Login() {
                 Remember me
               </label>
             </div>
-            <div className="d-grid">
+            <div className="d-grid" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <button className="btn btn-primary">Sign in</button>
             </div>
             <p className="mt-2 paragraph-size ">

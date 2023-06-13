@@ -5,7 +5,7 @@ import { FcAbout } from "react-icons/fc";
 import BootstrapSwitchButton  from "bootstrap-switch-button-react";
 const Notifications = () => {
   return (
-    <div className="notifications p-lg-3 p-xs-0">
+    <div className="notifications p-lg-3 p-xs-0" data-aos="zoom-in-left">
       <Row>
         <Col xs={1} className="pen-icon">
           <GrNotification />
