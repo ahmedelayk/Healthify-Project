@@ -1,5 +1,5 @@
-import VideoSection from "../../../Workouts/CommonComponents/VideoSection";
-import homeVideo from '../../../assets/videos/fitness.mp4';
+// import VideoSection from "../../../Workouts/CommonComponents/VideoSection";
+// import homeVideo from '../../../assets/videos/fitness.mp4';
 import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import './Section0.css';
@@ -14,7 +14,7 @@ export default function Section0() {
             <div className="workouts">
                 <div className="header">
                     <div className="header-content">
-                        <h2 className="macro-text">
+                        <h2 className="header-text">
                             Unlock Your Potential. Empowering Health and Wellness for All!
                         </h2>
                         <div>

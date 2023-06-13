@@ -33,3 +33,9 @@
     transform: translate(-50%, -50%);
     color: white;
 }
+
+@media (max-width: 767px) {
+    .header .header-text {
+        font-size: 1.3rem;
+    }
+}
