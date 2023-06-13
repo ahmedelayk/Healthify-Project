@@ -2,7 +2,7 @@ import React from "react";
 
 const Lang = () => {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <div style={{ display: "flex", flexWrap: "wrap" }} data-aos="zoom-in-left">
       <select
         className="selectpicker"
         style={{ flexGrow: 1, padding: "7px", width: "100%", boxSizing: "border-box" }}

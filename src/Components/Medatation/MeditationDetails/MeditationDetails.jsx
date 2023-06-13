@@ -9,7 +9,7 @@ import { v4 as uuid } from "uuid";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import { Rating } from "@smastrom/react-rating";
-import AnotherMeditations from "./AnotherMeditations";
+import MeditationCard from "./MeditaionCard";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -21,6 +21,8 @@ import {
   AiOutlineShareAlt,
   AiOutlineHeart,
   AiOutlineStar,
+  AiFillHeart,
+  AiFillStar
 } from "react-icons/ai";
 import { MdAttachMoney } from "react-icons/md";
 
@@ -28,22 +30,31 @@ import { MdAttachMoney } from "react-icons/md";
 import meditation from "../../assets/images/meditation.jpg";
 
 const MeditationDetails = () => {
+  const [btnsAction, setBtnsAction] = useState({save: false, rate:false, share: false, purches: false})
+
+  const handleBtnsAction = (name) => {
+    setBtnsAction({...btnsAction, [name]: !btnsAction[name]})
+  }
   const btns = [
     {
       name: "Save",
       icon: <AiOutlineHeart />,
+      icon2: <AiFillHeart color="red" />
     },
     {
       name: "Rate",
       icon: <AiOutlineStar />,
+      icon2: <AiFillStar color="orange" />
     },
     {
       name: "Share",
       icon: <AiOutlineShareAlt />,
+      icon2: <AiOutlineShareAlt />,
     },
     {
       name: "Purches",
       icon: <MdAttachMoney />,
+      icon2: <MdAttachMoney />,
     },
   ];
 
@@ -73,30 +84,20 @@ const MeditationDetails = () => {
         <Rating className="rating-size" value={rating} readOnly />
         <span className="color">(3 Reviews)</span>
       </div>
-      <Row className="mb-4" data-aos="zoom-in-left">
+      <Row className="mb-4">
         <img src={meditation} className=" w-100" alt="meditation" />
       </Row>
-      <Row className="mb-4" data-aos="zoom-in">
+      <Row className="mb-4">
         {btns.map((btn) => (
-          <Col
-            className="details-btns"
-            key={uuid()}
-            xs={12}
-            md={6}
-            lg={3}
-            data-aos="zoom-in"
-          >
-            <div
-              className="d-flex justify-content-between align-items-center p-3 border border-secondary-subtle rounded-5 mb-2"
-              data-aos="zoom-in"
-            >
+          <Col className="details-btns" key={uuid()} xs={12} md={6} lg={3}>
+            <div onClick={()=>handleBtnsAction(btn.name.toLowerCase())} className="btns-action d-flex justify-content-between align-items-center p-3 border border-secondary-subtle rounded-5 mb-2">
               <div>{btn.name}</div>
-              {btn.icon}
+              {!btnsAction[btn.name.toLowerCase()]? btn.icon : btn.icon2}
             </div>
           </Col>
         ))}
       </Row>
-      <div className="content mb-5" data-aos="zoom-in">
+      <div className="content mb-5">
         {detailsSections.map((section, idx) => (
           <div key={uuid()} className={`section-${idx + 1}`}>
             <h2 className="header2-size">{section.title}</h2>
@@ -105,9 +106,9 @@ const MeditationDetails = () => {
         ))}
       </div>
 
-      <div className="pt-4" data-aos="zoom-in"> 
+      <div className="pt-4">
         <h1 className="header1-size text-center">Another Meditaions</h1>
-        <div className="another-meditations" data-aos="flip-up">
+        <div className="another-meditations">
           <Swiper
             className="mt-5"
             modules={[Pagination]}
@@ -128,17 +129,17 @@ const MeditationDetails = () => {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
           >
-            <SwiperSlide >
-              <AnotherMeditations  />
+            <SwiperSlide>
+              <MeditationCard />
             </SwiperSlide>
             <SwiperSlide>
-              <AnotherMeditations />
+              <MeditationCard />
             </SwiperSlide>
             <SwiperSlide>
-              <AnotherMeditations />
+              <MeditationCard />
             </SwiperSlide>
             <SwiperSlide>
-              <AnotherMeditations />
+              <MeditationCard />
             </SwiperSlide>
           </Swiper>
         </div>

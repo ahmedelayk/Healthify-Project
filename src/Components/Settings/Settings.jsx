@@ -31,36 +31,36 @@ const Settings = () => {
   return (
     <Row className="settings ">
       {/* The first settings sidebar */ }
-      <Col xs={ 1 } className="first-sidebar">
+      <Col xs={ 1 } className="first-sidebar" >
         <Row className="icons-row">
-          <div className="icon-sidebar">
+          <div className="icon-sidebar" data-aos="fade-up-right">
             <GiStrong />
           </div>
-          <div className="icon-sidebar">
+          <div className="icon-sidebar" data-aos="fade-up-right">
             <MdOutlineFitnessCenter />
           </div>
-          <div className="icon-sidebar">
+          <div className="icon-sidebar" data-aos="fade-up-left">
             <BsGraphUp />
           </div>
-          <div className="icon-sidebar">
+          <div className="icon-sidebar" data-aos="fade-up-left">
             <GiBurningEye />
           </div>
         </Row>
-        <div className="settings-icon">
+        <div className="settings-icon" >
           <AiFillSetting />
         </div>
       </Col>
       {/* The second settings sidebar */ }
       <Col lg={ 2 } xs={ 4 } className="second-sidebar">
-        <Row>
+        <Row data-aos="fade-up-left">
           <Col xs={ 3 }>
             <MdArrowBackIosNew />
           </Col>
-          <Col xs={ 9 }>
+          <Col xs={ 9 } >
             <h5>Settings</h5>
           </Col>
         </Row>
-        <div className="setting-nav">
+        <div className="setting-nav" >
           <Row>
             <NavLink
               onClick={ () => handleNavLinkClick(<EditProfile />, "EditProfile") }
@@ -69,6 +69,7 @@ const Settings = () => {
                   ? "active-settings  setting-item"
                   : " setting-item"
               }
+              data-aos="fade-up-left"
             >
               <Row>
                 <Col xs={ 1 }>
@@ -88,6 +89,7 @@ const Settings = () => {
                   ? "active-settings setting-item"
                   : " setting-item"
               }
+              data-aos="fade-in-left"
             >
               <Row>
                 <Col xs={ 1 }>
@@ -105,6 +107,7 @@ const Settings = () => {
                   ? "active-settings setting-item"
                   : " setting-item"
               }
+              data-aos="fade-up-right"
             >
               <Row>
                 <Col xs={ 1 }>
@@ -122,6 +125,7 @@ const Settings = () => {
                   ? "active-settings setting-item"
                   : " setting-item"
               }
+              data-aos="fade-up-left"
             >
               <Row>
                 <Col xs={ 1 }>
@@ -139,6 +143,7 @@ const Settings = () => {
                   ? "active-settings setting-item"
                   : " setting-item"
               }
+              data-aos="fade-down-right"
             >
               <Row>
                 <Col xs={ 1 }>

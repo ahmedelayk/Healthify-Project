@@ -5,7 +5,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 function Datepicker() {
   
   return (
-    <div className="col-12 row ">
+    <div className="col-12 row " data-aos="flip-left">
       <div className="col-12 row mb-3">
         <div className="col-8">November 2023</div>
         <div className="col-3">

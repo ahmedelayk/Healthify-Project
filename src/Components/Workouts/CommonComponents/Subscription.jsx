@@ -18,7 +18,7 @@ const Subscription = () => {
           </InputGroup>
           <Button variant="primary">Subscribe</Button>
         </form>
-        <p className="text-center mt-3 mb-0 paragraph-size">
+        <p className="text-center mt-3 mb-0 paragraph-size" data-aos="zoom-in-left">
           Get to know the latest new and offers we provide on this site.
         </p>
       </div>

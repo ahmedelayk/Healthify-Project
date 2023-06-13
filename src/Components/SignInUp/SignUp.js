@@ -7,12 +7,26 @@ import { FaLock, FaUser, FaPhoneAlt, FaUsers } from "react-icons/fa";
 
 function SignUp() {
   return (
-    <div className="sec_container d-flex justify-content-center align-items-center">
+    <div
+      className="sec_container d-flex justify-content-center align-items-center"
+      data-aos="fade-right"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+    >
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
-        <div className="form_container rounded bg-white">
-          <form>
+        <div
+          className="form_container rounded bg-white"
+          data-aos="flip-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
+          <form
+            data-aos="fade-right"
+      
+          >
             <h2 className="text-start mb-4">Register</h2>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="text"
                 placeholder="Enter your name"
@@ -20,7 +34,8 @@ function SignUp() {
               ></input>
               <FaUser className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="email"
                 placeholder="Enter Email"
@@ -28,7 +43,8 @@ function SignUp() {
               ></input>
               <MdEmail className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="tel"
                 placeholder="Enter Phone"
@@ -36,7 +52,8 @@ function SignUp() {
               ></input>
               <FaPhoneAlt className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <select className="form-select" id="gender">
                 <option value="" disabled selected hidden>
                   Select Gender
@@ -46,7 +63,8 @@ function SignUp() {
               </select>
               <FaUsers className="icon-login" />
             </div>
-            <div className="mb-2 inputDiv">
+            <div className="mb-2 inputDiv" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <input
                 type="password"
                 placeholder="Enter Password"
@@ -54,7 +72,8 @@ function SignUp() {
               ></input>
               <FaLock className="icon-login" />
             </div>
-            <div className="d-grid mt-4">
+            <div className="d-grid mt-4" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
               <button className="btn btn-primary">Sign Up</button>
             </div>
             <p className="mt-2 paragraph-size ">
@@ -65,8 +84,9 @@ function SignUp() {
             </p>
           </form>
         </div>
-        <div className="img_container">
-          <img src={ signUpImg } alt="signUpImg" className="login-img" />
+        <div className="img_container" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
+          <img src={signUpImg} alt="signUpImg" className="login-img" />
         </div>
       </div>
     </div>

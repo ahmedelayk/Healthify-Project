@@ -62,8 +62,8 @@ const Workouts = () => {
     },
   ];
   return (
-    <div className="workouts">
-      <div className="wourkouts-header">
+    <div className="workouts" data-aos="zoom-in-left">
+      <div className="wourkouts-header" data-aos="zoom-in-left">
         <h1>Fitness & Cardio</h1>
       </div>
       <div

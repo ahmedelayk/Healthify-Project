@@ -4,7 +4,7 @@ import { BsCalculatorFill } from "react-icons/bs";
 
 const BMI = () => {
   return (
-    <div className="p-lg-3 p-xs-0">
+    <div className="p-lg-3 p-xs-0" data-aos="zoom-in-left">
       <Row>
         <Col xs={1} className="pen-icon pt-0">
           <BsCalculatorFill className=""/>
