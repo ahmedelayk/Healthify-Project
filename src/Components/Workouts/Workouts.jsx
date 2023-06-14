@@ -7,68 +7,79 @@ import cardio2 from "../assets/images/cardio2.jpg";
 // Components
 import Fitness from "./Fitness";
 import Cardio from "./Cardio";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllCardio, getAllWorkouts } from "../../redux/workoutsSlice";
 
 const Workouts = () => {
-  const fitnesses = [
-    {
-      img: fitness2,
-      title: "Dumbbell Muscle Fit",
-    },
-    {
-      img: fitness1,
-      title: "Stretches & Crunches",
-    },
-    {
-      img: fitness2,
-      title: "Dumbbell Muscle Fit",
-    },
-    {
-      img: fitness1,
-      title: "Stretches & Crunches",
-    },
-    {
-      img: fitness2,
-      title: "Dumbbell Muscle Fit",
-    },
-    {
-      img: fitness1,
-      title: "Stretches & Crunches",
-    },
-    {
-      img: fitness2,
-      title: "Dumbbell Muscle Fit",
-    },
-    {
-      img: fitness1,
-      title: "Stretches & Crunches",
-    },
-  ];
-  const cardios = [
-    {
-      img: cardio1,
-      title: "Total Body Stretching",
-    },
-    {
-      img: cardio2,
-      title: "Flexibility And Toning",
-    },
-    {
-      img: cardio1,
-      title: "Strength Upper Body",
-    },
-    {
-      img: cardio2,
-      title: "Total Body Stretching",
-    },
-    {
-      img: cardio1,
-      title: "Strength Upper Body",
-    },
-    {
-      img: cardio2,
-      title: "Total Body Stretching",
-    },
-  ];
+  // const { workouts } = useSelector((state) => state.workouts);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getAllWorkouts());
+  //   console.log("Hello");
+  //   console.log(workouts);
+  // }, []);
+  // const fitnesses = [
+  //   {
+  //     img: fitness2,
+  //     title: "Dumbbell Muscle Fit",
+  //   },
+  //   {
+  //     img: fitness1,
+  //     title: "Stretches & Crunches",
+  //   },
+  //   {
+  //     img: fitness2,
+  //     title: "Dumbbell Muscle Fit",
+  //   },
+  //   {
+  //     img: fitness1,
+  //     title: "Stretches & Crunches",
+  //   },
+  //   {
+  //     img: fitness2,
+  //     title: "Dumbbell Muscle Fit",
+  //   },
+  //   {
+  //     img: fitness1,
+  //     title: "Stretches & Crunches",
+  //   },
+  //   {
+  //     img: fitness2,
+  //     title: "Dumbbell Muscle Fit",
+  //   },
+  //   {
+  //     img: fitness1,
+  //     title: "Stretches & Crunches",
+  //   },
+  // ];
+  // const cardios = [
+  //   {
+  //     img: cardio1,
+  //     title: "Total Body Stretching",
+  //   },
+  //   {
+  //     img: cardio2,
+  //     title: "Flexibility And Toning",
+  //   },
+  //   {
+  //     img: cardio1,
+  //     title: "Strength Upper Body",
+  //   },
+  //   {
+  //     img: cardio2,
+  //     title: "Total Body Stretching",
+  //   },
+  //   {
+  //     img: cardio1,
+  //     title: "Strength Upper Body",
+  //   },
+  //   {
+  //     img: cardio2,
+  //     title: "Total Body Stretching",
+  //   },
+  // ];
   return (
     <div className="workouts" data-aos="zoom-in-left">
       <div className="wourkouts-header" data-aos="zoom-in-left">
@@ -79,14 +90,14 @@ const Workouts = () => {
         data-aos-easing="ease-in-cubic"
         data-aos-duration="2000"
       >
-        <Fitness fitnesses={fitnesses} />
+        <Fitness />
       </div>
       <div
         data-aos="fade-right"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
       >
-        <Cardio cardios={cardios} />
+        <Cardio />
       </div>
     </div>
   );

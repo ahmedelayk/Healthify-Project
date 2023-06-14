@@ -11,8 +11,19 @@ import "swiper/css/autoplay";
 // uuid
 import { v4 as uuid } from "uuid";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllWorkouts } from "../../redux/workoutsSlice";
+import { useEffect } from "react";
 
-const Fitness = ({ fitnesses }) => {
+const Fitness = () => {
+  const { fitnesses, isLoading, error } = useSelector(
+    (state) => state.workouts
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllWorkouts());
+  }, []);
   return (
     <div className="section-padding" data-aos="zoom-out-left">
       <div className="fitness overflow-hidden">
@@ -21,7 +32,7 @@ const Fitness = ({ fitnesses }) => {
           <Col className="mb-3" xs={12} md={4} lg={4}>
             <h1>Fitness Categories</h1>
             <NavLink to="fitness">
-            <Button variant="primary">View all</Button>
+              <Button variant="primary">View all</Button>
             </NavLink>
           </Col>
           <Col xs={12} md={8} lg={8}>
@@ -44,18 +55,26 @@ const Fitness = ({ fitnesses }) => {
               }}
               // pagination={{ clickable: true }}
             >
-              {fitnesses.map((fitness, index) => (
-                <SwiperSlide key={uuid()}>
-                  <Card data-aos="zoom-in-left">
-                    <Card.Img variant="top" src={fitness.img} />
-                    <Card.Body>
-                      <Card.Title className="header1-size">
-                        {fitness.title}
-                      </Card.Title>
-                    </Card.Body>
-                  </Card>
-                </SwiperSlide>
-              ))}
+              {isLoading ? (
+                <div>Loading</div>
+              ) : error ? (
+                <div>{error}</div>
+              ) : (
+                // <div>fff</div>
+                fitnesses?
+                fitnesses.slice(0, 10).map((fitness) => (
+                  <SwiperSlide key={uuid()}>
+                    <Card className="workouts-card" data-aos="zoom-in-left">
+                      <Card.Img variant="top" src={fitness.gifUrl} />
+                      <Card.Body>
+                        <Card.Title className="header1-size">
+                          {fitness.name}
+                        </Card.Title>
+                      </Card.Body>
+                    </Card>
+                  </SwiperSlide>
+                ))
+              :"")}
             </Swiper>
           </Col>
         </Row>

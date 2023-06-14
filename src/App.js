@@ -17,33 +17,35 @@ import Footer from "./Components/Home/Sections/section7/Footer";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 function App() {
   useEffect(() => {
     Aos.init();
     Aos.refresh();
   }, []);
   return (
-    <>
-    <div className="app">
-      <Navbarr />
-      <div className="bg-main-color">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/medatation" element={<Medatation />} />
-          <Route path="/medatation/:id" element={<MeditationDetails />} />
-          <Route path="/nutration" element={<Nutration />} />
-          <Route path="/workouts" element={<Workouts />} />
-          <Route path="/workouts/fitness" element={<Fitness />} />
-          <Route path="/workouts/cardio" element={<Cardio />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
+    <Provider store={store}>
+      <div className="app">
+        <Navbarr />
+        <div className="bg-main-color">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/medatation" element={<Medatation />} />
+            <Route path="/medatation/:id" element={<MeditationDetails />} />
+            <Route path="/nutration" element={<Nutration />} />
+            <Route path="/workouts" element={<Workouts />} />
+            <Route path="/workouts/fitness" element={<Fitness />} />
+            <Route path="/workouts/cardio" element={<Cardio />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer/>
-    </div>
-  </>
+    </Provider>
   );
 }
 
