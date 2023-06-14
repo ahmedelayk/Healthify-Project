@@ -4,6 +4,7 @@ import { BMICalculator } from "./BMICalculator";
 import { BMIResult } from "./BMIResult";
 import { CaloriesTrack } from "./CaloriesTrack";
 import { ProgressTrack } from "./ProgressTrack";
+import { RecomendedRecipies } from "./RecomendedRecipies";
 import { WaterTrack } from "./WaterTrack";
 
 const Nutration = () => {
@@ -18,6 +19,7 @@ const Nutration = () => {
         <WaterTrack />
         {/* <Col lg={1} className="padding"></Col> */}
         <ProgressTrack />
+        <RecomendedRecipies />
       </Row>
     </Container>
   );
