@@ -15,7 +15,7 @@ export const RecomendedRecipies = () => {
       <Row className="align-content-center">
         <Col xs={12} md={6} lg={3}>
           <div class="card mb-3">
-            <img src={RR1} class="card-img-top" alt="..." />
+            <img src={RR1} class="card-img-top" alt="" />
             <div class="card-body">
               <h5 class="card-title">Avocado and Tuna Salad Wrap</h5>
               <p class="card-text">
