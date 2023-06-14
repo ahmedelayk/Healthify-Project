@@ -1,8 +1,26 @@
 import { Button, Navbar, Nav, Container } from "react-bootstrap";
 import Logo from "../assets/images/logo.jpg";
 import "./nav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
+import { useState } from "react";
 function Navbarr() {
+
+  const { logout } = useAuth();
+  const { currentUser } = useAuth();
+  const [error, setError] = useState("");
+  const navigate =useNavigate()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+      try {
+        setError('')
+        await logout();
+        navigate('/login')
+      } catch (err) {
+        setError(err.message);
+      }
+    
+  }; 
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
@@ -26,11 +44,19 @@ function Navbarr() {
               Workouts
             </NavLink>
           </Nav>
-          <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
+          {
+            currentUser?( <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
+            <Button variant="primary" className="login-btn nav-collapse" onClick={handleSubmit}>
+              logout
+            </Button>
+          </NavLink>):  <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
             <Button variant="primary" className="login-btn nav-collapse">
               Login
             </Button>
           </NavLink>
+          }
+
+        
         </Navbar.Collapse>
       </Container>
     </Navbar>
