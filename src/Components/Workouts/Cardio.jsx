@@ -65,7 +65,7 @@ const Cardio = () => {
                       className="text-decoration-none"
                     >
                       <Card className="workouts-card" data-aos="zoom-in-left">
-                        <Card.Img variant="top" src={cardio.gifUrl} />
+                        <Card.Img variant="top" src={cardio.gifUrl} loading="lazy"/>
                         <Card.Body>
                           <Card.Title className="header1-size">
                             {cardio.name}

@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
 import "./nutration.css";
-import RR1 from "../assets/images/RR1.jpg";
-import RR2 from "../assets/images/RR2.jpg";
-import RR3 from "../assets/images/RR3.jpg";
-import RR4 from "../assets/images/RR4.jpg";
+import RR1 from "../assets/images/RR1.webp";
+import RR2 from "../assets/images/RR2.webp";
+import RR3 from "../assets/images/RR3.webp";
+import RR4 from "../assets/images/RR4.webp";
 
 export const RecomendedRecipies = () => {
   return (
@@ -15,7 +15,7 @@ export const RecomendedRecipies = () => {
       <Row className="align-content-center">
         <Col xs={12} md={6} lg={3}>
           <div className="card mb-3">
-            <img src={RR1} className="card-img-top" alt="" />
+            <img src={RR1} className="card-img-top" alt="..." loading="lazy"/>
             <div className="card-body">
               <h5 className="card-title">Avocado and Tuna Salad Wrap</h5>
               <p className="card-text">
@@ -33,7 +33,7 @@ export const RecomendedRecipies = () => {
         </Col>
         <Col xs={12} md={6} lg={3}>
           <div className="card mb-3">
-            <img src={RR2} className="card-img-top" alt="..." />
+            <img src={RR2} className="card-img-top" alt="..." loading="lazy"/>
             <div className="card-body">
               <h5 className="card-title">
                 Grilled Sweet Potatoes with Lemon-Herb Sauce
@@ -53,7 +53,7 @@ export const RecomendedRecipies = () => {
         </Col>
         <Col xs={12} md={6} lg={3}>
           <div className="card mb-3">
-            <img src={RR3} className="card-img-top" alt="..." />
+            <img src={RR3} className="card-img-top" alt="..." loading="lazy"/>
             <div className="card-body">
               <h5 className="card-title">Greek Salad</h5>
               <p className="card-text">
@@ -73,7 +73,7 @@ export const RecomendedRecipies = () => {
         </Col>
         <Col xs={12} md={6} lg={3}>
           <div className="card mb-3">
-            <img src={RR4} className="card-img-top" alt="..." />
+            <img src={RR4} className="card-img-top" alt="..." loading="lazy"/>
             <div className="card-body">
               <h5 className="card-title">
                 Roasted Butternut Squash Salad with Tahini Vinaigrette

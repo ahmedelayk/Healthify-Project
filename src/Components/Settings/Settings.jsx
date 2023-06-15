@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Col, NavLink, Row } from "react-bootstrap";
+// style
 import "./settings.css";
+// icons
 import { MdOutlineFitnessCenter } from "react-icons/md";
 import { BsGraphUp } from "react-icons/bs";
 import { GiBurningEye } from "react-icons/gi";
@@ -12,7 +14,7 @@ import { GrNotification } from "react-icons/gr";
 import { BsCalculatorFill } from "react-icons/bs";
 import { LuLanguages } from "react-icons/lu";
 import { BiHelpCircle } from "react-icons/bi";
-
+// Components
 import EditProfile from "./SettingsComponents/EditProfile";
 import Notifications from "./SettingsComponents/Notifications";
 import Languages from "./SettingsComponents/Languages";
