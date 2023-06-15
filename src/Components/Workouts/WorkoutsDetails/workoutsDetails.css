@@ -1,0 +1,35 @@
+.rating-size {
+    max-width: 100px;
+}
+
+.color {
+    color: var(--second-color);
+}
+
+.details-btns:last-child div{
+    background-color: #0066ff;
+    color: white;
+}
+
+.another-workouts .swiper {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+  }
+
+  .another-workouts .swiper-pagination {
+    bottom: -8% !important;
+  }
+
+  .btns-action {
+    cursor: pointer;
+  }
+
+  @media (min-width: 992px) {
+    .workouts-img {
+      width: 50% !important;
+    }
+  }
+
+  .workouts-name {
+    color: var(--main-color);
+  }

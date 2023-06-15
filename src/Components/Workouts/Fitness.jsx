@@ -1,7 +1,7 @@
-// Components
-import { Button, Card, Col, Row } from "react-bootstrap";
-import { Pagination, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
 
 // Styles
 import "swiper/css";
@@ -10,10 +10,14 @@ import "swiper/css/autoplay";
 
 // uuid
 import { v4 as uuid } from "uuid";
-import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+
+// Components
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Data
 import { getAllWorkouts } from "../../redux/workoutsSlice";
-import { useEffect } from "react";
 
 const Fitness = () => {
   const { fitnesses, isLoading, error } = useSelector(
@@ -64,6 +68,7 @@ const Fitness = () => {
                 fitnesses?
                 fitnesses.slice(0, 10).map((fitness) => (
                   <SwiperSlide key={uuid()}>
+                    <Link to={`fitness/${fitness.id}`} className="text-decoration-none">
                     <Card className="workouts-card" data-aos="zoom-in-left">
                       <Card.Img variant="top" src={fitness.gifUrl} />
                       <Card.Body>
@@ -72,6 +77,7 @@ const Fitness = () => {
                         </Card.Title>
                       </Card.Body>
                     </Card>
+                    </Link>
                   </SwiperSlide>
                 ))
               :"")}
