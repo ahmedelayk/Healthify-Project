@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
     onSnapshot(usersRef, (snapshot)=>{{
       snapshot.docs.forEach((user)=>{
         arrayOfUsers.push(user.data());
-        console.log(arrayOfUsers)
+        // console.log(arrayOfUsers)
       })
       setUsers([...arrayOfUsers])
     }})}catch(error){
@@ -39,13 +39,13 @@ const AuthProvider = ({ children }) => {
   };
   const getCurrentUserData = (email)=>{
     try {
-      console.log('before loop');
-      console.log(currentUser);
-      console.log(users);
+      // console.log('before loop');
+      // console.log(currentUser);
+      // console.log(users);
       users?.forEach((usr)=>{
-        console.log('before if condition');
+        // console.log('before if condition');
         if(usr.email === email){
-          console.log('found: ', usr, currentUser);
+          // console.log('found: ', usr, currentUser);
           setCurrentUserData(usr);
         }
       })
