@@ -11,8 +11,17 @@ import "swiper/css/autoplay";
 // uuid
 import { v4 as uuid } from "uuid";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllCardio } from "../../redux/workoutsSlice";
 
-const Cardio = ({ cardios }) => {
+const Cardio = () => {
+  const { cardios, isLoading, error } = useSelector((state) => state.workouts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllCardio());
+  }, []);
   return (
     <div className="section-padding" data-aos="zoom-in-left">
       <div className="cardio overflow-hidden" data-aos="flip-left">
@@ -21,9 +30,9 @@ const Cardio = ({ cardios }) => {
           <Col xs={12} md={8} lg={8}>
             <Swiper
               modules={[Pagination, Autoplay]}
-              autoplay={{
-                reverseDirection:true
-              }}
+              // autoplay={{
+              //   reverseDirection: true,
+              // }}
               speed={2000}
               // pagination={{ clickable: true }}
               spaceBetween={15}
@@ -40,24 +49,31 @@ const Cardio = ({ cardios }) => {
                 },
               }}
             >
-              {cardios.map((cardio, index) => (
-                <SwiperSlide key={uuid()}>
-                  <Card data-aos="zoom-in-left">
-                    <Card.Img variant="top" src={cardio.img} />
-                    <Card.Body>
-                      <Card.Title className="header1-size">
-                        {cardio.title}
-                      </Card.Title>
-                    </Card.Body>
-                  </Card>
-                </SwiperSlide>
-              ))}
+              {isLoading ? (
+                <div>Loading...</div>
+              ) : error ? (
+                <div>{error}</div>
+              ) : (
+                cardios?
+                cardios.slice(0, 10).map((cardio) => (
+                  <SwiperSlide key={uuid()}>
+                    <Card className="workouts-card" data-aos="zoom-in-left">
+                      <Card.Img variant="top" src={cardio.gifUrl} />
+                      <Card.Body>
+                        <Card.Title className="header1-size">
+                          {cardio.name}
+                        </Card.Title>
+                      </Card.Body>
+                    </Card>
+                  </SwiperSlide>
+                ))
+              :"")}
             </Swiper>
           </Col>
           <Col className="mb-3" xs={12} md={4} lg={4} data-aos="zoom-in-left">
             <h1>Cardio Categories</h1>
             <NavLink to="cardio">
-            <Button variant="primary">View all</Button>
+              <Button variant="primary">View all</Button>
             </NavLink>
           </Col>
         </Row>

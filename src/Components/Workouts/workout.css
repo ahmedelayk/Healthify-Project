@@ -47,3 +47,22 @@
     transform: translate(-50%, -50%);
     color: white;
 }
+
+.workouts-card-content {
+    padding: 7px 12px;
+    border-radius: 12px;
+    color: white;
+}
+
+.workouts-card-content:first-child {
+    background-color: var(--main-color);
+}
+.workouts-card-content:last-child {
+    background-color: var(--second-color);
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .workouts-card {
+        height: 300px !important;
+    }
+}

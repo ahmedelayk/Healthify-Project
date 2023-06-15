@@ -3,31 +3,20 @@
 import "../workout.css"
 
 // Components
-import { Card, Col, Row } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
-const WorkoutCard = ({ img, title, description, numOfSteps, muscleGroup }) => {
+const WorkoutCard = ({ img, name, equipment, bodyPart, target }) => {
   return (
     <Card className="h-100" data-aos="flip-left">
-      <Card.Img variant="top" src={img} />
+      <Card.Img variant="top" src={img} loading="lazy" />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>{name}</Card.Title>
         <Card.Text className="text-paragraph-color">
-          {description}
-          <Row className="mt-3" data-aos="zoom-in-left">
-            <Col
-              className="d-flex align-items-md-center flex-wrap flex-column"
-              xs={6}
-              md={3}
-              lg={3}
-            >
-              <span className="main-color">{numOfSteps}</span>
-              <span>Steps</span>
-            </Col>
-            <Col xs={6} md={9} lg={9}>
-              <h6 className="main-color">Muscle group:</h6>
-              <span className="second-color">{muscleGroup}</span>
-            </Col>
-          </Row>
+          {equipment}
+          <div className="mt-3 d-flex" data-aos="zoom-in-left">
+            <div className="workouts-card-content">{bodyPart}</div>
+            <div className="workouts-card-content ms-2">{target}</div>
+          </div>
         </Card.Text>
       </Card.Body>
     </Card>
