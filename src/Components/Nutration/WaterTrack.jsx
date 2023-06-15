@@ -1,14 +1,14 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./nutration.css";
-import water from "../assets/images/water.png";
+import water from "../assets/images/water.webp";
 
 export const WaterTrack = () => {
   return (
     <Col xs={12} md={6} lg={3} className="card-n mt-0">
       <h4 className="font-family1 text-paragraph-color mb-2">Water</h4>
       <Row className="justify-content-center align-items-center mt-4">
-        <img className="w-25 " src={water} alt="water"></img>
+        <img className="w-25 " src={water} alt="water" loading="lazy"/>
       </Row>
       <div className="my-3 progress" style={{ height: "6px" }}>
         <div

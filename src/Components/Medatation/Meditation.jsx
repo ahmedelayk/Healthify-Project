@@ -1,8 +1,11 @@
-import React from "react";
-import "./meditation.css";
+// Components
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import MeditationCard from "./MeditationDetails/MeditaionCard";
+// 
 import { Link } from "react-router-dom";
+// style
+import "./meditation.css";
+
 const Medatation = () => {
   return (
     <>

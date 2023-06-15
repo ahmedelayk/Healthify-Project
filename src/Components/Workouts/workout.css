@@ -20,7 +20,7 @@
 }
 
 .wourkouts-header {
-    background-image: url("../assets/images/fitnessGym1.jpg");
+    background-image: url("../assets/images/fitnessGym1.webp");
     height: calc(100vh - 68.8px);
     background-size: cover;
     background-attachment: fixed;

@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+// style
 import "./signInUp.css";
-import loginImg from "../assets/images/loginImg.png";
+// image
+import loginImg from "../assets/images/loginImg.webp";
+// icons
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { useAuth } from "../../Context/AuthContext";
@@ -33,7 +36,7 @@ function Login() {
           data-aos="flip-up"
           data-aos-anchor-placement="top-bottom"
         >
-          <img src={loginImg} alt="loginImg" className="login-img" />
+          <img src={loginImg} alt="loginImg" className="login-img" loading="lazy"/>
         </div>
         <div
           className="form_container rounded bg-white"

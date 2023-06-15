@@ -1,4 +1,6 @@
+// Components
 import { Container, Row } from "react-bootstrap";
+// style
 import './Section6.css';
 
 export default function Section6() {

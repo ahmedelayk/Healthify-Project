@@ -1,11 +1,12 @@
-import React from "react";
-import "./Footer.css";
+// icons
 import { BsFacebook } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsGooglePlay } from "react-icons/bs";
 import { SiMediafire } from "react-icons/si";
+// style
+import "./Footer.css";
 
 function Footer() {
   return (

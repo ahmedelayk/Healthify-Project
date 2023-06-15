@@ -1,8 +1,12 @@
-import React from "react";
-import Macro from "../../../assets/images/macro.png";
+// image
+import Macro from "../../../assets/images/macro.webp";
+// 
 import { NavLink } from "react-router-dom";
+// Components
 import { Container, Button, Row } from "react-bootstrap";
+// style
 import "./section1.css";
+
 const Section1 = () => {
   return (
     <Container id="landing" className="section-padding-bottom">
@@ -21,7 +25,7 @@ const Section1 = () => {
           </div>
         </div>
         <div className="col-md-6 col-12  d-flex align-items-center mt-1">
-          <img src={Macro} className="w-100 macro-image" alt="macro"/>
+          <img src={Macro} className="w-100 macro-image" alt="macro" loading="lazy"/>
         </div>
       </Row>
     </Container>

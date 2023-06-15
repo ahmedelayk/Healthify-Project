@@ -1,14 +1,11 @@
 // Hooks
 import { useEffect } from 'react';
-
 // Components
 import { Container, Row } from 'react-bootstrap';
-
 // images
-import foodimg1 from '../../../assets/images/food1.jpg';
-import foodimg2 from '../../../assets/images/food2.jpg';
-// import foodimg2 from '../../../assets/images/about/nutrition.jpg';
-
+import foodimg1 from '../../../assets/images/food1.webp';
+import foodimg2 from '../../../assets/images/food2.webp';
+// import foodimg2 from '../../../assets/images/about/nutrition.webp';
 // Aos Library
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -26,7 +23,7 @@ export default function Section3() {
           <div className="my-5">
             <Row data-aos="fade-left">
                 <div className='col-md-6'>
-                    <img src={foodimg1} className=' w-100' alt="food" />
+                    <img src={foodimg1} className=' w-100' alt="food" loading="lazy"/>
                 </div>
                 <div className='col-md-6 d-flex align-items-center'>
                   <p className='text-paragraph-color header1-size'> Power of meal planning and tracking. By taking control of your nutrition, you can fuel your body with balanced, nourishing meals that support your goals and optimize your well-being.</p>
@@ -38,7 +35,7 @@ export default function Section3() {
                   <p className='text-paragraph-color header1-size'>Track your activities and what you eat with the help of our food, exercise and water trackers to maintain a balanced everyday life.</p>
                 </div>
                 <div className='col-md-6'>
-                    <img src={foodimg2} className=' w-100' alt="food" />
+                    <img src={foodimg2} className=' w-100' alt="food" loading="lazy"/>
                 </div>
             </Row>
           </div>

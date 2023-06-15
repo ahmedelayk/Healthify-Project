@@ -1,5 +1,7 @@
+// Components
 import { Container, Row } from "react-bootstrap";
-import yoga from '../../../assets/images/yoga.jpg'
+// images
+import yoga from '../../../assets/images/yoga.webp'
 
 export default function Section4() {
   return (
@@ -16,7 +18,7 @@ export default function Section4() {
                   <h3 className=' header1-size'>Find Inner Peace and Harmony Meditate with Serenity</h3>
               </div>
               <div className="col-md-6">
-                  <img className="w-100" src={yoga} alt="yoga" />
+                  <img className="w-100" src={yoga} alt="yoga" loading="lazy"/>
               </div>
           </Row>
         </div>

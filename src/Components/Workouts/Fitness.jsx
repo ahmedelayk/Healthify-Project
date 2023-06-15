@@ -70,7 +70,7 @@ const Fitness = () => {
                   <SwiperSlide key={uuid()}>
                     <Link to={`fitness/${fitness.id}`} className="text-decoration-none">
                     <Card className="workouts-card" data-aos="zoom-in-left">
-                      <Card.Img variant="top" src={fitness.gifUrl} />
+                      <Card.Img variant="top" src={fitness.gifUrl} loading="lazy"/>
                       <Card.Body>
                         <Card.Title className="header1-size">
                           {fitness.name}
