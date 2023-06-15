@@ -4,12 +4,10 @@ import "./nav.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import { useState } from "react";
-import { useEffect } from "react";
+
 function Navbarr() {
-  const [user, setUser] = useState({})
   const { logout } = useAuth();
   const { currentUser } = useAuth();
-  const { users } = useAuth();
   const [error, setError] = useState("");
   const navigate =useNavigate()
   const handleSubmit = async (e) => {
@@ -22,18 +20,6 @@ function Navbarr() {
         setError(err.message);
       }
   }; 
-  useEffect(()=>{
-    // users.forEach(ele => {
-    //   if(ele.email === currentUser.email){
-    //     setUser(ele);
-    //     console.log('user data:', ele)
-    //   }
-    //   console.log(ele.email)
-    // })
-    // console.log(currentUser?.email)
-  }, [])
-  // console.log(users)
-
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
@@ -65,7 +51,6 @@ function Navbarr() {
                   logout
                 </Button>
               </NavLink>
-              <h3>{user.firstName}</h3>
             </div>
           ):  <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
             <Button variant="primary" className="login-btn nav-collapse">

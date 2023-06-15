@@ -10,7 +10,6 @@ const EditProfile = () => {
   useEffect(() => {
     users.forEach(user => {
       // console.log(user.firstName)
-      
     });
   }, [users])
   
