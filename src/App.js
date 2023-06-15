@@ -19,6 +19,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import store from "./redux/store";
 import { Provider } from "react-redux";
+import WorkoutsDetails from "./Components/Workouts/WorkoutsDetails/WorkoutsDetails";
 function App() {
   useEffect(() => {
     Aos.init();
@@ -37,6 +38,8 @@ function App() {
             <Route path="/workouts" element={<Workouts />} />
             <Route path="/workouts/fitness" element={<Fitness />} />
             <Route path="/workouts/cardio" element={<Cardio />} />
+            <Route path="/workouts/cardio/:id" element={<WorkoutsDetails />} />
+            <Route path="/workouts/fitness/:id" element={<WorkoutsDetails />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/login" element={<Login />} />
