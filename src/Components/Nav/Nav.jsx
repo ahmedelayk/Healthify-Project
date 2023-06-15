@@ -4,10 +4,12 @@ import "./nav.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import { useState } from "react";
+import { useEffect } from "react";
 function Navbarr() {
-
+  const [user, setUser] = useState({})
   const { logout } = useAuth();
   const { currentUser } = useAuth();
+  const { users } = useAuth();
   const [error, setError] = useState("");
   const navigate =useNavigate()
   const handleSubmit = async (e) => {
@@ -19,8 +21,19 @@ function Navbarr() {
       } catch (err) {
         setError(err.message);
       }
-    
   }; 
+  useEffect(()=>{
+    // users.forEach(ele => {
+    //   if(ele.email === currentUser.email){
+    //     setUser(ele);
+    //     console.log('user data:', ele)
+    //   }
+    //   console.log(ele.email)
+    // })
+    // console.log(currentUser?.email)
+  }, [])
+  // console.log(users)
+
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
@@ -35,21 +48,26 @@ function Navbarr() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
             <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
-              Nutration
+              Nutrition
             </NavLink>
             <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
-              Medatation
+              Meditation
             </NavLink>
             <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
               Workouts
             </NavLink>
           </Nav>
           {
-            currentUser?( <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
-            <Button variant="primary" className="login-btn nav-collapse" onClick={handleSubmit}>
-              logout
-            </Button>
-          </NavLink>):  <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
+            currentUser?( 
+            <div>
+              <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
+                <Button variant="primary" className="login-btn nav-collapse" onClick={handleSubmit}>
+                  logout
+                </Button>
+              </NavLink>
+              <h3>{user.firstName}</h3>
+            </div>
+          ):  <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
             <Button variant="primary" className="login-btn nav-collapse">
               Login
             </Button>

@@ -14,7 +14,7 @@ export const ProgressTrack = () => {
         <Col xs={12}>
           <div className="my-3 progress" style={{ height: "6px" }}>
             <div
-              class="progress-bar"
+              className="progress-bar"
               role="progressbar"
               style={{ width: "25%" }}
               aria-valuenow="25"

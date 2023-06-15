@@ -59,7 +59,7 @@ const Fitness = () => {
     ]
   return (
     <div>
-      <VideoSection source={gym} header="Fitness Video Workout" description="Fall in love with fitness" />
+      <VideoSection source={gym} header="Fitness Workout" description="Fall in love with fitness" />
       <Container className="section-padding" data-aos="zoom-in-left">
         <h1 className="header1-size text-center">Fitness of the day</h1>
         <Row className="my-5" data-aos="flip-up">
