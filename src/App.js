@@ -13,7 +13,7 @@ import Cardio from "./Components/Workouts/Cardio/Cardio";
 import Login from "./Components/SignInUp/Login";
 import SignUp from "./Components/SignInUp/SignUp";
 import Footer from "./Components/Home/Sections/section7/Footer";
-
+// Aos library
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";

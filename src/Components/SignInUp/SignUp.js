@@ -1,28 +1,56 @@
+// Hooks
 import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./signInUp.css";
-import signUpImg from "../assets/images/signUpImg.png";
-import { MdEmail } from "react-icons/md";
-import { FaLock, FaUser, FaPhoneAlt, FaUsers } from "react-icons/fa";
-import { useAuth } from "../../Context/AuthContext";
+// Components
 import { Alert } from "react-bootstrap";
+// icons
+import { FaLock, FaUser, FaPhoneAlt, FaUsers } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+// context
+import { useAuth } from "../../Context/AuthContext";
+// image
+import signUpImg from "../assets/images/signUpImg.png";
+// style
+import "./signInUp.css";
+// firebase
+// import { doc, setDoc } from "firebase/firestore"; 
+import { db } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore"; 
+
 
 function SignUp() {
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig;
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/ig;
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
   const emailRef = useRef();
+  const phoneNumberRef = useRef();
   const passwordRef = useRef();
+  const [gender, setGender] = useState('male');
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const navigate =useNavigate()
+  const handleSelect = (e) => {
+    setGender(e.target.value);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (emailRef.current.value !== "" && passwordRef.current.value !== "") {
+    // console.log(firstNameRef.current.value)
+    // console.log(lastNameRef.current.value)
+    // console.log(phoneNumberRef.current.value)
+    // console.log(gender)
+    if (emailRegex.test(emailRef.current.value) && passwordRegex.test(passwordRef.current.value)) {
       try {
         setError('')
-        await signup(emailRef.current.value, passwordRef.current.value);
+        await signup(firstNameRef.current.value,lastNameRef.current.value,phoneNumberRef.current.value,gender, emailRef.current.value, passwordRef.current.value);
+        console.log('Done')
         navigate('/settings')
       } catch (err) {
         setError(err.message);
       }
+    }else{
+      setError('password: must have lower and uppercase character and numbers');
     }
   };
   return (
@@ -43,8 +71,9 @@ function SignUp() {
             >
               <input
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="First name"
                 className="form-control form-control-login"
+                ref={firstNameRef}
               />
               <FaUser className="icon-login" />
             </div>
@@ -55,8 +84,9 @@ function SignUp() {
             >
               <input
                 type="text"
-                placeholder="Enter your last name"
+                placeholder="Last name"
                 className="form-control form-control-login"
+                ref={lastNameRef}
               />
               <FaUser className="icon-login" />
             </div>
@@ -66,10 +96,10 @@ function SignUp() {
               data-aos-anchor-placement="top-bottom"
             >
               <input
-                ref={emailRef}
                 type="email"
-                placeholder="Enter Email"
+                placeholder="E-mail"
                 className="form-control form-control-login"
+                ref={emailRef}
               />
               <MdEmail className="icon-login" />
             </div>
@@ -80,8 +110,9 @@ function SignUp() {
             >
               <input
                 type="tel"
-                placeholder="Enter Phone"
+                placeholder="Phone number"
                 className="form-control form-control-login"
+                ref={phoneNumberRef}
               />
               <FaPhoneAlt className="icon-login" />
             </div>
@@ -90,9 +121,9 @@ function SignUp() {
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
             >
-              <select className="form-select form-select-login" id="gender">
-                <option value="" disabled defaultValue hidden>
-                  Select Gender
+              <select className="form-select form-select-login" id="gender" onChange={handleSelect}>
+                <option disabled defaultValue hidden>
+                  Gender
                 </option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -107,7 +138,7 @@ function SignUp() {
               <input
                 ref={passwordRef}
                 type="password"
-                placeholder="Enter Password"
+                placeholder="Password"
                 className="form-control form-control-login"
               />
               <FaLock className="icon-login" />

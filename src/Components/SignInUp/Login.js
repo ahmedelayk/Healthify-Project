@@ -33,7 +33,7 @@ function Login() {
           data-aos="flip-up"
           data-aos-anchor-placement="top-bottom"
         >
-          <img src={loginImg} alt="loginImg" class="login-img" />
+          <img src={loginImg} alt="loginImg" className="login-img" />
         </div>
         <div
           className="form_container rounded bg-white"

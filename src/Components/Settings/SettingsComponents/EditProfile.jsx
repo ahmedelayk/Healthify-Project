@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import { BsFillPencilFill } from "react-icons/bs";
 import "./style.css";
 import ProfileImage from "./ProfileImage";
+import { useAuth } from "../../../Context/AuthContext";
 
 const EditProfile = () => {
+  const {currentUser, users} = useAuth();
+  useEffect(() => {
+    users.forEach(user => {
+      // console.log(user.firstName)
+    });
+  }, [users])
+  
   return (
     <div className="p-lg-3 p-xs-0" data-aos="zoom-in-left">
       <Row>
@@ -36,12 +44,13 @@ const EditProfile = () => {
 
         <Form.Group controlId="inputEmail4">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Email" />
+          {/* <Form.Control type="email" placeholder="Email" value = {currentUser?currentUser.email:''}/> */}
+          <Form.Control type="email" placeholder="Email"/>
         </Form.Group>
 
         <Form.Group controlId="contactNumber">
-          <Form.Label>Contact Number</Form.Label>
-          <Form.Control type="number" placeholder="Contact Number" />
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control type="number" placeholder="Phone Number" />
         </Form.Group>
 
         <Form.Group controlId="changePassword">

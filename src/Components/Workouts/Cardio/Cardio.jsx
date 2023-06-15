@@ -23,11 +23,7 @@ const Cardio = () => {
   }, []);
   return (
     <div>
-      <VideoSection
-        source={cardio}
-        header="Cardio Video Workout"
-        description="Fall in love with cardio"
-      />
+      <VideoSection source={cardio} header="Cardio Workout" description="Fall in love with cardio" />
       <Container className="section-padding" data-aos="zoom-in-left">
         <h1 className="header1-size text-center">Cardio of the day</h1>
         <Row className="my-5" data-aos="zoom-in-left">
