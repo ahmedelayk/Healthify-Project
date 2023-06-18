@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import profile from "../../assets/images/profile.png";
+import profile from "../../assets/images/profile.webp";
 
 const ProfileImage = () => {
   const loadFile = (event) =>{
@@ -15,7 +15,7 @@ const ProfileImage = () => {
         <span className="image-txt">Change</span>
       </label>
       <input id="file" type="file" onChange={loadFile} />
-      <img src={profile} id="output" width="200" alt="Profile" />
+      <img src={profile} id="output" width="200" alt="Profile" loading="lazy"/>
     </div>
   );
 };

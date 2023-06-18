@@ -1,30 +1,24 @@
-import { Container, Row } from "react-bootstrap";
+// Hooks
 import { useEffect } from "react";
-
 // Aos Library
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
 // Components
-import { Card } from "react-bootstrap";
+import { Card, Container, Row } from "react-bootstrap";
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Styles
 import "./section2.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-
 // uuid
 import { v4 as uuid } from "uuid";
-
 // import images
-import master_your_nutrition_image from "../../../assets/images/about/Master Your Nutrition.avif";
-import meditation_image from "../../../assets/images/about/meditation.avif";
-import unleash_your_potential_image from "../../../assets/images/about/Unleash Your Potential2.jpg";
-import stay_hydrated_image from "../../../assets/images/about/stay_hydrated3.jpg";
+import master_your_nutrition_image from "../../../assets/images/about/Master-Your-Nutrition.webp";
+import meditation_image from "../../../assets/images/about/meditation.webp";
+import unleash_your_potential_image from "../../../assets/images/about/Unleash-Your-Potential2.webp";
+import stay_hydrated_image from "../../../assets/images/about/stay_hydrated3.webp";
 
 export default function Section2() {
 

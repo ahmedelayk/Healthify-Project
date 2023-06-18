@@ -9,7 +9,7 @@ import { MdEmail } from "react-icons/md";
 // context
 import { useAuth } from "../../Context/AuthContext";
 // image
-import signUpImg from "../assets/images/signUpImg.png";
+import signUpImg from "../assets/images/signUpImg.webp";
 // style
 import "./signInUp.css";
 // firebase
@@ -163,7 +163,7 @@ function SignUp() {
           data-aos="flip-up"
           data-aos-anchor-placement="top-bottom"
         >
-          <img src={signUpImg} alt="signUpImg" className="login-img" />
+          <img src={signUpImg} alt="signUpImg" className="login-img" loading="lazy"/>
         </div>
       </div>
     </div>

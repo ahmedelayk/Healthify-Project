@@ -1,9 +1,13 @@
+// Components
 import { Button, Navbar, Nav, Container } from "react-bootstrap";
-import Logo from "../assets/images/logo.jpg";
-import "./nav.css";
 import { NavLink, useNavigate } from "react-router-dom";
+// Hooks
 import { useAuth } from "../../Context/AuthContext";
 import { useState } from "react";
+// images
+import Logo from "../assets/images/logo.webp";
+// style
+import "./nav.css";
 
 function Navbarr() {
   const { logout } = useAuth();
@@ -26,7 +30,7 @@ function Navbarr() {
         <NavLink to="/" className="col-3 navbar-brand">
           <div className="d-flex align-items-center gap-1">
             <h2 className="logo-text mt-1">Healthify</h2>
-            <img src={Logo} alt="logo" className="logo-img" />
+            <img src={Logo} alt="logo" className="logo-img" loading="lazy"/>
           </div>
         </NavLink>
 

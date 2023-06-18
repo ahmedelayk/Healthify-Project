@@ -20,7 +20,7 @@
 }
 
 .wourkouts-header {
-    background-image: url("../assets/images/fitnessGym1.jpg");
+    background-image: url("../assets/images/fitnessGym1.webp");
     height: calc(100vh - 68.8px);
     background-size: cover;
     background-attachment: fixed;
@@ -64,5 +64,11 @@
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .workouts-card {
         height: 300px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .workouts-card {
+        height: 400px !important;
     }
 }

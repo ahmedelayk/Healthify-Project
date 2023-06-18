@@ -1,3 +1,4 @@
+// Components
 import Section0 from './Sections/section0/Section0';
 import Section1 from './Sections/section1/Section1';
 import Section2 from './Sections/section2/Section2';

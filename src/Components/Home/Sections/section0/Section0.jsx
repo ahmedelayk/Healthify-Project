@@ -1,7 +1,11 @@
+// video section
 import VideoSection from "../../../Workouts/CommonComponents/VideoSection";
 import homeVideo from '../../../assets/videos/fitness.mp4';
+// 
 import { NavLink } from "react-router-dom";
+// Components
 import { Button } from "react-bootstrap";
+// style
 import './Section0.css';
 
 export default function Section0() {

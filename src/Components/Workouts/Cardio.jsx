@@ -1,7 +1,6 @@
-// Components
-import { Button, Card, Col, Row } from "react-bootstrap";
-import { Pagination, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 // Styles
 import "swiper/css";
@@ -10,18 +9,23 @@ import "swiper/css/autoplay";
 
 // uuid
 import { v4 as uuid } from "uuid";
-import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllCardio } from "../../redux/workoutsSlice";
+
+// Components
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Data
+import { getAllWorkouts } from "../../redux/workoutsSlice";
 
 const Cardio = () => {
   const { cardios, isLoading, error } = useSelector((state) => state.workouts);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getAllCardio());
+    dispatch(getAllWorkouts());
   }, []);
+
   return (
     <div className="section-padding" data-aos="zoom-in-left">
       <div className="cardio overflow-hidden" data-aos="flip-left">
@@ -53,21 +57,27 @@ const Cardio = () => {
                 <div>Loading...</div>
               ) : error ? (
                 <div>{error}</div>
-              ) : (
-                cardios?
+              ) : cardios ? (
                 cardios.slice(0, 10).map((cardio) => (
                   <SwiperSlide key={uuid()}>
-                    <Card className="workouts-card" data-aos="zoom-in-left">
-                      <Card.Img variant="top" src={cardio.gifUrl} />
-                      <Card.Body>
-                        <Card.Title className="header1-size">
-                          {cardio.name}
-                        </Card.Title>
-                      </Card.Body>
-                    </Card>
+                    <Link
+                      to={`cardio/${cardio.id}`}
+                      className="text-decoration-none"
+                    >
+                      <Card className="workouts-card" data-aos="zoom-in-left">
+                        <Card.Img variant="top" src={cardio.gifUrl} loading="lazy"/>
+                        <Card.Body>
+                          <Card.Title className="header1-size">
+                            {cardio.name}
+                          </Card.Title>
+                        </Card.Body>
+                      </Card>
+                    </Link>
                   </SwiperSlide>
                 ))
-              :"")}
+              ) : (
+                ""
+              )}
             </Swiper>
           </Col>
           <Col className="mb-3" xs={12} md={4} lg={4} data-aos="zoom-in-left">

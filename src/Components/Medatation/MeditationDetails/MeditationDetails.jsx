@@ -27,7 +27,7 @@ import {
 import { MdAttachMoney } from "react-icons/md";
 
 // Images
-import meditation from "../../assets/images/meditation.jpg";
+import meditation from "../../assets/images/meditation.webp";
 
 const MeditationDetails = () => {
   const [btnsAction, setBtnsAction] = useState({save: false, rate:false, share: false, purches: false})
@@ -85,7 +85,7 @@ const MeditationDetails = () => {
         <span className="color">(3 Reviews)</span>
       </div>
       <Row className="mb-4">
-        <img src={meditation} className=" w-100" alt="meditation" />
+        <img src={meditation} className=" w-100" alt="meditation" loading="lazy"/>
       </Row>
       <Row className="mb-4">
         {btns.map((btn) => (

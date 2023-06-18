@@ -13,9 +13,9 @@ const WorkoutCard = ({ img, name, equipment, bodyPart, target }) => {
         <Card.Title>{name}</Card.Title>
         <Card.Text className="text-paragraph-color">
           {equipment}
-          <div className="mt-3 d-flex" data-aos="zoom-in-left">
-            <div className="workouts-card-content">{bodyPart}</div>
-            <div className="workouts-card-content ms-2">{target}</div>
+          <div className="d-flex flex-lg-wrap" data-aos="zoom-in-left">
+            <div className="mt-2 workouts-card-content">{bodyPart}</div>
+            <div className="mt-2 workouts-card-content ms-2">{target}</div>
           </div>
         </Card.Text>
       </Card.Body>

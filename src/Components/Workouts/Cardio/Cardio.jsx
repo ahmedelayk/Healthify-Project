@@ -1,25 +1,37 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+
 // uuid
 import { v4 as uuid } from "uuid";
 
 // Videos and images
 import cardio from "../../assets/videos/cardio.mp4";
-import cardio1 from "../../assets/images/cardio1.jpg";
-import cardio2 from "../../assets/images/cardio2.jpg";
 
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import WorkoutCard from "../CommonComponents/WorkoutCard";
 import VideoSection from "../CommonComponents/VideoSection";
 import Subscription from "../CommonComponents/Subscription";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllCardio } from "../../../redux/workoutsSlice";
+import MyPagination from "../CommonComponents/Pagination";
+
+// Data
+import { getAllWorkouts } from "../../../redux/workoutsSlice";
 
 const Cardio = () => {
+  const todoPerPage = 6;
+  const [page, setPage] = useState(1);
+  const [indexOfFirstTodo, setIndexOfFirstTodo] = useState(0);
+  const [indexOflastTodo, setIndexOfLastTodo] = useState(todoPerPage);
   const { cardios, isLoading, error } = useSelector((state) => state.workouts);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllCardio());
+    dispatch(getAllWorkouts());
+  }, [page]);
+  const handleChangePage = useCallback((page) => {
+    setPage(page);
+    setIndexOfFirstTodo(indexOflastTodo - todoPerPage);
+    setIndexOfLastTodo(page + todoPerPage);
   }, []);
   return (
     <div>
@@ -31,8 +43,8 @@ const Cardio = () => {
             <div>Loading...</div>
           ) : error ? (
             <div>{error}</div>
-          ) : ( cardios?
-            cardios.map((cardio) => (
+          ) : cardios ? (
+            cardios.slice(indexOfFirstTodo, indexOflastTodo).map((cardio) => (
               <Col
                 className="mb-3"
                 key={uuid()}
@@ -41,18 +53,29 @@ const Cardio = () => {
                 lg={4}
                 data-aos="flip-down"
               >
-                <WorkoutCard
-                  img={cardio.gifUrl}
-                  name={cardio.name}
-                  equipment={cardio.equipment}
-                  bodyPart={cardio.bodyPart}
-                  target={cardio.target}
-                  data-aos="flip-up"
-                />
+                <Link to={cardio.id} className="text-decoration-none">
+                  <WorkoutCard
+                    img={cardio.gifUrl}
+                    name={cardio.name}
+                    equipment={cardio.equipment}
+                    bodyPart={cardio.bodyPart}
+                    target={cardio.target}
+                    data-aos="flip-up"
+                  />
+                </Link>
               </Col>
             ))
-          :"")}
+          ) : (
+            ""
+          )}
         </Row>
+        {cardios && (
+          <MyPagination
+            total={Math.ceil(cardios.length / todoPerPage)}
+            current={page}
+            onChangePage={handleChangePage}
+          />
+        )}
         <Subscription />
       </Container>
     </div>
