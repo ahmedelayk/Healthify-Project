@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import { BsFillPencilFill } from "react-icons/bs";
 import "./style.css";
@@ -6,12 +6,14 @@ import ProfileImage from "./ProfileImage";
 import { useAuth } from "../../../Context/AuthContext";
 
 const EditProfile = () => {
-  const {currentUser, users} = useAuth();
-  useEffect(() => {
-    users.forEach(user => {
-      // console.log(user.firstName)
-    });
-  }, [users])
+  const {currentUserData} = useAuth()
+  // useEffect(() => {
+  //   console.log(currentUserData)
+    
+  
+  //   return () => {
+  //   }
+  // }, [currentUserData])
   
   return (
     <div className="p-lg-3 p-xs-0" data-aos="zoom-in-left">
@@ -31,7 +33,7 @@ const EditProfile = () => {
           <Col md={6}>
             <Form.Group controlId="firstName">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="First Name" />
+              <Form.Control type="text" placeholder="First Name" value={currentUserData?.firstName}/>
             </Form.Group>
           </Col>
           <Col md={6}>
@@ -45,7 +47,7 @@ const EditProfile = () => {
         <Form.Group controlId="inputEmail4">
           <Form.Label>Email</Form.Label>
           {/* <Form.Control type="email" placeholder="Email" value = {currentUser?currentUser.email:''}/> */}
-          <Form.Control type="email" placeholder="Email"/>
+          <Form.Control type="email" placeholder="Email" />
         </Form.Group>
 
         <Form.Group controlId="contactNumber">
