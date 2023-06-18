@@ -8,8 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth, db } from "../firebase";
-import { collection, addDoc, onSnapshot } from "firebase/firestore"; 
-import { useCallback } from "react";
+import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore"; 
 
 const AuthContext = createContext();
 
@@ -18,76 +17,86 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
   const [currentUserData, setCurrentUserData] = useState({});
   const usersRef = collection(db, 'users');
-  useEffect(() => { 
-    const loggedIn = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user)
-    })
-  },[]);
-  // functions
-  const getAllUsers = ()=>{
-    try{
-    let arrayOfUsers = [];
-    onSnapshot(usersRef, (snapshot)=>{{
-      snapshot.docs.forEach((user)=>{
-        arrayOfUsers.push(user.data());
-        console.log(arrayOfUsers)
-      })
-      setUsers([...arrayOfUsers])
-    }})}catch(error){
-      console.log(error.message);
-    }
-  };
-  const getCurrentUserData = (email)=>{
-    try {
-      console.log('before loop');
-      console.log(currentUser);
-      console.log(users);
-      users?.forEach((usr)=>{
-        console.log('before if condition');
-        if(usr.email === email){
-          console.log('found: ', usr, currentUser);
-          setCurrentUserData(usr);
-        }
-      })
-    } catch (error) {
-      console.log(error.message);
-    }
+
+  // get all users from fire store
+  const fetchAllUsers = async() => {
+    const data = await getDocs(usersRef);
+    const users = data.docs.map((doc)=>({...doc.data(), id: doc.id}));
+    return users;
   }
+  
+  // fetch user data
+  const fetchUserData = async (userId) => {
+    try {
+      const userDoc = await getDoc(doc(usersRef, userId));
+      if (userDoc.exists()) {
+        // User data exists
+        const userData = userDoc.data();
+        console.log(userData);
+      } else {
+        // User data does not exist
+        console.log('error finding user');
+      }
+    } catch (error) { console.log(error.message) }
+  };
+
+      
+  useEffect(() => {
+    console.log('context work');
+    
+    fetchAllUsers()
+    .then((users) => setUsers(users))
+    .catch((error)=> console.log(error.message));
+
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if(user){
+        setCurrentUser(user);
+        const userFetchedData = await fetchUserData(user.uid);
+        setCurrentUserData(userFetchedData);
+      }else {
+        setCurrentUser(null);
+        setCurrentUserData(null);
+      }
+    })
+
+  // Clean up the subscription when component unmounts
+  // return () => unsubscribe();
+  },[]);
+
   // Authentication Operations (signup, login, logout)
+  // Signup function
   const signup = (firstName, lastName, phoneNumber, gender, email, password) => {
-    createUserWithEmailAndPassword(auth, email, password).then(
-      async (result) => {
-        // console.log(result)
-        // console.log(result.user.email)
-        await addDoc(usersRef, { 
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(
+      async(userCredential) => {
+        const user = userCredential.user;
+        await setDoc(doc(usersRef, user.uid), {
+          userId: user.uid,
           firstName: firstName,
           lastName: lastName,
           phoneNumber: phoneNumber,
           gender: gender,
           email: email,
           password: password
-         }).then((res) => {
-          // console.log(res)
-        });
+         })
       }
     );
-    getAllUsers();
-    getCurrentUserData(email);
   };
+  // Login function
   const login = (email,password) => {
     signInWithEmailAndPassword(auth, email, password);
-    getAllUsers();
-    getCurrentUserData(email);
   };
+  // Logout function
   const logout = () => {
     signOut(auth);
   };
-  const values = { signup, login, logout ,currentUser, users};
+  const values = { signup, login, logout ,currentUser, users, currentUserData };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;
+
 export const useAuth = () => {
   return useContext(AuthContext);
 }

@@ -3,7 +3,7 @@ import { Button, Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 // Hooks
 import { useAuth } from "../../Context/AuthContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // images
 import Logo from "../assets/images/logo.webp";
 // style
@@ -11,6 +11,7 @@ import "./nav.css";
 
 function Navbarr() {
   const { logout } = useAuth();
+  const { users } = useAuth();
   const { currentUser } = useAuth();
   const [error, setError] = useState("");
   const navigate =useNavigate()
@@ -23,7 +24,8 @@ function Navbarr() {
       } catch (err) {
         setError(err.message);
       }
-  }; 
+  };
+
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>

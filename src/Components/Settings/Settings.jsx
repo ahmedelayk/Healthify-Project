@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, NavLink, Row } from "react-bootstrap";
 // style
 import "./settings.css";
@@ -21,14 +21,24 @@ import Languages from "./SettingsComponents/Languages";
 import BMI from "./SettingsComponents/BMI";
 import Help from "./SettingsComponents/Help";
 
+import { useAuth } from "../../Context/AuthContext";
+
 const Settings = () => {
   const [selectedComponent, setSelectedComponent] = useState(<EditProfile />);
   const [activeNavLink, setActiveNavLink] = useState("EditProfile");
+  const {users} = useAuth()
+  const {currentUserData} = useAuth()
 
   const handleNavLinkClick = (component, navLinkName) => {
     setSelectedComponent(component);
     setActiveNavLink(navLinkName);
   };
+
+  useEffect(() => {
+    console.log('Settings Mounted')
+    // console.log(users);
+    console.log(currentUserData);
+  }, [])
 
   return (
     <Row className="settings ">
