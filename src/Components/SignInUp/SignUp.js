@@ -12,10 +12,6 @@ import { useAuth } from "../../Context/AuthContext";
 import signUpImg from "../assets/images/signUpImg.webp";
 // style
 import "./signInUp.css";
-// firebase
-// import { doc, setDoc } from "firebase/firestore"; 
-import { db } from "../../firebase";
-import { collection, addDoc } from "firebase/firestore"; 
 
 
 function SignUp() {
@@ -30,21 +26,17 @@ function SignUp() {
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const navigate =useNavigate()
+  
   const handleSelect = (e) => {
     setGender(e.target.value);
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(firstNameRef.current.value)
-    // console.log(lastNameRef.current.value)
-    // console.log(phoneNumberRef.current.value)
-    // console.log(gender)
     if (emailRegex.test(emailRef.current.value) && passwordRegex.test(passwordRef.current.value)) {
       try {
         setError('')
         await signup(firstNameRef.current.value,lastNameRef.current.value,phoneNumberRef.current.value,gender, emailRef.current.value, passwordRef.current.value);
-        console.log('Done')
         navigate('/settings')
       } catch (err) {
         setError(err.message);
@@ -53,6 +45,7 @@ function SignUp() {
       setError('password: must have lower and uppercase character and numbers');
     }
   };
+
   return (
     <div className="sec_container_signup d-flex justify-content-center align-items-center">
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
