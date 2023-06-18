@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
     const users = data.docs.map((doc)=>({...doc.data(), id: doc.id}));
     return users;
   }
-  
+
   // fetch user data
   const fetchUserData = async (userId) => {
     try {
@@ -32,7 +32,8 @@ const AuthProvider = ({ children }) => {
       if (userDoc.exists()) {
         // User data exists
         const userData = userDoc.data();
-        console.log(userData);
+        return userData;
+        // console.log(userData);
       } else {
         // User data does not exist
         console.log('error finding user');
@@ -52,7 +53,8 @@ const AuthProvider = ({ children }) => {
       if(user){
         setCurrentUser(user);
         const userFetchedData = await fetchUserData(user.uid);
-        setCurrentUserData(userFetchedData);
+        console.log(userFetchedData)
+        setCurrentUserData({...userFetchedData});
       }else {
         setCurrentUser(null);
         setCurrentUserData(null);

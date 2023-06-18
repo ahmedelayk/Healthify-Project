@@ -10,9 +10,7 @@ import Logo from "../assets/images/logo.webp";
 import "./nav.css";
 
 function Navbarr() {
-  const { logout } = useAuth();
-  const { users } = useAuth();
-  const { currentUser } = useAuth();
+  const { logout, currentUser, currentUserData } = useAuth();
   const [error, setError] = useState("");
   const navigate =useNavigate()
   const handleSubmit = async (e) => {
@@ -49,6 +47,9 @@ function Navbarr() {
               Workouts
             </NavLink>
           </Nav>
+          {
+            currentUser?(<div>{currentUserData.firstName}</div>):<></>
+          }
           {
             currentUser?( 
             <div>
