@@ -7,14 +7,6 @@ import { useAuth } from "../../../Context/AuthContext";
 
 const EditProfile = () => {
   const {currentUserData} = useAuth()
-  // useEffect(() => {
-  //   console.log(currentUserData)
-    
-  
-  //   return () => {
-  //   }
-  // }, [currentUserData])
-  
   return (
     <div className="p-lg-3 p-xs-0" data-aos="zoom-in-left">
       <Row>
@@ -39,7 +31,7 @@ const EditProfile = () => {
           <Col md={6}>
             <Form.Group controlId="lastName">
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="Last Name" />
+              <Form.Control type="text" placeholder="Last Name" value={currentUserData?.lastName}/>
             </Form.Group>
           </Col>
         </Row>
@@ -47,17 +39,17 @@ const EditProfile = () => {
         <Form.Group controlId="inputEmail4">
           <Form.Label>Email</Form.Label>
           {/* <Form.Control type="email" placeholder="Email" value = {currentUser?currentUser.email:''}/> */}
-          <Form.Control type="email" placeholder="Email" />
+          <Form.Control type="email" placeholder="Email" value={currentUserData?.email}/>
         </Form.Group>
 
         <Form.Group controlId="contactNumber">
           <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="number" placeholder="Phone Number" />
+          <Form.Control type="number" placeholder="Phone Number" value={currentUserData?.phoneNumber}/>
         </Form.Group>
 
         <Form.Group controlId="changePassword">
           <Form.Label>Change Your Password</Form.Label>
-          <Form.Control type="password" placeholder="*********" />
+          <Form.Control type="password" placeholder="*********" value={currentUserData?.password}/>
         </Form.Group>
 
         <Row className="mt-5 text-center">

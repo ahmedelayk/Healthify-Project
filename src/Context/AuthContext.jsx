@@ -53,7 +53,7 @@ const AuthProvider = ({ children }) => {
       if(user){
         setCurrentUser(user);
         const userFetchedData = await fetchUserData(user.uid);
-        console.log(userFetchedData)
+        // console.log(userFetchedData)
         setCurrentUserData({...userFetchedData});
       }else {
         setCurrentUser(null);
