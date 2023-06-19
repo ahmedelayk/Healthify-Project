@@ -6,7 +6,7 @@ import { AiOutlineDown, AiOutlineUser, AiFillSetting, AiOutlineLogout, AiOutline
 // style
 import './nav.css'
 // images
-import avatar from "../assets/images/avatar.png";
+import avatar from "../assets/images/avatar.webp";
 // routing
 import { Link, useNavigate } from "react-router-dom";
 
@@ -38,7 +38,7 @@ const DropDown = () => {
                     <li className="p-2 dropdown-list-item">
                         <Link className="dropdown-item" type="button" to='/profile'>
                                 <div className=" d-flex gap-2 align-items-center">
-                                    <img src={ avatar } alt="user avatar" className="avatar-img" />
+                                    <img src={ avatar } alt="user avatar" className="avatar-img" loading="lazy"/>
                                     <h6 className="dropdown-text">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
                                 </div>
                         </Link>
