@@ -38,8 +38,8 @@ const Settings = () => {
   useEffect(() => {
     console.log('Settings Mounted')
     // console.log(users);
-    console.log(currentUser?.email);
-    console.log(currentUserData);
+    // console.log(currentUser?.email);
+    // console.log(currentUserData);
   }, [currentUser, currentUserData])
 
   return (
