@@ -40,7 +40,6 @@ const Meditation = () => {
   const onTypeChanged = (event) => {
     setFilterdInst(types.filter((ins) => ins.name === event.target.value));
   };
-
   return (
     <>
       <div className="filter-meditation p-5">
@@ -99,6 +98,7 @@ const Meditation = () => {
                       className="text-decoration-none"
                     >
                       <MeditationCard
+                        id={i.id}
                         title={i.title}
                         description={i.description}
                         poster={i.poster}

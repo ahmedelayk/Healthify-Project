@@ -84,14 +84,15 @@ const MeditationDetails = () => {
     },
   ];
 
-  const [rating, setRating] = useState(5);
+  let randomRate = Math.floor(Math.random() * (5 - 2)) + 2;
+  const [rating, setRating] = useState(randomRate);
   let randomNum = Math.floor(Math.random() * 3);
   return (
     <Container id="meditation-details" className="section-padding">
       <h1 className="header1-size">{artDetails?.title}</h1>
       <div className="d-flex pb-3">
         <Rating className="rating-size" value={rating} readOnly />
-        <span className="color">(3 Reviews)</span>
+        <span className="color">({randomNum * randomRate * 25} Reviews)</span>
       </div>
       <Row className="mb-4">
         <img
