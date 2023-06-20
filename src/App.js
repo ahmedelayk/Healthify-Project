@@ -8,6 +8,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import store from "./redux/store";
 import { Provider } from "react-redux";
+// import { Spinner } from "react-bootstrap";
+import Spinner from "./Components/Spinner/Spinner";
 
 // lazy loading
 const Navbarr = lazy(() => import("./Components/Nav/Nav"));
@@ -31,7 +33,13 @@ function App() {
     Aos.refresh();
   }, []);
   return (
-    <Suspense fallback={<h3>Loading...</h3>}>
+    <Suspense fallback={
+      <>
+        <div className="d-flex justify-content-center align-items-center page-height">
+          <Spinner/>
+        </div>
+      </>
+    }>
     <Provider store={store}>
       <div className="app">
         <Navbarr />

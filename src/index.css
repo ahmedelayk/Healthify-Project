@@ -60,3 +60,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+
+.page-height {
+  width: 100vw;
+  height: 100vh;
+}

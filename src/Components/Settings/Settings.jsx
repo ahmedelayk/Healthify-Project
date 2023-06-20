@@ -26,7 +26,6 @@ import { useAuth } from "../../Context/AuthContext";
 const Settings = () => {
   const [selectedComponent, setSelectedComponent] = useState(<EditProfile />);
   const [activeNavLink, setActiveNavLink] = useState("EditProfile");
-  const {users} = useAuth()
   const {currentUser} = useAuth()
   const {currentUserData} = useAuth()
 
