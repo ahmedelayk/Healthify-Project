@@ -1,31 +1,45 @@
+import { useEffect, lazy, Suspense } from "react";
+// routing
 import { Route, Routes } from "react-router-dom";
+// style
 import "./App.css";
-import Navbarr from "./Components/Nav/Nav";
-import Home from "./Components/Home/Home";
-import Medatation from "./Components/Medatation/Meditation";
-import Nutration from "./Components/Nutration/Nutration";
-import Workouts from "./Components/Workouts/Workouts";
-import Profile from "./Components/Profile/Profile";
-import Settings from "./Components/Settings/Settings";
-import MeditationDetails from "./Components/Medatation/MeditationDetails/MeditationDetails";
-import Fitness from "./Components/Workouts/Fitness/Fitness";
-import Cardio from "./Components/Workouts/Cardio/Cardio";
-import Login from "./Components/SignInUp/Login";
-import SignUp from "./Components/SignInUp/SignUp";
-import Footer from "./Components/Home/Sections/section7/Footer";
 // Aos library
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import WorkoutsDetails from "./Components/Workouts/WorkoutsDetails/WorkoutsDetails";
+// import { Spinner } from "react-bootstrap";
+import Spinner from "./Components/Spinner/Spinner";
+
+// lazy loading
+const Navbarr = lazy(() => import("./Components/Nav/Nav"));
+const Home = lazy(() => import("./Components/Home/Home"));
+const Nutration = lazy(() => import("./Components/Nutration/Nutration"))
+const Medatation = lazy(() => import("./Components/Medatation/Meditation"));
+const MeditationDetails = lazy(() => import("./Components/Medatation/MeditationDetails/MeditationDetails"))
+const Workouts = lazy(() => import("./Components/Workouts/Workouts"))
+const Fitness = lazy(() => import("./Components/Workouts/Fitness/Fitness"))
+const Cardio = lazy(() => import("./Components/Workouts/Cardio/Cardio"))
+const WorkoutsDetails = lazy(() => import("./Components/Workouts/WorkoutsDetails/WorkoutsDetails"))
+const Profile = lazy(() => import("./Components/Profile/Profile"))
+const Settings = lazy(() => import("./Components/Settings/Settings"))
+const Login = lazy(() => import("./Components/SignInUp/Login"))
+const SignUp = lazy(() => import("./Components/SignInUp/SignUp"))
+const Footer = lazy(() => import("./Components/Home/Sections/section7/Footer"))
+
 function App() {
   useEffect(() => {
     Aos.init();
     Aos.refresh();
   }, []);
   return (
+    <Suspense fallback={
+      <>
+        <div className="d-flex justify-content-center align-items-center page-height">
+          <Spinner/>
+        </div>
+      </>
+    }>
     <Provider store={store}>
       <div className="app">
         <Navbarr />
@@ -49,6 +63,7 @@ function App() {
         <Footer />
       </div>
     </Provider>
+    </Suspense>
   );
 }
 

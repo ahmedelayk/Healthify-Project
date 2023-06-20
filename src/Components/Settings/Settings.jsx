@@ -26,7 +26,6 @@ import { useAuth } from "../../Context/AuthContext";
 const Settings = () => {
   const [selectedComponent, setSelectedComponent] = useState(<EditProfile />);
   const [activeNavLink, setActiveNavLink] = useState("EditProfile");
-  const {users} = useAuth()
   const {currentUser} = useAuth()
   const {currentUserData} = useAuth()
 
@@ -38,8 +37,8 @@ const Settings = () => {
   useEffect(() => {
     console.log('Settings Mounted')
     // console.log(users);
-    console.log(currentUser?.email);
-    console.log(currentUserData);
+    // console.log(currentUser?.email);
+    // console.log(currentUserData);
   }, [currentUser, currentUserData])
 
   return (
