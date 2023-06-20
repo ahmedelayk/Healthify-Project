@@ -1,8 +1,5 @@
 // Hooks
-import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// Components
-import { Alert } from "react-bootstrap";
 // icons
 import { FaLock, FaUser, FaPhoneAlt, FaUsers } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -19,7 +16,6 @@ function SignUp() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
         trigger,
     } = useForm()
@@ -31,21 +27,6 @@ function SignUp() {
         await signup(firstName, lastName, phoneNumber, gender, mail, password);
         navigate('/settings');
     }
-    // console.log(errors.name)
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         if (emailRegex.test(emailRef) && passwordRegex.test(passwordRef.current.value)) {
-    //             setError('')
-    //             await signup(firstNameRef.current.value, lastNameRef.current.value, phoneNumberRef.current.value, gender, emailRef.current.value, passwordRef.current.value);
-    //             navigate('/settings')
-    //         } else {
-    //             setError('password: must have lower and uppercase character and numbers');
-    //         }
-    //     } catch (err) {
-    //         console.log(err.message);
-    //     }
-    // };
 
     return (
         <div className="sec_container_signup d-flex justify-content-center align-items-center">
@@ -128,7 +109,7 @@ function SignUp() {
                             />
                             <MdEmail className="icon-login" />
                         </div>
-                            { errors.mail && <p className="text-danger">{ errors.mail?.message }</p> }
+                        { errors.mail && <p className="text-danger">{ errors.mail?.message }</p> }
                         <div
                             className="mb-2 inputDiv"
                             data-aos="fade-up"
