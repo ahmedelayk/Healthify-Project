@@ -6,12 +6,12 @@ import { AiOutlineDown, AiOutlineUser, AiFillSetting, AiOutlineLogout, AiOutline
 // style
 import './nav.css'
 // images
-import avatar from "../assets/images/avatar.webp";
+// import avatar from "../assets/images/avatar.webp";
 // routing
 import { Link, useNavigate } from "react-router-dom";
 
 const DropDown = () => {
-    const { currentUserData, logout } = useAuth();
+    const { currentUserData, logout, userImage } = useAuth();
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const handleLogout = async (e) => {
@@ -26,6 +26,7 @@ const DropDown = () => {
     };
     return (
         <>
+        <div>{error}</div>
             <div className="dropdown">
                 <button className="dropdown-btn dropdown-toggle py-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <div className='user-arrow'>
@@ -38,7 +39,7 @@ const DropDown = () => {
                     <li className="p-2 dropdown-list-item">
                         <Link className="dropdown-item" type="button" to='/profile'>
                                 <div className=" d-flex gap-2 align-items-center">
-                                    <img src={ avatar } alt="user avatar" className="avatar-img" loading="lazy"/>
+                                    <img src={ userImage } alt="usr" className="avatar-img" loading="lazy"/>
                                     <h6 className="dropdown-text">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
                                 </div>
                         </Link>

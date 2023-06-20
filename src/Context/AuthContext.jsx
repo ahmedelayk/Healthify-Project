@@ -8,7 +8,9 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth, db } from "../firebase";
-import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore"; 
+import { collection, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
+import { storage } from "../firebase";
+import { ref, getDownloadURL } from "firebase/storage"
 
 const AuthContext = createContext();
 
@@ -17,11 +19,12 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
   const [currentUserData, setCurrentUserData] = useState({});
   const usersRef = collection(db, 'users');
+  const [userImage, setUserImage] = useState("")
 
   // get all users from fire store
-  const fetchAllUsers = async() => {
+  const fetchAllUsers = async () => {
     const data = await getDocs(usersRef);
-    const users = data.docs.map((doc)=>({...doc.data(), id: doc.id}));
+    const users = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     return users;
   }
 
@@ -33,68 +36,90 @@ const AuthProvider = ({ children }) => {
         // User data exists
         const userData = userDoc.data();
         return userData;
-        // console.log(userData);
       } else {
-        // User data does not exist
         console.log('error finding user');
       }
     } catch (error) { console.log(error.message) }
   };
 
-      
+
+  const getImageFromFirebase = (imageUrl) => {
+    getDownloadURL(ref(storage, imageUrl))
+      .then((url) => {
+        setUserImage(url);
+      })
+  }
+  const getImage = () => {
+    const userImageRef = ref(storage, `usersImages/${currentUserData?.userId}`);
+    if (userImageRef) {
+      getDownloadURL(userImageRef)
+        .then((url) => {
+          setUserImage(url);
+        })
+        .catch((error) => {
+          if (currentUserData?.gender === 'female') {
+            getImageFromFirebase(`usersImages/avatar-female.webp`);
+          } else if(currentUserData?.gender === 'male') {
+            getImageFromFirebase(`usersImages/avatar-male.webp`);
+          }
+        });
+    }
+  }
+
   useEffect(() => {
     console.log('context work');
-    
+
     fetchAllUsers()
-    .then((users) => setUsers(users))
-    .catch((error)=> console.log(error.message));
+      .then((users) => setUsers(users))
+      .catch((error) => console.log(error.message));
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if(user){
+      if (user) {
         setCurrentUser(user);
         const userFetchedData = await fetchUserData(user.uid);
         // console.log(userFetchedData)
-        setCurrentUserData({...userFetchedData});
-      }else {
+        setCurrentUserData({ ...userFetchedData });
+      } else {
         setCurrentUser(null);
         setCurrentUserData(null);
       }
     })
 
-  // Clean up the subscription when component unmounts
-  // return () => unsubscribe();
-  },[]);
+    getImage();
+    // Clean up the subscription when component unmounts
+    return () => unsubscribe();
+  }, [currentUserData?.gender]);
 
   // Authentication Operations (signup, login, logout)
   // Signup function
   const signup = (firstName, lastName, phoneNumber, gender, email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
-    .then(
-      async(userCredential) => {
-        const user = userCredential.user;
-        await setDoc(doc(usersRef, user.uid), {
-          userId: user.uid,
-          firstName: firstName,
-          lastName: lastName,
-          phoneNumber: phoneNumber,
-          gender: gender,
-          email: email,
-          password: password
-         })
-      }
-    );
+      .then(
+        async (userCredential) => {
+          const user = userCredential.user;
+          await setDoc(doc(usersRef, user.uid), {
+            userId: user.uid,
+            firstName: firstName,
+            lastName: lastName,
+            phoneNumber: phoneNumber,
+            gender: gender,
+            email: email,
+            password: password
+          })
+        }
+      );
   };
   // Login function
-  const login = (email,password) => {
+  const login = (email, password) => {
     signInWithEmailAndPassword(auth, email, password);
   };
   // Logout function
   const logout = () => {
     signOut(auth);
   };
-  const values = { signup, login, logout ,currentUser, users, currentUserData };
+  const values = { signup, login, logout, currentUser, users, currentUserData, getImage, userImage };
 
-  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={ values }>{ children }</AuthContext.Provider>;
 };
 
 export default AuthProvider;

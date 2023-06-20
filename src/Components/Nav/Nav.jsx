@@ -12,6 +12,7 @@ import DropDown from "./DropDown";
 
 function Navbarr() {
     const { currentUser, currentUserData } = useAuth();
+    
     return (
         <Navbar expand="lg" className="border-bottom navbar">
             <Container>
@@ -54,12 +55,3 @@ function Navbarr() {
 }
 
 export default Navbarr;
-
-
-{/* <div>
-<NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
-  <Button variant="primary" className="login-btn nav-collapse" onClick={handleSubmit}>
-    logout
-  </Button>
-</NavLink>
-</div> */}
