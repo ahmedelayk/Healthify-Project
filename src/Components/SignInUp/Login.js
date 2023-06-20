@@ -8,26 +8,33 @@ import loginImg from "../assets/images/loginImg.webp";
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { useAuth } from "../../Context/AuthContext";
-import { Alert } from "react-bootstrap";
+// react hook form
+import { useForm } from "react-hook-form";
 
 function Login() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    trigger,
+  } = useForm()
+
+  const [error, setError] = useState("")
   const { login } = useAuth();
-  const [error, setError] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (emailRef.current.value !== "" && passwordRef.current.value !== "") {
-      try {
-        setError("");
-        await login(emailRef.current.value, passwordRef.current.value);
-        navigate("/settings");
-      } catch (err) {
-        setError(err.message);
-      }
+
+  const onSubmit = async (data) => {
+    // console.log(data);
+    console.log(data);
+    const { mail, password, remember } = data;
+    try {
+      await login(mail, password);
+      navigate("/settings");
+    } catch (error) {
+      setError("Incorrect email or password.");
     }
-  };
+  }
+
   return (
     <div className="sec_container_login d-flex justify-content-center align-items-center">
       <div className="signInUp_container p-5 login template d-flex gap-5 justify-content-center align-items-center bg-white rounded">
@@ -36,16 +43,14 @@ function Login() {
           data-aos="flip-up"
           data-aos-anchor-placement="top-bottom"
         >
-          <img src={loginImg} alt="loginImg" className="login-img" loading="lazy"/>
+          <img src={ loginImg } alt="loginImg" className="login-img" loading="lazy" />
         </div>
         <div
           className="form_container rounded bg-white"
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
         >
-          {error && <Alert variant="danger">{error}</Alert>}
-
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={ handleSubmit(onSubmit) }>
             <h2 className="text-start mb-4">Sign In</h2>
             <div
               className="mb-2 inputDiv"
@@ -53,28 +58,51 @@ function Login() {
               data-aos-anchor-placement="top-bottom"
             >
               <input
-                ref={emailRef}
                 type="email"
                 placeholder="Enter Email"
                 className="form-control form-control-login"
-              ></input>
+                { ...register("mail", {
+                  required: "Enter your Email",
+                  pattern: {
+                    value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig,
+                    message: "invalid email",
+                  }
+                }
+                ) }
+                onKeyUp={ () => {
+                  trigger("mail");
+                } }
+              />
               <MdEmail className="icon-login" />
             </div>
+            { errors.mail && <p className="text-danger">{ errors.mail?.message }</p> }
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
             >
               <input
-                ref={passwordRef}
                 type="password"
                 placeholder="Enter Password"
                 className="form-control form-control-login"
-              ></input>
+                { ...register("password", {
+                  required: "Enter your password",
+                  pattern: {
+                    value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/ig,
+                    message: "check your password",
+                  }
+                }
+                ) }
+                onKeyUp={ () => {
+                  trigger("password");
+                } }
+              />
               <FaLock className="icon-login" />
             </div>
+            { errors.password && <p className="text-danger">{ errors.password?.message }</p> }
+            { error && <p className="text-danger">{ error}</p> }
             <p className="text-start mt-2 paragraph-size">
-              <a href="" className="text-decoration-none ">
+              <a href="#" className="text-decoration-none ">
                 Forgot Password?
               </a>
             </p>
@@ -87,7 +115,8 @@ function Login() {
                 type="checkbox"
                 className="custom-control custom-checkbox"
                 id="check"
-              ></input>
+                { ...register("remember") }
+              />
               <label htmlFor="check" className="custom-input-label ms-2">
                 Remember me
               </label>
@@ -107,8 +136,8 @@ function Login() {
             </p>
           </form>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 
