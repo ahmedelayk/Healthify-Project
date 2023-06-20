@@ -15,3 +15,6 @@
 .results-number {
     color: var(--main-color);
 }
+.poster{
+    height: 300px !important;
+}

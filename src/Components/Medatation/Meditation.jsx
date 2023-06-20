@@ -1,64 +1,113 @@
-// Components
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import MeditationCard from "./MeditationDetails/MeditaionCard";
-// 
+
 import { Link } from "react-router-dom";
-// style
+
 import "./meditation.css";
 
-const Medatation = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import {
+  getInstructors,
+  getTypes,
+} from "../../redux/medititionSlice";
+import { useState } from "react";
+import { v4 as uuid } from "uuid";
+
+
+const Meditation = () => {
+  const [filterdInst, setFilterdInst] = useState([]);
+  const { instructors, types } = useSelector((state) => state.meditition);
+  // let filterdInst;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getInstructors());
+    dispatch(getTypes());
+    setFilterdInst(instructors?.slice(1, instructors.length));
+  }, [dispatch]);
+
+  const onInstructorChanged = (event) => {
+    if (event.target.value === "All") {
+      setFilterdInst(instructors.slice(1, instructors.length));
+    } else {
+      setFilterdInst(
+        instructors.filter((ins) => ins.name === event.target.value)
+      );
+    }
+  };
+
+  const onTypeChanged = (event) => {
+    setFilterdInst(types.filter((ins) => ins.name === event.target.value));
+  };
+
   return (
     <>
       <div className="filter-meditation p-5">
         <h1 className="header1-size mb-3">Filter</h1>
-        <Form className="d-flex flex-row flex-wrap flex-md-nowrap" data-aos='fade-in'>
+        <Form
+          className="d-flex flex-row flex-wrap flex-md-nowrap"
+          data-aos="fade-in"
+        >
           <Form.Select
             aria-label="Default select example"
             className="meditaion-select mx-md-2 mb-2 mb-md-0"
+            onChange={onTypeChanged}
           >
             <option hidden>Meditation Type</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            {types?.map((type) => (
+              <option value={type.name} key={uuid()}>
+                {type.name}
+              </option>
+            ))}
           </Form.Select>
           <Form.Select
             aria-label="Default select example"
             className="meditaion-select mx-md-2 mb-2 mb-md-0"
+            onChange={onInstructorChanged}
           >
-            <option hidden>Instructor</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option hidden value={"All"}>
+              Instructor
+            </option>
+            <option value={"All"}>All</option>
+            {instructors?.map((instructor) => (
+              <option value={instructor.name} key={uuid()}>
+                {instructor.name}
+              </option>
+            ))}
           </Form.Select>
-          <Button className="mx-md-2">Apply</Button>
         </Form>
       </div>
       <Container>
         <div className="results-section section-padding">
           <h2 className="header2-size result-header mb-4">
-            <span className="results-number">5</span> Result(s)
+            <span className="results-number">
+              (
+              {filterdInst?.length &&
+                filterdInst.map((item) => item.articles?.length)}
+              ){"    "}
+            </span>
+            Results
           </h2>
           <Row className="Results">
-            <Col xs={12} md={6} lg={4} data-aos="flip-right">
-              <Link to="1" className="text-decoration-none">
-                <MeditationCard/>
-              </Link>
-            </Col>
-            <Col xs={12} md={6} lg={4} data-aos="flip-left">
-              <Link to="1" className="text-decoration-none">
-                <MeditationCard/>
-              </Link>
-            </Col>
-            <Col xs={12} md={6} lg={4} data-aos="flip-right">
-              <Link to="1" className="text-decoration-none">
-                <MeditationCard/>
-              </Link>
-            </Col>
-            <Col xs={12} md={6} lg={4} data-aos="flip-right">
-              <Link to="1" className="text-decoration-none">
-                <MeditationCard />
-              </Link>
-            </Col>
+            {filterdInst?.length &&
+              filterdInst.map((item) =>
+                item.articles.map((i) => (
+                  <Col xs={12} md={6} lg={4} data-aos="flip-right" key={uuid()}>
+                    <Link
+                      to={`/medatation/details/${i.id}`}
+                      className="text-decoration-none"
+                    >
+                      <MeditationCard
+                        title={i.title}
+                        description={i.description}
+                        poster={i.poster}
+                        author={i.author}
+                      />
+                    </Link>
+                  </Col>
+                ))
+              )}
           </Row>
         </div>
       </Container>
@@ -66,4 +115,4 @@ const Medatation = () => {
   );
 };
 
-export default Medatation;
+export default Meditation;
