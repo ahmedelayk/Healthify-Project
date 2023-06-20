@@ -1,10 +1,27 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import { MdMale, MdFemale } from "react-icons/md";
 import "toolcool-range-slider";
 import "./nutration.css";
+import { useState } from "react";
+import { useRef } from "react";
 
 export const BMICalculator = () => {
+  const [isMale, setIsMale] = useState(true);
+  const [isFemale, setIsFemale] = useState(false);
+  const [height, setHeight] = useState(150);
+  const heightRef=useRef()
+  const handleMale = () => {
+    setIsMale(true);
+    setIsFemale(false);
+  };
+  const handleFemale = () => {
+    setIsFemale(true);
+    setIsMale(false);
+  };
+  const getHeight = (e) => {
+    console.log(heightRef.current.value);
+  }
   return (
     <Col xs={12} lg={6} className="card-n">
       <h4 className="font-family1 text-paragraph-color mb-3 bolder">
@@ -12,12 +29,18 @@ export const BMICalculator = () => {
       </h4>
       <Row className="w-50 ms-0">
         <Col>
-          <Row className="cursor-pointer bg-second-color justify-content-around align-items-center p-2">
+          <Row className="cursor-pointerjustify-content-around align-items-center p-2">
             <Col xs={3}>
-              <MdMale color="white" size={25} />
+              <MdMale color="" size={25} />
             </Col>
             <Col xs={8}>
-              <h5 className="m-0 text-white font-family1 bolder">Male</h5>
+              <Button
+                className="m-0  font-family1 border bolder"
+                variant={!isMale ? "light" : "primary"}
+                onClick={handleMale}
+              >
+                Male
+              </Button>
             </Col>
           </Row>
         </Col>
@@ -27,7 +50,13 @@ export const BMICalculator = () => {
               <MdFemale size={25} />
             </Col>
             <Col xs={8}>
-              <h5 className="m-0 font-family1 bolder">Female</h5>
+              <Button
+                className="m-0 font-family1 bolder"
+                variant={isFemale ? "primary" : "light"}
+                onClick={handleFemale}
+              >
+                Female
+              </Button>
             </Col>
           </Row>
         </Col>
@@ -39,7 +68,7 @@ export const BMICalculator = () => {
           </h6>
         </Col>
         <Col>
-          <h6 className="grey text-center">167"</h6>
+          <h6 className="grey text-center">{height}"</h6>
         </Col>
       </Row>
       <toolcool-range-slider
@@ -53,7 +82,9 @@ export const BMICalculator = () => {
         slider-bg-fill="#0066ff"
         min="120"
         max="220"
-        value="167"
+        ref={heightRef}
+        value="200"
+        onInput={getHeight}
       ></toolcool-range-slider>
       <p className="fs-8 mt-2 ruler">
         |&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|
