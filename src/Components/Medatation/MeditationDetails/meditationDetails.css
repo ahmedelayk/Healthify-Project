@@ -3,7 +3,7 @@
 }
 
 .color {
-    color: var(--second-color);
+    color: var(--second-color) !important;
 }
 
 .details-btns:last-child div{
