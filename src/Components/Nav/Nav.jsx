@@ -11,7 +11,7 @@ import "./nav.css";
 import DropDown from "./DropDown";
 
 function Navbarr() {
-    const { currentUser, currentUserData } = useAuth();
+    const { currentUser, currentUserData, t } = useAuth();
     
     return (
         <Navbar expand="lg" className="border-bottom navbar">
@@ -27,13 +27,13 @@ function Navbarr() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
                         <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
-                            Nutrition
+                            {t("Nutrition")}
                         </NavLink>
                         <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
-                            Meditation
+                            {t("Meditation")}
                         </NavLink>
                         <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
-                            Workouts
+                            {t("Workouts")}
                         </NavLink>
                     </Nav>
                     {
@@ -44,7 +44,7 @@ function Navbarr() {
                             </div>
                         ) : <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
                             <Button variant="primary" className="login-btn nav-collapse">
-                                Login
+                                {t("Login")}
                             </Button>
                         </NavLink>
                     }

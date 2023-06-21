@@ -11,10 +11,13 @@ import { auth, db } from "../firebase";
 import { collection, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
 import { storage } from "../firebase";
 import { ref, getDownloadURL } from "firebase/storage"
+// Localization i18next
+import { useTranslation } from "react-i18next"
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const {t, i18n} = useTranslation();
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [currentUserData, setCurrentUserData] = useState({});
@@ -59,7 +62,7 @@ const AuthProvider = ({ children }) => {
         .catch((error) => {
           if (currentUserData?.gender === 'female') {
             getImageFromFirebase(`usersImages/avatar-female.webp`);
-          } else if(currentUserData?.gender === 'male') {
+          } else if (currentUserData?.gender === 'male') {
             getImageFromFirebase(`usersImages/avatar-male.webp`);
           }
         });
@@ -117,7 +120,7 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth);
   };
-  const values = { signup, login, logout, currentUser, users, currentUserData, getImage, userImage };
+  const values = { signup, login, logout, currentUser, users, currentUserData, getImage, userImage, t, i18n };
 
   return <AuthContext.Provider value={ values }>{ children }</AuthContext.Provider>;
 };
