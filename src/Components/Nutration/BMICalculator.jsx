@@ -3,27 +3,23 @@ import { Button, Col, Row } from "react-bootstrap";
 import { MdMale, MdFemale } from "react-icons/md";
 import "toolcool-range-slider";
 import "./nutration.css";
-import { useState } from "react";
-import { useRef } from "react";
+import { useNutrition } from "../../Context/NutritionContext";
 
 export const BMICalculator = () => {
-  const [isMale, setIsMale] = useState(true);
-  const [isFemale, setIsFemale] = useState(false);
-  const [height, setHeight] = useState(150);
-  const heightRef=useRef()
-  const handleMale = () => {
-    setIsMale(true);
-    setIsFemale(false);
-  };
-  const handleFemale = () => {
-    setIsFemale(true);
-    setIsMale(false);
-  };
-  const getHeight = (e) => {
-    console.log(heightRef.current.value);
-  }
+  const {
+    changeHeight,
+    changeWeight,
+    handleFemale,
+    handleCalculate,
+    handleMale,
+    gender,
+    result,
+    height,
+    weight,
+  } = useNutrition();
+
   return (
-    <Col xs={12} lg={6} className="card-n">
+    <Col xs={12} lg={5} className="card-n">
       <h4 className="font-family1 text-paragraph-color mb-3 bolder">
         BMI Calculator
       </h4>
@@ -36,7 +32,7 @@ export const BMICalculator = () => {
             <Col xs={8}>
               <Button
                 className="m-0  font-family1 border bolder"
-                variant={!isMale ? "light" : "primary"}
+                variant={gender !== "Male" ? "light" : "primary"}
                 onClick={handleMale}
               >
                 Male
@@ -52,7 +48,7 @@ export const BMICalculator = () => {
             <Col xs={8}>
               <Button
                 className="m-0 font-family1 bolder"
-                variant={isFemale ? "primary" : "light"}
+                variant={gender === "Female" ? "primary" : "light"}
                 onClick={handleFemale}
               >
                 Female
@@ -68,7 +64,7 @@ export const BMICalculator = () => {
           </h6>
         </Col>
         <Col>
-          <h6 className="grey text-center">{height}"</h6>
+          <h6 className="grey text-center">{height} Cm</h6>
         </Col>
       </Row>
       <toolcool-range-slider
@@ -80,11 +76,12 @@ export const BMICalculator = () => {
         pointer-bg-hover="white"
         pointer-bg-focus="white"
         slider-bg-fill="#0066ff"
-        min="120"
-        max="220"
-        ref={heightRef}
-        value="200"
-        onInput={getHeight}
+        id="height-slider"
+        min={120}
+        max={220}
+        step={10}
+        value={height}
+        onClick={changeHeight}
       ></toolcool-range-slider>
       <p className="fs-8 mt-2 ruler">
         |&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|
@@ -100,7 +97,7 @@ export const BMICalculator = () => {
           </h6>
         </Col>
         <Col>
-          <h6 className="grey text-center">80"</h6>
+          <h6 className="grey text-center">{weight} Kg</h6>
         </Col>
       </Row>
       <toolcool-range-slider
@@ -113,8 +110,9 @@ export const BMICalculator = () => {
         pointer-bg-focus="white"
         slider-bg-fill="#0066ff"
         min="40"
-        max="400"
-        value="80"
+        max="150"
+        value={weight}
+        onClick={changeWeight}
       ></toolcool-range-slider>
       <p className="fs-8 mt-2 ruler">
         |&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|
@@ -123,9 +121,12 @@ export const BMICalculator = () => {
         &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|
         &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|
       </p>
-      <h6 className="bg-second-color p-2 w-25 min-w-100 text-center text-white cursor-pointer">
+      <Button
+        className="mt-5 p-2 w-25 min-w-100 text-center text-white cursor-pointer"
+        onClick={() => handleCalculate(weight, height)}
+      >
         Calculate BMI
-      </h6>
+      </Button>
     </Col>
   );
 };

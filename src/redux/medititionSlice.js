@@ -14,18 +14,12 @@ export const getTypes = createAsyncThunk("meditition/getTypes", async () => {
   const data = res.data;
   return data;
 });
-export const getAllArticles = createAsyncThunk("meditition/getAllArticles", async () => {
-  const res = await axios.get(`http://localhost:3002/articles`);
-  const data = res.data;
-  return data;
-});
 
 const medititionSlice = createSlice({
   name: "meditition",
   initialState: {
     instructors: null,
     types: null,
-    articles: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -35,9 +29,7 @@ const medititionSlice = createSlice({
     builder.addCase(getTypes.fulfilled, (state, { payload }) => {
       state.types = payload;
     });
-    builder.addCase(getAllArticles.fulfilled, (state, { payload }) => {
-      state.articles = payload;
-    });
+  
   },
 });
 export const {} = medititionSlice.actions;
