@@ -71,6 +71,7 @@ function Login() {
                 ) }
                 onKeyUp={ () => {
                   trigger("mail");
+                  setError("");
                 } }
               />
               <MdEmail className="icon-login" />
@@ -95,6 +96,7 @@ function Login() {
                 ) }
                 onKeyUp={ () => {
                   trigger("password");
+                  setError("");
                 } }
               />
               <FaLock className="icon-login" />
