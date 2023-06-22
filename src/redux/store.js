@@ -7,7 +7,7 @@ const store = configureStore({
   reducer: {
     workouts: workoutsSlice,
     recipe: recipesSlice,
-    meditition:medititionSlice
+    meditition:medititionSlice,
   },
 });
 

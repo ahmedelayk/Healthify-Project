@@ -1,4 +1,4 @@
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import MeditationCard from "./MeditationDetails/MeditaionCard";
 
 import { Link } from "react-router-dom";
@@ -65,7 +65,7 @@ const Meditation = () => {
             className="meditaion-select mx-md-2 mb-2 mb-md-0"
             onChange={onInstructorChanged}
           >
-            <option hidden value={"All"}>
+            <option hidden >
               Instructor
             </option>
             <option value={"All"}>All</option>

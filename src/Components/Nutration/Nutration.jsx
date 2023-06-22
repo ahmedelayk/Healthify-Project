@@ -6,6 +6,7 @@ import { CaloriesTrack } from "./CaloriesTrack";
 import { ProgressTrack } from "./ProgressTrack";
 import { RecomendedRecipies } from "./RecomendedRecipies";
 import { WaterTrack } from "./WaterTrack";
+import MonthGraph from "../Profile/ProfileComponents/MonthGraph"
 
 const Nutration = () => {
   return (
@@ -18,7 +19,7 @@ const Nutration = () => {
         {/* <Col lg={1} className="padding"></Col> */}
         <WaterTrack />
         {/* <Col lg={1} className="padding"></Col> */}
-        <ProgressTrack />
+        <MonthGraph />
         <RecomendedRecipies />
       </Row>
     </Container>

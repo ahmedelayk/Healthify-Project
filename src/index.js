@@ -10,17 +10,21 @@ import "react-bootstrap-country-select/dist/react-bootstrap-country-select.css";
 import "./index.css";
 // ContextAPI
 import AuthProvider from "./Context/AuthContext";
+
 // localization
 import "./i18n";
+
+import NutritionProvider from "./Context/NutritionContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
+  <BrowserRouter>
+    <AuthProvider>
+      <NutritionProvider>
         <App />
-      </AuthProvider>
-    </BrowserRouter>
+      </NutritionProvider>
+    </AuthProvider>
+  </BrowserRouter>
   // </React.StrictMode>
 );
-
