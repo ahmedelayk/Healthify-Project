@@ -11,8 +11,8 @@ import "./nav.css";
 import DropDown from "./DropDown";
 
 function Navbarr() {
-    const { currentUser, currentUserData, t } = useAuth();
-    
+    const { currentUser, currentUserData, t, i18n } = useAuth();
+
     return (
         <Navbar expand="lg" className="border-bottom navbar">
             <Container>
@@ -27,13 +27,13 @@ function Navbarr() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
                         <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
-                            {t("Nutrition")}
+                            { t("Nutrition") }
                         </NavLink>
                         <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
-                            {t("Meditation")}
+                            { t("Meditation") }
                         </NavLink>
                         <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
-                            {t("Workouts")}
+                            { t("Workouts") }
                         </NavLink>
                     </Nav>
                     {
@@ -41,10 +41,24 @@ function Navbarr() {
                             <div className='d-flex justify-content-center align-items-center gap-2'>
                                 <h6 className=" text-capitalize mb-0  text-main-color">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
                                 <DropDown />
+                                {
+                                    i18n.language === "en" && (
+                                        <>
+                                            <input type="button" value="عربي" onClick={ () => {
+                                                i18n.changeLanguage("ar");
+                                            } } />
+                                        </>
+                                    )
+                                }
+                                {
+                                    i18n.language === "ar" && (<input type="button" value="English" onClick={ () => {
+                                        i18n.changeLanguage("en");
+                                    } } />)
+                                }
                             </div>
                         ) : <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
                             <Button variant="primary" className="login-btn nav-collapse">
-                                {t("Login")}
+                                { t("Login") }
                             </Button>
                         </NavLink>
                     }

@@ -11,7 +11,7 @@ import './Section0.css';
 import { useAuth } from "../../../../Context/AuthContext"
 
 export default function Section0() {
-    const { t } = useAuth();
+    const { currentUser, t } = useAuth();
     return (
         <>
             {/* <div className="position-relative">
@@ -24,11 +24,18 @@ export default function Section0() {
                             { t("Unlock Your Potential. Empowering Health and Wellness for All!") }
                         </h2>
                         <div>
-                            <NavLink to="/login">
-                                <Button className="go-btn">
-                                    { t("Start your journey") }
-                                </Button>
-                            </NavLink>
+                            {
+                                currentUser ? <NavLink to="/nutration">
+                                    <Button className="go-btn">
+                                        { t("Start your journey") }
+                                    </Button>
+                                </NavLink> : <NavLink to="/login">
+                                    <Button className="go-btn">
+                                        { t("Start your journey") }
+                                    </Button>
+                                </NavLink>
+                            }
+
                         </div>
                     </div>
                 </div>
