@@ -11,14 +11,19 @@ import {
 import { auth, db, gProvider, fProvider } from "../firebase";
 import { collection, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
 import { storage } from "../firebase";
-import { ref, getDownloadURL } from "firebase/storage";
+
 import { useNutrition } from "./NutritionContext";
+
+import { ref, getDownloadURL } from "firebase/storage"
+// Localization i18next
+import { useTranslation } from "react-i18next"
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const { result } = useNutrition()
   console.log(result);
+  const {t, i18n} = useTranslation();
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [currentUserData, setCurrentUserData] = useState({});
@@ -63,7 +68,7 @@ const AuthProvider = ({ children }) => {
         .catch((error) => {
           if (currentUserData?.gender === "female") {
             getImageFromFirebase(`usersImages/avatar-female.webp`);
-          } else if (currentUserData?.gender === "male") {
+          } else if (currentUserData?.gender === 'male') {
             getImageFromFirebase(`usersImages/avatar-male.webp`);
           }
         });
@@ -127,7 +132,6 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth);
   };
-  let gUser;
   const googleSignIn = () => {
     signInWithPopup(auth, gProvider)
       .then((result) => {
@@ -157,8 +161,10 @@ const AuthProvider = ({ children }) => {
     users,
     currentUserData,
     userImage,
-    gUser,
+    t,
+    i18n 
   };
+
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

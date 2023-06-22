@@ -6,26 +6,29 @@ import { NavLink } from "react-router-dom";
 import { Container, Button, Row } from "react-bootstrap";
 // style
 import "./section1.css";
+// context
+import { useAuth } from "../../../../Context/AuthContext";
 
 const Section1 = () => {
+  const { t } = useAuth();
   return (
     <Container id="landing" className="section-padding-bottom">
       <Row>
         <div className="col-lg-6 col-12  p-5 part1 d-flex flex-column justify-content-center">
           <h2 className="macro-text">
-            Unlock Your Potential. Empowering Health and Wellness for All!
+            { t("Unlock Your Potential. Empowering Health and Wellness for All!") }
           </h2>
           <div>
 
-          <NavLink to="/login">
-            <Button className="go-btn">
-              Start your journey
-            </Button>
-          </NavLink>
+            <NavLink to="/login">
+              <Button className="go-btn">
+                { t("Start your journey") }
+              </Button>
+            </NavLink>
           </div>
         </div>
         <div className="col-md-6 col-12  d-flex align-items-center mt-1">
-          <img src={Macro} className="w-100 macro-image" alt="macro" loading="lazy"/>
+          <img src={ Macro } className="w-100 macro-image" alt="macro" loading="lazy" />
         </div>
       </Row>
     </Container>

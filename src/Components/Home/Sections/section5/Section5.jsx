@@ -9,8 +9,11 @@ import './Section5.css';
 // Aos Library
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+// Context
+import { useAuth } from "../../../../Context/AuthContext";
+  
 export default function Section5() {
+    const {t} = useAuth()
     useEffect(() => {
         AOS.init();
     }, []);
@@ -24,16 +27,16 @@ export default function Section5() {
                     <div className=" workouts-content container text-white position-absolute top-0 left-50">
                         <div className="higher-part h-30 d-flex flex-column justify-content-between ">
                             <Row>
-                                <h1 className="text-center">Workouts</h1>
+                                <h1 className="text-center">{t("Workouts")}</h1>
                             </Row>
                             <div className=" d-flex justify-content-evenly" data-aos="zoom-out" data-aos-duration="600">
-                                <h2>Train</h2>
-                                <h2>Transform</h2>
-                                <h2>Triumph</h2>
+                                <h2>{t("Train")}</h2>
+                                <h2>{t("Transform")}</h2>
+                                <h2>{t("Triumph")}</h2>
                             </div>
                         </div>
                         <div className=" h-60 d-flex flex-column-reverse align-items-center " data-aos="zoom-in" data-aos-duration="600">
-                                <h2 className=" lower-part">Unleash Your Potential with Powerful Workouts</h2>
+                                <h2 className=" lower-part">{t("Unleash Your Potential with Powerful Workouts")}</h2>
                         </div>
                     </div>
                 </div>

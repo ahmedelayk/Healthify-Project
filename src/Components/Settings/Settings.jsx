@@ -20,14 +20,13 @@ import Notifications from "./SettingsComponents/Notifications";
 import Languages from "./SettingsComponents/Languages";
 import BMI from "./SettingsComponents/BMI";
 import Help from "./SettingsComponents/Help";
-
+// Context
 import { useAuth } from "../../Context/AuthContext";
 
 const Settings = () => {
+  const { t } = useAuth();
   const [selectedComponent, setSelectedComponent] = useState(<EditProfile />);
   const [activeNavLink, setActiveNavLink] = useState("EditProfile");
-  const {currentUser} = useAuth()
-  const {currentUserData} = useAuth()
 
   const handleNavLinkClick = (component, navLinkName) => {
     setSelectedComponent(component);
@@ -36,10 +35,7 @@ const Settings = () => {
 
   useEffect(() => {
     console.log('Settings Mounted')
-    // console.log(users);
-    // console.log(currentUser?.email);
-    // console.log(currentUserData);
-  }, [currentUser, currentUserData])
+  }, [])
 
   return (
     <Row className="settings ">
@@ -70,7 +66,7 @@ const Settings = () => {
             <MdArrowBackIosNew />
           </Col>
           <Col xs={ 9 } >
-            <h5>Settings</h5>
+            <h5>{t("Settings")}</h5>
           </Col>
         </Row>
         <div className="setting-nav" >
@@ -89,7 +85,7 @@ const Settings = () => {
                   <BsFillPencilFill />
                 </Col>
                 <Col xs={ 10 } className="pt-1">
-                  <h6>Edit Profile</h6>
+                  <h6>{t("Edit Profile")}</h6>
                 </Col>
               </Row>
             </NavLink>
@@ -109,7 +105,7 @@ const Settings = () => {
                   <GrNotification />
                 </Col>
                 <Col xs={ 10 } className="pt-1">
-                  <h6>Notifications</h6>
+                  <h6>{t("Notifications")}</h6>
                 </Col>
               </Row>
             </NavLink>
@@ -127,7 +123,7 @@ const Settings = () => {
                   <BsCalculatorFill />
                 </Col>
                 <Col xs={ 10 } className="pt-1">
-                  <h6>BMI Test</h6>
+                  <h6>{t("BMI Test")}</h6>
                 </Col>
               </Row>
             </NavLink>
@@ -145,7 +141,7 @@ const Settings = () => {
                   <LuLanguages />
                 </Col>
                 <Col xs={ 10 } className="pt-1">
-                  <h6>Languages</h6>
+                  <h6>{t("Languages")}</h6>
                 </Col>
               </Row>
             </NavLink>
@@ -163,7 +159,7 @@ const Settings = () => {
                   <BiHelpCircle />
                 </Col>
                 <Col xs={ 10 } className="pt-1">
-                  <h6>Help</h6>
+                  <h6>{t("Help")}</h6>
                 </Col>
               </Row>
             </NavLink>
