@@ -22,6 +22,7 @@ body {
   margin: 0;
   font-family: var(--font-family2) !important;
   /* font-family: var(--font-family-arabic) !important; */
+  /* direction: rtl; */
 }
 .section-padding {
   padding-top: var(--section-padding);

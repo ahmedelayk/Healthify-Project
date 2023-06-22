@@ -1,12 +1,16 @@
 // Components
 import Fitness from "./Fitness";
 import Cardio from "./Cardio";
-
+// Context
+import {useAuth} from "../../Context/AuthContext";
+// Styling
+import "./workout.css";
 const Workouts = () => {
+  const {t} = useAuth();
   return (
     <div className="workouts" data-aos="zoom-in-left">
-      <div className="wourkouts-header" data-aos="zoom-in-left">
-        <h1>Fitness & Cardio</h1>
+      <div className="wourkouts-header">
+        <h1>{t("Fitness & Cardio")}</h1>
       </div>
       <div
         data-aos="fade-left"

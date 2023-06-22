@@ -18,8 +18,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Data
 import { getAllWorkouts } from "../../redux/workoutsSlice";
+import { useAuth } from "../../Context/AuthContext";
 
 const Fitness = () => {
+  const {t} = useAuth();
   const { fitnesses, isLoading, error } = useSelector(
     (state) => state.workouts
   );
@@ -31,12 +33,12 @@ const Fitness = () => {
   return (
     <div className="section-padding" data-aos="zoom-out-left">
       <div className="fitness overflow-hidden">
-        <h1 className="header1-size ps-4 mb-3">Fitness</h1>
+        <h1 className="header1-size ps-4 mb-3">{t("Fitness")}</h1>
         <Row className="py-5 ps-5 pe-5 pe-md-0 bg-white">
           <Col className="mb-3" xs={12} md={4} lg={4}>
-            <h1>Fitness Categories</h1>
+            <h1>{t("Fitness Categories")}</h1>
             <NavLink to="fitness">
-              <Button variant="primary">View all</Button>
+              <Button variant="primary">{t("View all")}</Button>
             </NavLink>
           </Col>
           <Col xs={12} md={8} lg={8}>
@@ -60,7 +62,7 @@ const Fitness = () => {
               // pagination={{ clickable: true }}
             >
               {isLoading ? (
-                <div>Loading</div>
+                <div>{t("Loading...")}</div>
               ) : error ? (
                 <div>{error}</div>
               ) : (
