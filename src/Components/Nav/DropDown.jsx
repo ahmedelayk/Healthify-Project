@@ -1,19 +1,34 @@
 // Hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../Context/AuthContext";
 // icons
-import { AiOutlineDown, AiOutlineUser, AiFillSetting, AiOutlineLogout, AiOutlineRight, AiFillProfile } from "react-icons/ai";
+import {
+  AiOutlineDown,
+  AiOutlineUser,
+  AiFillSetting,
+  AiOutlineLogout,
+  AiOutlineRight,
+  AiFillProfile,
+} from "react-icons/ai";
 // style
-import './nav.css'
+import "./nav.css";
 // images
 // import avatar from "../assets/images/avatar.webp";
 // routing
 import { Link, useNavigate } from "react-router-dom";
 
 const DropDown = () => {
-    const { currentUserData, logout, userImage, t } = useAuth();
-    const [error, setError] = useState("");
-    const navigate = useNavigate();
+  const { currentUserData, logout, userImage, currentUser } = useAuth();
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+    useEffect(() => {
+      currentUserData?.firstName != null
+        ? setUsername(
+            `${currentUserData?.firstName} ${currentUserData?.lastName}`
+          )
+            : setUsername(currentUser?.displayName);
+    });
     const handleLogout = async (e) => {
         e.preventDefault();
         try {
@@ -40,7 +55,7 @@ const DropDown = () => {
                         <Link className="dropdown-item" type="button" to='/profile'>
                                 <div className=" d-flex gap-2 align-items-center">
                                     <img src={ userImage } alt="usr" className="avatar-img" loading="lazy"/>
-                                    <h6 className="dropdown-text">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
+                                    <h6 className="dropdown-text">{username}</h6>
                                 </div>
                         </Link>
                     </li>
@@ -88,5 +103,6 @@ const DropDown = () => {
         </>
     );
 }
+>>>>>>> master
 
 export default DropDown;

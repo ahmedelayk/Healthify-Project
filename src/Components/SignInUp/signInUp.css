@@ -76,3 +76,8 @@ form h2::after {
   transform: translateY(-50%);
   color: var(--main-color);
 }
+.social-icons{
+  font-size: 25px;
+  margin: 0 10px;
+  cursor: pointer;
+}
