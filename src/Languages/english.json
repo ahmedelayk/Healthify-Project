@@ -144,7 +144,28 @@
     "at least 8 chars and numbers": "at least 8 chars and numbers",
     "Sign Up": "Sign Up",
     "Already have an account?": "Already have an account?",
-    "Login Now!": "Login Now!"
+    "Login Now!": "Login Now!",
+    
+    "workouts-page":"------------------------------------------------------------------",
+    "Fitness & Cardio": "Fitness & Cardio",
+    "Fitness Categories": "Fitness Categories",
+    "View all": "View all",
+    "Loading...": "Loading...",
+    "Fitness": "Fitness",
+    "Cardio": "Cardio",
+    "Cardio Categories": "Cardio Categories",
+    "Cardio of the day": "Cardio of the day",
+    "Newsletter Subscription": "Newsletter Subscription",
+    "Get to know the latest new and offers we provide on this site.": "Get to know the latest new and offers we provide on this site.",
+
+    "medita-page":"------------------------------------------------------------------",
+    "Meditation Type": "Meditation Type",
+    "Instructor": "Instructor",
+    "All": "All",
+    "Filter": "Filter",
+    "Results": "Results"
+
+
 }
 
 

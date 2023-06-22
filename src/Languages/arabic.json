@@ -132,6 +132,26 @@
     "at least 8 chars and numbers": "8 أحرف وأرقام على الأقل",
     "Sign Up": "التسجيل",
     "Already have an account?": "هل لديك حساب بالفعل؟",
-    "Login Now!": "تسجيل الدخول الآن!"
+    "Login Now!": "تسجيل الدخول الآن!",
+
+    "workouts-page":"------------------------------------------------------------------",
+    "Fitness & Cardio": "لياقة بدنية وكارديو",
+    "Fitness Categories": "فئات اللياقة",
+    "View all": "عرض الكل",
+    "Loading...": "تحميل...",
+    "Fitness": "لياقة بدنية",
+    "Cardio": "كارديو",
+    "Cardio Categories": "فئات الكارديو",
+    "Cardio of the day": "كارديو اليوم",
+    "Newsletter Subscription": "الاشتراك في النشرة الإخبارية",
+    "Get to know the latest new and offers we provide on this site.": "تعرف على أحدث العروض الجديدة التي نقدمها على هذا الموقع.",
+
+    "medita-page":"------------------------------------------------------------------",
+    "Meditation Type": "نوع التأمل",
+    "Instructor": "المدرب",
+    "All": "الجميع",
+    "Filter": "فلتر",
+    "Results": "نتائج"
+
 
 }
