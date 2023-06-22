@@ -11,7 +11,6 @@ export const getInstructors = createAsyncThunk(
 );
 export const getTypes = createAsyncThunk("meditition/getTypes", async () => {
   const res = await axios.get("http://localhost:3002/types");
-  
   const data = res.data;
   return data;
 });
