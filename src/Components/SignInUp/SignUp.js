@@ -14,23 +14,45 @@ import "./signInUp.css";
 // react hook form
 import { useForm } from "react-hook-form";
 import { Col, Row } from "react-bootstrap";
-
+import { useState } from "react";
+import { useEffect } from "react";
 
 function SignUp() {
+  const [error, setError] = useState("");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     trigger,
-  } = useForm()
-  const { signup, t } = useAuth();
-  const navigate = useNavigate()
+  } = useForm();
+  const { login, googleSignIn, facebookSignIn, currentUser, t, signup } =
+    useAuth();
+  const navigate = useNavigate();
   const onSubmit = async (data) => {
     console.log(data);
     const { firstName, lastName, mail, phoneNumber, gender, password } = data;
     await signup(firstName, lastName, phoneNumber, gender, mail, password);
-    navigate('/settings');
-  }
+  };
+  const handleGoogleSignIn = () => {
+    try {
+      googleSignIn();
+    } catch (error) {
+      setError("unable to sign with Google.");
+    }
+  };
+  const handleFacebookSignIn = () => {
+    try {
+      facebookSignIn();
+    } catch (error) {
+      setError("unable to sign with Facebook.");
+    }
+  };
+  useEffect(() => {
+    if (currentUser != null) {
+      navigate("/settings");
+    }
+  });
 
   return (
     <div className="sec_container_signup d-flex justify-content-center align-items-center">
@@ -40,8 +62,8 @@ function SignUp() {
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
         >
-          <form onSubmit={ handleSubmit(onSubmit) }>
-            <h2 className="text-start mb-4">{ t("Register") }</h2>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <h2 className="text-start mb-4">{t("Register")}</h2>
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
@@ -49,23 +71,24 @@ function SignUp() {
             >
               <input
                 type="text"
-                placeholder={ t("First name") }
+                placeholder={t("First name")}
                 className="form-control form-control-login"
-                { ...register("firstName", {
+                {...register("firstName", {
                   required: t("required"),
                   pattern: {
-                    value: /^[a-zA-Z]{3,}$/ig,
+                    value: /^[a-zA-Z]{3,}$/gi,
                     message: t("name must be at least 3 char."),
-                  }
-                }
-                ) }
-                onKeyUp={ () => {
+                  },
+                })}
+                onKeyUp={() => {
                   trigger("firstName");
-                } }
+                }}
               />
               <FaUser className="icon-login" />
             </div>
-            { errors.firstName && <p className="text-danger">{ errors.firstName?.message }</p> }
+            {errors.firstName && (
+              <p className="text-danger">{errors.firstName?.message}</p>
+            )}
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
@@ -73,23 +96,24 @@ function SignUp() {
             >
               <input
                 type="text"
-                placeholder={ t("Last name") }
+                placeholder={t("Last name")}
                 className="form-control form-control-login"
-                { ...register("lastName", {
+                {...register("lastName", {
                   required: t("required"),
                   pattern: {
-                    value: /^[a-zA-Z]{3,}$/ig,
+                    value: /^[a-zA-Z]{3,}$/gi,
                     message: t("name must be at least 3 char."),
-                  }
-                }
-                ) }
-                onKeyUp={ () => {
+                  },
+                })}
+                onKeyUp={() => {
                   trigger("lastName");
-                } }
+                }}
               />
               <FaUser className="icon-login" />
             </div>
-            { errors.lastName && <p className="text-danger">{ errors.lastName?.message }</p> }
+            {errors.lastName && (
+              <p className="text-danger">{errors.lastName?.message}</p>
+            )}
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
@@ -97,23 +121,25 @@ function SignUp() {
             >
               <input
                 type="email"
-                placeholder={ t("E-mail") }
+                placeholder={t("E-mail")}
                 className="form-control form-control-login"
-                { ...register("mail", {
+                {...register("mail", {
                   required: t("required"),
                   pattern: {
-                    value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig,
+                    value:
+                      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gi,
                     message: t("invalid email"),
-                  }
-                }
-                ) }
-                onKeyUp={ () => {
+                  },
+                })}
+                onKeyUp={() => {
                   trigger("mail");
-                } }
+                }}
               />
               <MdEmail className="icon-login" />
             </div>
-            { errors.mail && <p className="text-danger">{ errors.mail?.message }</p> }
+            {errors.mail && (
+              <p className="text-danger">{errors.mail?.message}</p>
+            )}
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
@@ -121,37 +147,39 @@ function SignUp() {
             >
               <input
                 type="tel"
-                placeholder={ t("Phone number") }
+                placeholder={t("Phone number")}
                 className="form-control form-control-login"
-                { ...register("phoneNumber", {
+                {...register("phoneNumber", {
                   required: t("required"),
                   pattern: {
-                    value: /^(010|011|012|015)\d{8}$/ig,
+                    value: /^(010|011|012|015)\d{8}$/gi,
                     message: t("invalid phone number"),
-                  }
-                }
-                ) }
-                onKeyUp={ () => {
+                  },
+                })}
+                onKeyUp={() => {
                   trigger("phoneNumber");
-                } }
+                }}
               />
               <FaPhoneAlt className="icon-login" />
             </div>
-            { errors.phoneNumber && <p className="text-danger">{ errors.phoneNumber?.message }</p> }
+            {errors.phoneNumber && (
+              <p className="text-danger">{errors.phoneNumber?.message}</p>
+            )}
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
             >
-              <select className="form-select form-select-login" id="gender"
-                { ...register("gender") }
-
+              <select
+                className="form-select form-select-login"
+                id="gender"
+                {...register("gender")}
               >
                 <option disabled defaultValue hidden>
-                  { t("Gender") }
+                  {t("Gender")}
                 </option>
-                <option value="male">{ t("Male") }</option>
-                <option value="female">{ t("Female") }</option>
+                <option value="male">{t("Male")}</option>
+                <option value="female">{t("Female")}</option>
               </select>
               <FaUsers className="icon-login" />
             </div>
@@ -162,47 +190,51 @@ function SignUp() {
             >
               <input
                 type="password"
-                placeholder={ t("Password") }
+                placeholder={t("Password")}
                 className="form-control form-control-login"
-                { ...register("password", {
+                {...register("password", {
                   required: t("required"),
                   pattern: {
-                    value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/ig,
+                    value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/gi,
                     message: t("at least 8 chars and numbers"),
-                  }
-                }
-                ) }
-                onKeyUp={ () => {
+                  },
+                })}
+                onKeyUp={() => {
                   trigger("password");
-                } }
+                }}
               />
               <FaLock className="icon-login" />
             </div>
-            { errors.password && <p className="text-danger">{ errors.password?.message }</p> }
+            {errors.password && (
+              <p className="text-danger">{errors.password?.message}</p>
+            )}
             <div className="d-grid mt-4">
-              <button className="btn btn-primary">{ t("Sign Up") }</button>
+              <button className="btn btn-primary">{t("Sign Up")}</button>
             </div>
             <p
               className="mt-2 paragraph-size"
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
             >
-              { t("Already have an account?") }
+              {t("Already have an account?")}
               <Link to="/login" className="text-decoration-none">
-                { t("Login Now!") }
+                {t("Login Now!")}
               </Link>
             </p>
             <Row className="text-center">
-              <Col xs={ 12 }>
+              <Col xs={12}>
                 <p className="mt-2 paragraph-size d-inline ">
                   Try To Sign Up With &nbsp;
                 </p>
                 <FcGoogle
                   className="social-icons"
-                  onClick={ () => console.log("hhh") }
+                  onClick={handleGoogleSignIn}
                 />
                 <p className="mt-2 paragraph-size d-inline ">Or</p>
-                <BsFacebook className="social-icons" />
+                <BsFacebook
+                  className="social-icons"
+                  onClick={handleFacebookSignIn}
+                />
               </Col>
             </Row>
           </form>
@@ -212,7 +244,12 @@ function SignUp() {
           data-aos="flip-up"
           data-aos-anchor-placement="top-bottom"
         >
-          <img src={ signUpImg } alt="signUpImg" className="login-img" loading="lazy" />
+          <img
+            src={signUpImg}
+            alt="signUpImg"
+            className="login-img"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
