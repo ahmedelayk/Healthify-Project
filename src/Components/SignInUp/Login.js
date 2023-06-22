@@ -20,7 +20,7 @@ function Login() {
   } = useForm()
 
   const [error, setError] = useState("")
-  const { login } = useAuth();
+  const { login, t } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
@@ -51,7 +51,7 @@ function Login() {
           data-aos-anchor-placement="top-bottom"
         >
           <form onSubmit={ handleSubmit(onSubmit) }>
-            <h2 className="text-start mb-4">Sign In</h2>
+            <h2 className="text-start mb-4">{t("Sign In")}</h2>
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
@@ -59,13 +59,13 @@ function Login() {
             >
               <input
                 type="email"
-                placeholder="Enter Email"
+                placeholder={t("Enter Email")}
                 className="form-control form-control-login"
                 { ...register("mail", {
-                  required: "Enter your Email",
+                  required: t("Enter your Email"),
                   pattern: {
                     value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig,
-                    message: "invalid email",
+                    message: t("invalid email"),
                   }
                 }
                 ) }
@@ -84,13 +84,13 @@ function Login() {
             >
               <input
                 type="password"
-                placeholder="Enter Password"
+                placeholder={t("Enter Password")}
                 className="form-control form-control-login"
                 { ...register("password", {
-                  required: "Enter your password",
+                  required: t("Enter your password"),
                   pattern: {
                     value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/ig,
-                    message: "check your password",
+                    message: t("check your password"),
                   }
                 }
                 ) }
@@ -105,7 +105,7 @@ function Login() {
             { error && <p className="text-danger">{ error}</p> }
             <p className="text-start mt-2 paragraph-size">
               <a href="#" className="text-decoration-none ">
-                Forgot Password?
+                {t("Forgot Password?")}
               </a>
             </p>
             <div
@@ -120,7 +120,7 @@ function Login() {
                 { ...register("remember") }
               />
               <label htmlFor="check" className="custom-input-label ms-2">
-                Remember me
+                {t("Remember me")}
               </label>
             </div>
             <div
@@ -128,12 +128,12 @@ function Login() {
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
             >
-              <button className="btn btn-primary">Sign in</button>
+              <button className="btn btn-primary">{t("Sign in")}</button>
             </div>
             <p className="mt-2 paragraph-size ">
-              Don't have an account?&nbsp;
+              {t("Don't have an account?")}&nbsp;
               <Link to="/signup" className="text-decoration-none">
-                Register Now!
+                {t("Register Now!")}
               </Link>
             </p>
           </form>

@@ -25,6 +25,10 @@
     "Embrace the Power of Minimalism": "Embrace the Power of Minimalism",
     "Water is essential for numerous bodily functions, from regulating body temperature to supporting digestion and nutrient absorption. It helps flush out toxins, improves cognitive function, and boosts energy levels":"Water is essential for numerous bodily functions, from regulating body temperature to supporting digestion and nutrient absorption. It helps flush out toxins, improves cognitive function, and boosts energy levels",
 
+    "Nutrit":"------------------------------------------------------------------",
+    "Power of meal planning and tracking. By taking control of your nutrition, you can fuel your body with balanced, nourishing meals that support your goals and optimize your well-being.": "Power of meal planning and tracking. By taking control of your nutrition, you can fuel your body with balanced, nourishing meals that support your goals and optimize your well-being.",
+    "Track your activities and what you eat with the help of our food, exercise and water trackers to maintain a balanced everyday life.": "Track your activities and what you eat with the help of our food, exercise and water trackers to maintain a balanced everyday life.",
+
 
     "med":"------------------------------------------------------------------",
     "Meditation": "Meditation",
@@ -79,8 +83,68 @@
     "set last Name": "set last Name",
     "set new email": "set new email",
     "set new phone number": "set new phone number",
-    "set new password": "set new password"
+    "set new password": "set new password",
+    
+    "Bmi-page":"------------------------------------------------------------------",
+    "BMI Calculation": "BMI Calculation",
+    
+    "notification-page":"------------------------------------------------------------------",
+    "Reminders to exercise": "Reminders to exercise",
+    "Daily meditation": "Daily meditation",
+    "Updates on fitness goals": "Updates on fitness goals",
+    "Personalized recommendations": "Personalized recommendations",
+    "BMI weekly test notifications": "BMI weekly test notifications",
+    "Cancel": "Cancel",
 
+    "help-page":"------------------------------------------------------------------",
+    "Arabic": "Arabic",
+    "English": "English",
+    
+    "Select Country": "Select Country",
+    "Select Language": "Select Language",
+    
+    "How do I get started with a fitness routine?": "How do I get started with a fitness routine?",
+    "What are some effective meditation techniques for beginners?": "What are some effective meditation techniques for beginners?",
+    "How can I set realistic fitness goals for myself?": "How can I set realistic fitness goals for myself?",
+    "What are some healthy and balanced meal plans for weight loss?": "What are some healthy and balanced meal plans for weight loss?",
+    "How do I stay motivated to exercise regularly?": "How do I stay motivated to exercise regularly?",
+    "What are the benefits of incorporating mindfulness into my daily routine?": "What are the benefits of incorporating mindfulness into my daily routine?",
+    "How can I prevent injuries during workouts?": "How can I prevent injuries during workouts?",
+    "What are some recommended meditation apps or resources?": "What are some recommended meditation apps or resources?",
+    "How can I improve my flexibility and mobility?": "How can I improve my flexibility and mobility?",
+    "What are some nutritious and convenient snack options for pre and post-workout?": "What are some nutritious and convenient snack options for pre and post-workout?",
+
+
+    "login-page":"------------------------------------------------------------------",
+    "Sign In": "Sign In",
+    "Enter Email": "Enter Email",
+    "Enter your Email": "Enter your Email",
+    "invalid email": "invalid email",
+    "Enter Password": "Enter Password",
+    "Enter your password": "Enter your password",
+    "check your password": "check your password",
+    "Forgot Password?": "Forgot Password?",
+    "Remember me": "Remember me",
+    "Don't have an account?": "Don't have an account?",
+    "Register Now!": "Register Now!",
+    "Sign in": "Sign in",
+    
+    "signup-page":"------------------------------------------------------------------",
+    "Register": "Register",
+    "First name": "First name",
+    "required": "required",
+    "name must be at least 3 char.": "name must be at least 3 char.",
+    "Last name": "Last name",
+    "Phone number": "Phone number",
+    "invalid phone number": "invalid phone number",
+    "gender": "gender",
+    "Male": "Male",
+    "Female": "Female",
+    "Password": "Password",
+    "at least 8 chars and numbers": "at least 8 chars and numbers",
+    "Sign Up": "Sign Up",
+    "Already have an account?": "Already have an account?",
+    "Login Now!": "Login Now!"
 }
 
 

@@ -3,8 +3,10 @@ import { Col, Row } from "react-bootstrap";
 import { BsCalculatorFill } from "react-icons/bs";
 import { BMICalculator } from '../../Nutration/BMICalculator'
 import { BMIResult } from '../../Nutration/BMIResult'
+import { useAuth } from "../../../Context/AuthContext";
 
 const BMI = () => {
+  const {t} = useAuth();
   return (
     <div className="p-lg-3 p-xs-0" data-aos="zoom-in-left">
       <Row>
@@ -12,7 +14,7 @@ const BMI = () => {
           <BsCalculatorFill className=""/>
         </Col>
         <Col xs={9} className=" pt-1">
-          <h6>BMI Calculation</h6>
+          <h6>{t("BMI Calculation")}</h6>
         </Col>
       </Row>
       <Row >
