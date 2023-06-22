@@ -12,6 +12,7 @@ import DropDown from "./DropDown";
 import { useEffect, useState } from "react";
 
 function Navbarr() {
+
   const { currentUser, currentUserData } = useAuth();
   const [username, setUsername] = useState("Welcome...");
   useEffect(() => {
@@ -62,6 +63,7 @@ function Navbarr() {
       </Container>
     </Navbar>
   );
+
 }
 
 export default Navbarr;

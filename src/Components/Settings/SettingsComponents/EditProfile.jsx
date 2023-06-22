@@ -11,7 +11,7 @@ import { db } from "../../../firebase";
 import { useAuth } from "../../../Context/AuthContext";
 
 const EditProfile = () => {
-    const { currentUserData } = useAuth()
+    const { currentUserData, t } = useAuth();
     const {
         register,
         handleSubmit,
@@ -19,19 +19,19 @@ const EditProfile = () => {
         trigger,
     } = useForm({
         defaultValues: {
-            firstName: currentUserData.firstName,
-            lastName: currentUserData.lastName,
-            mail: currentUserData.email,
-            phoneNumber: currentUserData.phoneNumber,
-            password: currentUserData.password
+            firstName: currentUserData?.firstName,
+            lastName: currentUserData?.lastName,
+            mail: currentUserData?.email,
+            phoneNumber: currentUserData?.phoneNumber,
+            password: currentUserData?.password
         },
     })
     const onSubmit = async (data) => {
         console.log(data);
         const { firstName, lastName, mail, phoneNumber, password } = data;
         const newData = { firstName, lastName, mail, phoneNumber, password }
-        const userDoc = doc(db, "users", currentUserData.userId)
-        updateDoc(userDoc, newData)
+        const userDoc = doc(db, "users", currentUserData?.userId)
+        await updateDoc(userDoc, newData)
     }
 
     return (
@@ -41,7 +41,7 @@ const EditProfile = () => {
                     <BsFillPencilFill />
                 </Col>
                 <Col xs={ 9 } className=" pt-1">
-                    <h6>Edit Profile</h6>
+                    <h6>{t("Edit Profile")}</h6>
                 </Col>
                 <Col lg={ 2 } xs={ 1 }>
                     <ProfileImage />
@@ -51,8 +51,8 @@ const EditProfile = () => {
                 <Row className="mb-3">
                     <Col md={ 6 }>
                         <Form.Group>
-                            <Form.Label>First Name</Form.Label>
-                            <Form.Control type="text" placeholder="set first Name"
+                            <Form.Label>{t("First Name")}</Form.Label>
+                            <Form.Control type="text" placeholder={t("set first Name")}
                                 { ...register("firstName", {
                                     required: true,
                                     pattern: {
@@ -70,8 +70,8 @@ const EditProfile = () => {
                     </Col>
                     <Col md={ 6 }>
                         <Form.Group>
-                            <Form.Label>Last Name</Form.Label>
-                            <Form.Control type="text" placeholder="set last Name"
+                            <Form.Label>{t("Last Name")}</Form.Label>
+                            <Form.Control type="text" placeholder={t("set last Name")}
                                 { ...register("lastName", {
                                     required: true,
                                     pattern: {
@@ -90,9 +90,8 @@ const EditProfile = () => {
                 </Row>
 
                 <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    {/* <Form.Control type="email" placeholder="Email" value = {currentUser?currentUser.email:''}/> */ }
-                    <Form.Control type="email" placeholder="set new email"
+                    <Form.Label>{t("Email")}</Form.Label>
+                    <Form.Control type="email" placeholder={t("set new email")}
                         { ...register("mail", {
                             required: true,
                             pattern: {
@@ -109,8 +108,8 @@ const EditProfile = () => {
                 { errors.mail && <p className="text-danger">{ errors.mail?.message }</p> }
 
                 <Form.Group>
-                    <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="text" placeholder="set new phone number"
+                    <Form.Label>{t("Phone Number")}</Form.Label>
+                    <Form.Control type="text" placeholder={t("set new phone number")}
                         { ...register("phoneNumber", {
                             required: true,
                             pattern: {
@@ -128,8 +127,8 @@ const EditProfile = () => {
                 { errors.phoneNumber && <p className="text-danger">{ errors.phoneNumber?.message }</p> }
 
                 <Form.Group>
-                    <Form.Label>Change Your Password</Form.Label>
-                    <Form.Control type="password" placeholder="set new password"
+                    <Form.Label>{t("Change Your Password")}</Form.Label>
+                    <Form.Control type="password" placeholder={t("set new password")}
                         { ...register("password", {
                             required: true,
                             pattern: {
@@ -147,7 +146,7 @@ const EditProfile = () => {
 
                 <Row className="mt-5 text-center d-flex justify-content-center">
                     <Col xs={ 4 } md={ 3 } lg={ 2 }>
-                        <Form.Control type="submit" variant="primary" className="border bg-second-color text-white" value="Save" />
+                        <Form.Control type="submit" variant="primary" className="border bg-second-color text-white" value={t("Save")} />
                     </Col>
                 </Row>
             </Form>

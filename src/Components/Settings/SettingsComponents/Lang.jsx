@@ -1,6 +1,7 @@
-import React from "react";
+import { useAuth } from "../../../Context/AuthContext";
 
 const Lang = () => {
+  const {t} = useAuth();
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }} data-aos="zoom-in-left">
       <select
@@ -11,12 +12,12 @@ const Lang = () => {
         <option
           data-content='<span className="flag-icon flag-icon-us"></span> English'
         >
-          Arabic
+          {t("Arabic")}
         </option>
         <option
           data-content='<span className="flag-icon flag-icon-mx"></span> Español'
         >
-          English
+          {t("English")}
         </option>
       </select>
     </div>
