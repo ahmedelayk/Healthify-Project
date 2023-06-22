@@ -20,7 +20,7 @@ function Navbarr() {
         `${currentUserData?.firstName} ${currentUserData?.lastName}`
       )
       : setUsername(currentUser?.displayName);
-  },[]);
+  });
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
@@ -47,7 +47,7 @@ function Navbarr() {
           {
             currentUser ? (
               <div className='d-flex justify-content-center align-items-center gap-2'>
-                <h6 className=" text-capitalize mb-0  text-main-color">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
+                <h6 className=" text-capitalize mb-0  text-main-color">{username}</h6>
                 <DropDown />
                 {
                   i18n.language === "en" && (
