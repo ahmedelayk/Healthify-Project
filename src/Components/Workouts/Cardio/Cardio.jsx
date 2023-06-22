@@ -17,8 +17,10 @@ import MyPagination from "../CommonComponents/Pagination";
 
 // Data
 import { getAllWorkouts } from "../../../redux/workoutsSlice";
+import { useAuth } from "../../../Context/AuthContext";
 
 const Cardio = () => {
+  const {t} = useAuth();
   const todoPerPage = 6;
   const [page, setPage] = useState(1);
   const [indexOfFirstTodo, setIndexOfFirstTodo] = useState(0);
@@ -37,10 +39,10 @@ const Cardio = () => {
     <div>
       <VideoSection source={cardio} header="Cardio Workout" description="Fall in love with cardio" />
       <Container className="section-padding" data-aos="zoom-in-left">
-        <h1 className="header1-size text-center">Cardio of the day</h1>
+        <h1 className="header1-size text-center">{t("Cardio of the day")}</h1>
         <Row className="my-5" data-aos="zoom-in-left">
           {isLoading ? (
-            <div>Loading...</div>
+            <div>{t("Loading...")}</div>
           ) : error ? (
             <div>{error}</div>
           ) : cardios ? (

@@ -13,9 +13,11 @@ import {
 } from "../../redux/medititionSlice";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
-
+// Context
+import { useAuth } from "../../Context/AuthContext";
 
 const Meditation = () => {
+  const { t } = useAuth()
   const [filterdInst, setFilterdInst] = useState([]);
   const { instructors, types } = useSelector((state) => state.meditition);
   // let filterdInst;
@@ -43,7 +45,7 @@ const Meditation = () => {
   return (
     <>
       <div className="filter-meditation p-5">
-        <h1 className="header1-size mb-3">Filter</h1>
+        <h1 className="header1-size mb-3">{t("Filter")}</h1>
         <Form
           className="d-flex flex-row flex-wrap flex-md-nowrap"
           data-aos="fade-in"
@@ -51,29 +53,29 @@ const Meditation = () => {
           <Form.Select
             aria-label="Default select example"
             className="meditaion-select mx-md-2 mb-2 mb-md-0"
-            onChange={onTypeChanged}
+            onChange={ onTypeChanged }
           >
-            <option hidden>Meditation Type</option>
-            {types?.map((type) => (
-              <option value={type.name} key={uuid()}>
-                {type.name}
+            <option hidden>{t("Meditation Type")}</option>
+            { types?.map((type) => (
+              <option value={ type.name } key={ uuid() }>
+                { type.name }
               </option>
-            ))}
+            )) }
           </Form.Select>
           <Form.Select
             aria-label="Default select example"
             className="meditaion-select mx-md-2 mb-2 mb-md-0"
-            onChange={onInstructorChanged}
+            onChange={ onInstructorChanged }
           >
             <option hidden >
-              Instructor
+              {t("Instructor")}
             </option>
-            <option value={"All"}>All</option>
-            {instructors?.map((instructor) => (
-              <option value={instructor.name} key={uuid()}>
-                {instructor.name}
+            <option value="All">{t("All")}</option>
+            { instructors?.map((instructor) => (
+              <option value={ instructor.name } key={ uuid() }>
+                { instructor.name }
               </option>
-            ))}
+            )) }
           </Form.Select>
         </Form>
       </div>
@@ -82,32 +84,32 @@ const Meditation = () => {
           <h2 className="header2-size result-header mb-4">
             <span className="results-number">
               (
-              {filterdInst?.length &&
-                filterdInst.map((item) => item.articles?.length)}
-              ){"    "}
+              { filterdInst?.length &&
+                filterdInst.map((item) => item.articles?.length) }
+              )
             </span>
-            Results
+            {t("Results")}
           </h2>
           <Row className="Results">
-            {filterdInst?.length &&
+            { filterdInst?.length &&
               filterdInst.map((item) =>
                 item.articles.map((i) => (
-                  <Col xs={12} md={6} lg={4} data-aos="flip-right" key={uuid()}>
+                  <Col xs={ 12 } md={ 6 } lg={ 4 } data-aos="flip-right" key={ uuid() }>
                     <Link
-                      to={`/medatation/details/${i.id}`}
+                      to={ `/medatation/details/${i.id}` }
                       className="text-decoration-none"
                     >
                       <MeditationCard
-                        id={i.id}
-                        title={i.title}
-                        description={i.description}
-                        poster={i.poster}
-                        author={i.author}
+                        id={ i.id }
+                        title={ i.title }
+                        description={ i.description }
+                        poster={ i.poster }
+                        author={ i.author }
                       />
                     </Link>
                   </Col>
                 ))
-              )}
+              ) }
           </Row>
         </div>
       </Container>

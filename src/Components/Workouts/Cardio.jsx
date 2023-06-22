@@ -17,8 +17,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Data
 import { getAllWorkouts } from "../../redux/workoutsSlice";
+// Context
+import { useAuth } from "../../Context/AuthContext";
 
 const Cardio = () => {
+  const {t} = useAuth();
   const { cardios, isLoading, error } = useSelector((state) => state.workouts);
   const dispatch = useDispatch();
 
@@ -29,7 +32,7 @@ const Cardio = () => {
   return (
     <div className="section-padding" data-aos="zoom-in-left">
       <div className="cardio overflow-hidden" data-aos="flip-left">
-        <h1 className="header1-size ps-4 mb-3">Cardio</h1>
+        <h1 className="header1-size ps-4 mb-3">{t("Cardio")}</h1>
         <Row className="py-5 pe-5 ps-5 ps-md-0 bg-white">
           <Col xs={12} md={8} lg={8}>
             <Swiper
@@ -54,7 +57,7 @@ const Cardio = () => {
               }}
             >
               {isLoading ? (
-                <div>Loading...</div>
+                <div>{t("Loading...")}</div>
               ) : error ? (
                 <div>{error}</div>
               ) : cardios ? (
@@ -81,9 +84,9 @@ const Cardio = () => {
             </Swiper>
           </Col>
           <Col className="mb-3" xs={12} md={4} lg={4} data-aos="zoom-in-left">
-            <h1>Cardio Categories</h1>
+            <h1>{t("Cardio Categories")}</h1>
             <NavLink to="cardio">
-              <Button variant="primary">View all</Button>
+              <Button variant="primary">{t("View all")}</Button>
             </NavLink>
           </Col>
         </Row>

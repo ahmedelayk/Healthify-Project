@@ -4,13 +4,14 @@ import axios from "axios";
 export const getInstructors = createAsyncThunk(
   "meditition/getInstructors",
   async () => {
-    const res = await axios.get("http://localhost:3002/instructors/");
+    const res = await axios.get("http://localhost:3002/instructors");
     const data = res.data;
     return data;
   }
 );
 export const getTypes = createAsyncThunk("meditition/getTypes", async () => {
   const res = await axios.get("http://localhost:3002/types");
+  
   const data = res.data;
   return data;
 });
