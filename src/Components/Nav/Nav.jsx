@@ -9,7 +9,7 @@ import Logo from "../assets/images/logo.webp";
 import "./nav.css";
 // Custom Components
 import DropDown from "./DropDown";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 function Navbarr() {
   const { currentUser, currentUserData, t, i18n } = useAuth();
@@ -74,7 +74,6 @@ function Navbarr() {
       </Container>
     </Navbar>
   );
-
 }
 
 export default Navbarr;

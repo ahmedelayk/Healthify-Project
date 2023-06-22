@@ -2,9 +2,9 @@
 import { Link, useNavigate } from "react-router-dom";
 // icons
 import { FaLock, FaUser, FaPhoneAlt, FaUsers } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
 // context
 import { useAuth } from "../../Context/AuthContext";
 // image
@@ -14,6 +14,7 @@ import "./signInUp.css";
 // react hook form
 import { useForm } from "react-hook-form";
 import { Col, Row } from "react-bootstrap";
+
 
 function SignUp() {
   const {

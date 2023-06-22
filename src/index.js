@@ -20,11 +20,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <NutritionProvider>
     <AuthProvider>
+      <NutritionProvider>
         <App />
+      </NutritionProvider>
     </AuthProvider>
-    </NutritionProvider>
   </BrowserRouter>
   // </React.StrictMode>
 );

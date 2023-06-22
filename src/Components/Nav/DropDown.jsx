@@ -1,17 +1,10 @@
 // Hooks
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../Context/AuthContext";
 // icons
-import {
-  AiOutlineDown,
-  AiOutlineUser,
-  AiFillSetting,
-  AiOutlineLogout,
-  AiOutlineRight,
-  AiFillProfile,
-} from "react-icons/ai";
+import { AiOutlineDown, AiOutlineUser, AiFillSetting, AiOutlineLogout, AiOutlineRight, AiFillProfile } from "react-icons/ai";
 // style
-import "./nav.css";
+import './nav.css'
 // images
 // import avatar from "../assets/images/avatar.webp";
 // routing
@@ -57,7 +50,6 @@ const DropDown = () => {
                                 <img src={ userImage } alt="usr" className="avatar-img" loading="lazy" />
                                 <h6 className="dropdown-text">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
                             </div>
-
                         </Link>
                     </li>
                     <li className="border-top p-2 dropdown-list-item">
