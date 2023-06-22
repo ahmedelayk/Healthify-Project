@@ -12,23 +12,22 @@ import DropDown from "./DropDown";
 import { useEffect, useState } from "react";
 
 function Navbarr() {
-
-  const { currentUser, currentUserData } = useAuth();
+  const { currentUser, currentUserData, t, i18n } = useAuth();
   const [username, setUsername] = useState("Welcome...");
   useEffect(() => {
     currentUserData?.firstName != null
       ? setUsername(
-          `${currentUserData?.firstName} ${currentUserData?.lastName}`
-        )
+        `${currentUserData?.firstName} ${currentUserData?.lastName}`
+      )
       : setUsername(currentUser?.displayName);
-  });
+  },[]);
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
         <NavLink to="/" className="col-3 navbar-brand">
           <div className="d-flex align-items-center gap-1">
             <h2 className="logo-text mt-1">Healthify</h2>
-            <img src={Logo} alt="logo" className="logo-img" loading="lazy" />
+            <img src={ Logo } alt="logo" className="logo-img" loading="lazy" />
           </div>
         </NavLink>
 
@@ -36,89 +35,45 @@ function Navbarr() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
             <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
-              Nutrition
+              { t("Nutrition") }
             </NavLink>
             <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
-              Meditation
+              { t("Meditation") }
             </NavLink>
             <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
-              Workouts
+              { t("Workouts") }
             </NavLink>
           </Nav>
-          {currentUser ? (
-            <div className="d-flex justify-content-center align-items-center gap-2">
-              <h6 className=" text-capitalize mb-0  text-main-color">
-                {username}
-              </h6>
-              <DropDown />
-            </div>
-          ) : (
-            <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
+          {
+            currentUser ? (
+              <div className='d-flex justify-content-center align-items-center gap-2'>
+                <h6 className=" text-capitalize mb-0  text-main-color">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
+                <DropDown />
+                {
+                  i18n.language === "en" && (
+                    <>
+                      <input type="button" value="عربي" onClick={ () => {
+                        i18n.changeLanguage("ar");
+                      } } />
+                    </>
+                  )
+                }
+                {
+                  i18n.language === "ar" && (<input type="button" value="English" onClick={ () => {
+                    i18n.changeLanguage("en");
+                  } } />)
+                }
+              </div>
+            ) : <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
               <Button variant="primary" className="login-btn nav-collapse">
-                Login
+                { t("Login") }
               </Button>
             </NavLink>
-          )}
+          }
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-
-    const { currentUser, currentUserData, t, i18n } = useAuth();
-
-    return (
-        <Navbar expand="lg" className="border-bottom navbar">
-            <Container>
-                <NavLink to="/" className="col-3 navbar-brand">
-                    <div className="d-flex align-items-center gap-1">
-                        <h2 className="logo-text mt-1">Healthify</h2>
-                        <img src={ Logo } alt="logo" className="logo-img" loading="lazy" />
-                    </div>
-                </NavLink>
-
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
-                        <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
-                            { t("Nutrition") }
-                        </NavLink>
-                        <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
-                            { t("Meditation") }
-                        </NavLink>
-                        <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
-                            { t("Workouts") }
-                        </NavLink>
-                    </Nav>
-                    {
-                        currentUser ? (
-                            <div className='d-flex justify-content-center align-items-center gap-2'>
-                                <h6 className=" text-capitalize mb-0  text-main-color">{ currentUserData?.firstName } { currentUserData?.lastName }</h6>
-                                <DropDown />
-                                {
-                                    i18n.language === "en" && (
-                                        <>
-                                            <input type="button" value="عربي" onClick={ () => {
-                                                i18n.changeLanguage("ar");
-                                            } } />
-                                        </>
-                                    )
-                                }
-                                {
-                                    i18n.language === "ar" && (<input type="button" value="English" onClick={ () => {
-                                        i18n.changeLanguage("en");
-                                    } } />)
-                                }
-                            </div>
-                        ) : <NavLink to="/login" className="mx-lg-0 mx-md-0 mx-2">
-                            <Button variant="primary" className="login-btn nav-collapse">
-                                { t("Login") }
-                            </Button>
-                        </NavLink>
-                    }
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    );
 
 }
 

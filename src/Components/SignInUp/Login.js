@@ -23,8 +23,7 @@ function Login() {
     trigger,
   } = useForm();
 
-  const [error, setError] = useState("");
-  const { login, googleSignIn, facebookSignIn, currentUser, login, t } = useAuth();
+  const { login, googleSignIn, facebookSignIn, currentUser, t } = useAuth();
   const [error, setError] = useState("")
   const navigate = useNavigate();
 
