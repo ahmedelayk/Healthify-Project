@@ -2,6 +2,8 @@
 import { Link, useNavigate } from "react-router-dom";
 // icons
 import { FaLock, FaUser, FaPhoneAlt, FaUsers } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { BsFacebook } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 // context
 import { useAuth } from "../../Context/AuthContext";
@@ -11,6 +13,8 @@ import signUpImg from "../assets/images/signUpImg.webp";
 import "./signInUp.css";
 // react hook form
 import { useForm } from "react-hook-form";
+import { Col, Row } from "react-bootstrap";
+import { useEffect } from "react";
 
 function SignUp() {
     const {
@@ -198,8 +202,96 @@ function SignUp() {
                     <img src={ signUpImg } alt="signUpImg" className="login-img" loading="lazy" />
                 </div>
             </div>
+            {errors.phoneNumber && (
+              <p className="text-danger">{errors.phoneNumber?.message}</p>
+            )}
+            <div
+              className="mb-2 inputDiv"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+            >
+              <select
+                className="form-select form-select-login"
+                id="gender"
+                {...register("gender")}
+              >
+                <option disabled defaultValue hidden>
+                  Gender
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <FaUsers className="icon-login" />
+            </div>
+            <div
+              className="mb-2 inputDiv"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+            >
+              <input
+                type="password"
+                placeholder="Password"
+                className="form-control form-control-login"
+                {...register("password", {
+                  required: "required",
+                  pattern: {
+                    value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/gi,
+                    message: "at least 8 chars and numbers",
+                  },
+                })}
+                onKeyUp={() => {
+                  trigger("password");
+                }}
+              />
+              <FaLock className="icon-login" />
+            </div>
+            {errors.password && (
+              <p className="text-danger">{errors.password?.message}</p>
+            )}
+            <div className="d-grid mt-4">
+              <button className="btn btn-primary">Sign Up</button>
+            </div>
+            <p
+              className="mt-2 paragraph-size"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+            >
+              Already have an account?
+              <Link to="/login" className="text-decoration-none">
+                Login Now!
+              </Link>
+            </p>
+
+            <Row className="text-center">
+              <Col xs={12}>
+                <p className="mt-2 paragraph-size d-inline ">
+                  Try To Sign Up With &nbsp;
+                </p>
+                <FcGoogle
+                  className="social-icons"
+                  onClick={() => console.log("hhh")}
+                />
+                <p className="mt-2 paragraph-size d-inline ">Or</p>
+                <BsFacebook className="social-icons" />
+              </Col>
+            </Row>
+          </form>
         </div>
-    );
+        <div
+          className="img_container"
+          data-aos="flip-up"
+          data-aos-anchor-placement="top-bottom"
+        >
+          <img
+            src={signUpImg}
+            alt="signUpImg"
+            className="login-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default SignUp;
