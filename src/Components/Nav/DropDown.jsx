@@ -11,7 +11,7 @@ import './nav.css'
 import { Link, useNavigate } from "react-router-dom";
 
 const DropDown = () => {
-    const { currentUserData, logout, userImage } = useAuth();
+    const { currentUserData, logout, userImage, t } = useAuth();
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const handleLogout = async (e) => {
@@ -49,7 +49,7 @@ const DropDown = () => {
                             <div className="d-flex justify-content-between align-items-center">
                                 <div className=" d-flex gap-2 align-items-center">
                                     <AiFillProfile className="dropdown-icon" />
-                                    <h6 className="dropdown-text">Profile</h6>
+                                    <h6 className="dropdown-text">{t("Profile")}</h6>
                                 </div>
                                 <div>
                                     <AiOutlineRight />
@@ -62,7 +62,7 @@ const DropDown = () => {
                             <div className="d-flex justify-content-between align-items-center">
                                 <div className=" d-flex gap-2 align-items-center">
                                     <AiFillSetting className="dropdown-icon" />
-                                    <h6 className="dropdown-text">Settings</h6>
+                                    <h6 className="dropdown-text">{t("Settings")}</h6>
                                 </div>
                                 <div>
                                     <AiOutlineRight />
@@ -75,7 +75,7 @@ const DropDown = () => {
                             <div className="d-flex justify-content-between align-items-center">
                                 <div className=" d-flex gap-2 align-items-center">
                                     <AiOutlineLogout className="dropdown-icon" />
-                                    <h6 className="dropdown-text">Logout</h6>
+                                    <h6 className="dropdown-text">{t("Logout")}</h6>
                                 </div>
                                 <div>
                                     <AiOutlineRight />

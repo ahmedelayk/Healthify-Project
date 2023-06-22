@@ -19,7 +19,7 @@ function SignUp() {
         formState: { errors },
         trigger,
     } = useForm()
-    const { signup } = useAuth();
+    const { signup, t } = useAuth();
     const navigate = useNavigate()
     const onSubmit = async (data) => {
         console.log(data);
@@ -37,7 +37,7 @@ function SignUp() {
                     data-aos-anchor-placement="top-bottom"
                 >
                     <form onSubmit={ handleSubmit(onSubmit) }>
-                        <h2 className="text-start mb-4">Register</h2>
+                        <h2 className="text-start mb-4">{t("Register")}</h2>
                         <div
                             className="mb-2 inputDiv"
                             data-aos="fade-up"
@@ -45,13 +45,13 @@ function SignUp() {
                         >
                             <input
                                 type="text"
-                                placeholder="First name"
+                                placeholder={t("First name")}
                                 className="form-control form-control-login"
                                 { ...register("firstName", {
-                                    required: "required",
+                                    required: t("required"),
                                     pattern: {
                                         value: /^[a-zA-Z]{3,}$/ig,
-                                        message: "name must be at least 3 char.",
+                                        message: t("name must be at least 3 char."),
                                     }
                                 }
                                 ) }
@@ -69,13 +69,13 @@ function SignUp() {
                         >
                             <input
                                 type="text"
-                                placeholder="Last name"
+                                placeholder={t("Last name")}
                                 className="form-control form-control-login"
                                 { ...register("lastName", {
-                                    required: "required",
+                                    required: t("required"),
                                     pattern: {
                                         value: /^[a-zA-Z]{3,}$/ig,
-                                        message: "name must be at least 3 char.",
+                                        message: t("name must be at least 3 char."),
                                     }
                                 }
                                 ) }
@@ -93,13 +93,13 @@ function SignUp() {
                         >
                             <input
                                 type="email"
-                                placeholder="E-mail"
+                                placeholder={t("E-mail")}
                                 className="form-control form-control-login"
                                 { ...register("mail", {
-                                    required: "required",
+                                    required: t("required"),
                                     pattern: {
                                         value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig,
-                                        message: "invalid email",
+                                        message: t("invalid email"),
                                     }
                                 }
                                 ) }
@@ -117,13 +117,13 @@ function SignUp() {
                         >
                             <input
                                 type="tel"
-                                placeholder="Phone number"
+                                placeholder={t("Phone number")}
                                 className="form-control form-control-login"
                                 { ...register("phoneNumber", {
-                                    required: "required",
+                                    required: t("required"),
                                     pattern: {
                                         value: /^(010|011|012|015)\d{8}$/ig,
-                                        message: "invalid phone number",
+                                        message: t("invalid phone number"),
                                     }
                                 }
                                 ) }
@@ -144,10 +144,10 @@ function SignUp() {
 
                             >
                                 <option disabled defaultValue hidden>
-                                    Gender
+                                    {t("Gender")}
                                 </option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="male">{t("Male")}</option>
+                                <option value="female">{t("Female")}</option>
                             </select>
                             <FaUsers className="icon-login" />
                         </div>
@@ -158,13 +158,13 @@ function SignUp() {
                         >
                             <input
                                 type="password"
-                                placeholder="Password"
+                                placeholder={t("Password")}
                                 className="form-control form-control-login"
                                 { ...register("password", {
-                                    required: "required",
+                                    required: t("required"),
                                     pattern: {
                                         value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/ig,
-                                        message: "at least 8 chars and numbers",
+                                        message: t("at least 8 chars and numbers"),
                                     }
                                 }
                                 ) }
@@ -176,16 +176,16 @@ function SignUp() {
                         </div>
                         { errors.password && <p className="text-danger">{ errors.password?.message }</p> }
                         <div className="d-grid mt-4">
-                            <button className="btn btn-primary">Sign Up</button>
+                            <button className="btn btn-primary">{t("Sign Up")}</button>
                         </div>
                         <p
                             className="mt-2 paragraph-size"
                             data-aos="fade-up"
                             data-aos-anchor-placement="top-bottom"
                         >
-                            Already have an account?
+                            {t("Already have an account?")}
                             <Link to="/login" className="text-decoration-none">
-                                Login Now!
+                                {t("Login Now!")}
                             </Link>
                         </p>
                     </form>
