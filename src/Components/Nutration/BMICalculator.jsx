@@ -13,6 +13,7 @@ export const BMICalculator = () => {
     handleCalculate,
     handleMale,
     gender,
+    loadingResult,
     result,
     height,
     weight,
@@ -79,7 +80,7 @@ export const BMICalculator = () => {
         id="height-slider"
         min={120}
         max={220}
-        step={10}
+        step={1}
         value={height}
         onClick={changeHeight}
       ></toolcool-range-slider>
@@ -121,12 +122,26 @@ export const BMICalculator = () => {
         &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|
         &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|
       </p>
-      <Button
-        className="mt-5 p-2 w-25 min-w-100 text-center text-white cursor-pointer"
-        onClick={() => handleCalculate(weight, height)}
-      >
-        Calculate BMI
-      </Button>
+      {loadingResult ? (
+        <Button
+          className="mt-5 p-2 w-25 min-w-100 text-center text-white cursor-pointer"
+          onClick={() => handleCalculate(weight, height)}
+        >
+          <span
+            class="spinner-grow spinner-grow-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Calculating...
+        </Button>
+      ) : (
+        <Button
+          className="mt-5 p-2 w-25 min-w-100 text-center text-white cursor-pointer"
+          onClick={() => handleCalculate(weight, height)}
+        >
+          Calculate BMI
+        </Button>
+      )}
     </Col>
   );
 };
