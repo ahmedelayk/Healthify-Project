@@ -1,3 +1,6 @@
+.cardd-img{
+    height: 300px !important;
+}
 .main-color {
     color:var(--main-color)
 }

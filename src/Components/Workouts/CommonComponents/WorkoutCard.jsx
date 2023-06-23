@@ -8,7 +8,7 @@ import { Card } from "react-bootstrap";
 const WorkoutCard = ({ img, name, equipment, bodyPart, target }) => {
   return (
     <Card className="h-100" data-aos="flip-left">
-      <Card.Img variant="top" src={img} loading="lazy" />
+      <Card.Img variant="top" src={img} loading="lazy" className="cardd-img"/>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text className="text-paragraph-color">

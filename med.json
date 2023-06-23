@@ -462,419 +462,302 @@
       ]
     }
   ],
-  "articles": [
+  "exercises": [
     {
-      "id": 1,
-      "title": "The Benefits of Meditation",
-      "description": "Meditation has been shown to have many benefits, including reducing stress, improving sleep, and increasing focus.",
-      "poster": "https://img.freepik.com/free-photo/side-view-woman-meditating-nature_23-2148940305.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/92/2b/94/922b949a38ec4c875819f54f41795899.gif",
+      "id": "0001",
+      "name": "3/4 sit-up",
+      "target": "abs"
     },
     {
-      "id": 2,
-      "title": "The Benefits of Meditation",
-      "description": "Meditation has been shown to have many benefits, including reducing stress, improving sleep, and increasing focus.",
-      "poster": "https://img.freepik.com/premium-vector/woman-doing-yoga-asana-garudasana-while-sun-rises-her_1343-767.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/ef/c2/63/efc2639d761621ea2e9646a8096958e3.gif",
+      "id": "0002",
+      "name": "45° side bend",
+      "target": "abs"
     },
     {
-      "id": 3,
-      "title": "How to Meditate",
-      "description": "Here are some tips on how to meditate: Find a quiet place to sit or lie down. Close your eyes and focus on your breath. Pay attention to the sensations in your body as you breathe in and out. If your mind wanders, gently bring it back to your breath.",
-      "poster": "https://img.freepik.com/free-vector/organic-flat-people-meditating-illustration_23-2148906557.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/53/82/7e/53827e28d0eac694546f4167aed4e8ba.gif",
+      "id": "0003",
+      "name": "air bike",
+      "target": "abs"
     },
     {
-      "id": 4,
-      "title": "Meditation for Beginners",
-      "description": "If you're new to meditation, here are some tips to help you get started: Start with short meditation sessions of 5-10 minutes. Find a meditation technique that works for you and stick with it. Be patient and don't get discouraged if you don't see results immediately.",
-      "poster": "https://img.freepik.com/free-photo/full-shot-adult-meditating_23-2149711525.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "upper legs",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/c0/46/88/c046883339ac53eb29cd79b41d3061a7.gif",
+      "id": "1512",
+      "name": "all fours squad stretch",
+      "target": "quads"
     },
     {
-      "id": 5,
-      "title": "The Power of Positive Thinking",
-      "description": "Positive thinking has been shown to have many benefits, including improving mental and physical health, increasing resilience, and boosting creativity.",
-      "poster": "https://img.freepik.com/free-vector/organic-flat-people-meditating-illustration_23-2148906556.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "back",
+      "equipment": "cable",
+      "gifUrl": "https://i.pinimg.com/originals/ce/01/c0/ce01c076515e8252a4602832e6693319.gif",
+      "id": "0007",
+      "name": "alternate lateral pulldown",
+      "target": "lats"
     },
     {
-      "id": 6,
-      "title": "How to Think Positively",
-      "description": "Here are some tips on how to think more positively: Focus on the good things in your life. Be grateful for what you have. Challenge negative thoughts. Practice positive affirmations. Surround yourself with positive people.",
-      "poster": "https://img.freepik.com/free-photo/woman-sitting-yoga-pose-beach_1098-1454.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "lower legs",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/1f/32/2d/1f322db369badfe05d525eb2a8ca8fc6.gif",
+      "id": "1368",
+      "name": "ankle circles",
+      "target": "calves"
     },
     {
-      "id": 7,
-      "title": "The Benefits of Self-Care",
-      "description": "Self-care is important for your physical and mental health. It can help you reduce stress, improve sleep, and boost your mood.",
-      "poster": "https://img.freepik.com/free-photo/woman-digital-disconnecting-home-by-doing-yoga_23-2150037475.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "back",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/f6/62/3c/f6623cd6ebaa3151c03e60ee3ad6822f.gif",
+      "id": "3293",
+      "name": "archer pull up",
+      "target": "lats"
     },
     {
-      "id": 8,
-      "title": "How to Practice Self-Care",
-      "description": "Here are some tips on how to practice self-care: Get enough sleep. Eat healthy foods. Exercise regularly. Spend time in nature. Relaxation techniques such as meditation or yoga. Spend time with loved ones. Do things that you enjoy.",
-      "poster": "https://img.freepik.com/free-vector/chakras-concept-colorful-design_23-2148559951.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "chest",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/25/0a/b2/250ab27099d9921111d59f007df7b322.gif",
+      "id": "3294",
+      "name": "archer push up",
+      "target": "pectorals"
     },
     {
-      "id": 9,
-      "title": "The Power of Gratitude",
-      "description": "Gratitude has been shown to have many benefits, including improving mental and physical health, increasing happiness, and boosting relationships.",
-      "poster": "https://img.freepik.com/free-photo/young-attractive-woman-ardha-padmasana-pose-white-studio-bac_1163-2336.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/1b/1c/6a/1b1c6a8d4db85e236bc8f1179db161ae.gif",
+      "id": "2355",
+      "name": "arm slingers hanging bent knee legs",
+      "target": "abs"
     },
     {
-      "id": 10,
-      "title": "How to Be More Grateful",
-      "description": "Here are some tips on how to be more grateful: Keep a gratitude journal. Take time each day to reflect on the things you are grateful for. Express your gratitude to others. Practice random acts of kindness.",
-      "poster": "https://img.freepik.com/free-vector/female-doing-yoga-meditation-mandala-background_1017-38763.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/2e/43/e0/2e43e04410c77c1824e132bc852979fe.gif",
+      "id": "2333",
+      "name": "arm slingers hanging straight legs",
+      "target": "abs"
     },
     {
-      "id": 11,
-      "title": "The Power of Mindfulness",
-      "description": "Mindfulness is the practice of paying attention to the present moment without judgment. It can be a powerful tool for reducing stress, improving relationships, and increasing happiness.",
-      "poster": "https://img.freepik.com/premium-photo/human-sitting-yoga-poses-with-glowing-chakras_582637-1080.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "kk",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/f8/d2/3c/f8d23c133e8b9fc4ca0d124acce19a7b.gif",
+      "id": "1713",
+      "name": "assisted prone lying quads stretch",
+      "target": "quads"
     },
     {
-      "id": 12,
-      "title": "How to Be Mindful",
-      "description": "Here are some tips on how to be mindful: Start by paying attention to your breath. Notice how it feels as it enters and leaves your body. Once you're comfortable with paying attention to your breath, you can start to pay attention to other sensations in your body. Notice the feeling of your clothes against your skin, the sound of your breath, and the taste of your food.",
-      "poster": "https://img.freepik.com/free-photo/young-beautiful-woman-doing-yoga-exercise-green-park-healthy-lifestyle-fitness-concept_155003-22212.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "waist",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/f8/d2/3c/f8d23c133e8b9fc4ca0d124acce19a7b.gif",
+      "id": "1714",
+      "name": "assisted prone rectus femoris stretch",
+      "target": "abs"
     },
     {
-      "id": 13,
-      "title": "Mindfulness Meditation",
-      "description": "Mindfulness meditation is a type of meditation that focuses on the present moment. It can be practiced sitting or lying down. To practice mindfulness meditation, simply sit or lie down in a comfortable position and close your eyes. Focus on your breath and notice the sensations in your body as you breathe in and out. If your mind wanders, gently bring it back to your breath.",
-      "poster": "https://img.freepik.com/free-vector/hand-drawn-mindfulness-concept-with-characters_52683-69073.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/1b/1c/6a/1b1c6a8d4db85e236bc8f1179db161ae.gif",
+      "id": "0017",
+      "name": "assisted pull-up",
+      "target": "lats"
     },
     {
-      "id": 14,
-      "title": "The Benefits of Meditation",
-      "description": "Meditation has been shown to have many benefits, including reducing stress, improving sleep, and increasing focus.",
-      "poster": "https://img.freepik.com/premium-vector/girl-sitting-yoga-lotus-position-meditation-girl-yoga-nature-vector-illustration_808505-3733.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "chest",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/7e/b1/5b/7eb15b823dffa8bfab1974fb9d2ab308.gif",
+      "id": "1716",
+      "name": "assisted seated pectoralis major stretch with stability ball",
+      "target": "pectorals"
     },
     {
-      "id": 15,
-      "title": "How to Meditate",
-      "description": "Here are some tips on how to meditate: Find a quiet place to sit or lie down. Close your eyes and focus on your breath. Pay attention to the sensations in your body as you breathe in and out. If your mind wanders, gently bring it back to your breath.",
-      "poster": "https://img.freepik.com/free-vector/organic-flat-people-meditating-collection_52683-60663.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "kkmk",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/7a/1d/98/7a1d9869d830546227d36f8f7eb4cbaa.gif",
+      "id": "1712",
+      "name": "assisted side lying adductor stretch",
+      "target": "adductors"
     },
     {
-      "id": 16,
-      "title": "The Benefits of Self-Care",
-      "description": "Self-care is important for your physical and mental health. It can help you reduce stress, improve sleep, and boost your mood.",
-      "poster": "https://img.freepik.com/free-photo/studio-shot-young-woman-doing-yoga-exercises-white_155003-44694.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "waist",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/a5/ea/b5/a5eab570b6d4d937a392d7f26f8a7de5.gif",
+      "id": "1758",
+      "name": "assisted sit-up",
+      "target": "abs"
     },
     {
-      "id": 17,
-      "title": "How to Practice Self-Care",
-      "description": "Here are some tips on how to practice self-care: Get enough sleep. Eat healthy foods. Exercise regularly. Spend time in nature. Relaxation techniques such as meditation or yoga. Spend time with loved ones. Do things that you enjoy.",
-      "poster": "https://img.freepik.com/free-photo/front-view-woman-meditating-with-incense-candles_23-2148847541.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/5b/9b/3f/5b9b3f6d8573099e15d93cc29e730f04.gif",
+      "id": "1431",
+      "name": "assisted standing chin-up",
+      "target": "lats"
     },
     {
-      "id": 18,
-      "title": "The Power of Gratitude",
-      "description": "Gratitude has been shown to have many benefits, including improving mental and physical health, increasing happiness, and boosting relationships.",
-      "poster": "https://img.freepik.com/free-vector/buddha-hand-concept-illustration_114360-8569.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/09/70/49/097049349be72fae6f025eece23fb890.gif",
+      "id": "1432",
+      "name": "assisted standing pull-up",
+      "target": "lats"
     },
     {
-      "id": 19,
-      "title": "How to Be More Grateful",
-      "description": "Here are some tips on how to be more grateful: Keep a gratitude journal. Take time each day to reflect on the things you are grateful for. Express your gratitude to others. Practice random acts of kindness.",
-      "poster": "https://img.freepik.com/free-photo/stacked-zen-stones-sand-background-art-balance-concept_53876-128455.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
+      "bodyPart": "upper arms",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/56/35/40/563540bbc24b25d30986579a87026019.gif",
+      "id": "0018",
+      "name": "assisted standing triceps extension (with towel)",
+      "target": "triceps"
     },
     {
-      "id": 20,
-      "title": "The Science of Meditation",
-      "description": "There is a growing body of scientific research that supports the benefits of meditation. Studies have shown that meditation can reduce stress, improve sleep, increase focus, and even boost the immune system.",
-      "poster": "https://img.freepik.com/free-vector/women-doing-yoga-exercises-flat-illustration-set-isolated-white-background_8130-2058.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/b4/bc/7a/b4bc7abb353ab6c24908ca75af57c500.gif",
+      "id": "3214",
+      "name": "arms apart circular toe touch (male)",
+      "target": "glutes"
     },
     {
-      "id": 21,
-      "title": "How Meditation Works",
-      "description": "Meditation works by changing the way the brain functions. When we meditate, we activate areas of the brain that are associated with relaxation, focus, and compassion. We also deactivate areas of the brain that are associated with stress and anxiety.",
-      "poster": "https://img.freepik.com/free-vector/hand-drawn-flat-design-digital-detox-illustration_23-2149351492.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/15/12/21/151221eaee47f49640cbc59bb52803b9.gif",
+      "id": "3204",
+      "name": "arms overhead full sit-up (male)",
+      "target": "abs"
     },
     {
-      "id": 22,
-      "title": "The Benefits of Long-Term Meditation",
-      "description": "The benefits of meditation are cumulative. The more you meditate, the more you'll experience the benefits. Studies have shown that people who meditate for 20 minutes a day for 6 months or more experience significant reductions in stress, anxiety, and depression.",
-      "poster": "https://img.freepik.com/free-vector/silhouette-female-yoga-pose-against-mandala-design_1048-13082.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/f0/a5/31/f0a5312f9617ddc8c18a8715eb7e2be4.gif",
+      "id": "0009",
+      "name": "assisted chest dip (kneeling)",
+      "target": "pectorals"
     },
     {
-      "id": 23,
-      "title": "The Benefits of Meditation for Students",
-      "description": "Meditation can be a powerful tool for students. It can help them reduce stress, improve focus, and boost their academic performance. Studies have shown that students who meditate regularly have higher GPAs and are less likely to experience anxiety and depression.",
-      "poster": "https://img.freepik.com/free-photo/meditation_1048-1840.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/cc/d8/bb/ccd8bbc35c654dbbc2171f27c44f0048.gif",
+      "id": "0011",
+      "name": "assisted hanging knee raise",
+      "target": "abs"
     },
     {
-      "id": 24,
-      "title": "How to Meditate for Students",
-      "description": "Meditating for students can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that students can use, and the best technique for a particular student will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/free-psd/yoga-social-media-post-collection_23-2149003222.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/e6/a0/29/e6a029118aed4f5a7eb4c8791eafcc64.gif",
+      "id": "0010",
+      "name": "assisted hanging knee raise with throw down",
+      "target": "abs"
     },
     {
-      "id": 25,
-      "title": "The Benefits of Meditation for Athletes",
-      "description": "Meditation can be a powerful tool for athletes. It can help them reduce stress, improve focus, and boost their athletic performance. Studies have shown that athletes who meditate regularly have better reaction times, are less likely to get injured, and recover from injuries more quickly.",
-      "poster": "https://img.freepik.com/free-vector/decorative-background-international-yoga-day_1048-18650.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/00/86/72/008672d82cec0f4076eb8c210e9a5c64.gif",
+      "id": "1708",
+      "name": "assisted lying calves stretch",
+      "target": "calves"
     },
     {
-      "id": 26,
-      "title": "How to Meditate for Athletes",
-      "description": "Meditating for athletes can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that athletes can use, and the best technique for a particular athlete will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/premium-photo/international-yoga-day-flexibility-spiritual-relaxation-meditation-sport-spirituality-judaism-buddhism-philosophy-aerobics-stretching-pilates-aesthetic-postures_771426-6369.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/d9/98/04/d99804bc463199cdfcd9108ab5c6204c.gif",
+      "id": "1709",
+      "name": "assisted lying glutes stretch",
+      "target": "glutes"
     },
     {
-      "id": 27,
-      "title": "The Benefits of Meditation for People with Anxiety and Depression",
-      "description": "Meditation can be a powerful tool for people with anxiety and depression. It can help them reduce stress, improve focus, and boost their mood. Studies have shown that people with anxiety and depression who meditate regularly experience significant reductions in their symptoms.",
-      "poster": "https://img.freepik.com/free-photo/full-length-picture-concentrated-woman-casual-clothes-meditating-with-closed-eyes-while-sitting-lotus-pose-floor-isolated-white-wall_171337-1199.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/ab/14/8d/ab148d126780f9b1dbba182efb5444e9.gif",
+      "id": "1710",
+      "name": "assisted lying gluteus and piriformis stretch",
+      "target": "glutes"
     },
     {
-      "id": 28,
-      "title": "The Benefits of Mindfulness",
-      "description": "Mindfulness is the practice of paying attention to the present moment without judgment. It can be a powerful tool for reducing stress, improving relationships, and increasing happiness.",
-      "poster": "https://img.freepik.com/free-photo/back-view-woman-meditating-rock_23-2149711521.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/5c/4d/34/5c4d34bf1995c07c35916b0f92e0d7bc.gif",
+      "id": "0012",
+      "name": "assisted lying leg raise with lateral throw down",
+      "target": "abs"
     },
     {
-      "id": 29,
-      "title": "How to Be Mindful",
-      "description": "Here are some tips on how to be mindful: Start by paying attention to your breath. Notice how it feels as it enters and leaves your body. Once you're comfortable with paying attention to your breath, you can start to pay attention to other sensations in your body. Notice the feeling of your clothes against your skin, the sound of your breath, and the taste of your food.",
-      "poster": "https://img.freepik.com/free-photo/beautiful-woman-meditating-outdoors_72229-1487.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/f8/67/b1/f867b16e1abe608a0301ee8ddb41f5c7.gif",
+      "id": "0013",
+      "name": "assisted lying leg raise with throw down",
+      "target": "abs"
     },
     {
-      "id": 30,
-      "title": "Mindfulness Meditation",
-      "description": "Mindfulness meditation is a type of meditation that focuses on the present moment. It can be practiced sitting or lying down. To practice mindfulness meditation, simply sit or lie down in a comfortable position and close your eyes. Focus on your breath and notice the sensations in your body as you breathe in and out. If your mind wanders, gently bring it back to your breath.",
-      "poster": "https://img.freepik.com/free-photo/concentrated-woman-meditating-nature_1098-1412.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "cardio",
+      "equipment": "medicine ball",
+      "gifUrl": "https://i.pinimg.com/originals/d8/43/48/d843485305f6e9a8bd59fb042da5fb22.gif",
+      "id": "0014",
+      "name": "assisted motion russian twist",
+      "target": "abs"
     },
     {
-      "id": 31,
-      "title": "The Benefits of Meditation for Students",
-      "description": "Meditation can be a powerful tool for students. It can help them reduce stress, improve focus, and boost their academic performance. Studies have shown that students who meditate regularly have higher GPAs and are less likely to experience anxiety and depression.",
-      "poster": "https://img.freepik.com/free-vector/healthcare-center-logo-template-set_53876-118356.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://edbv2-ff7foj6vca-uc.a.run.app/image/Jy0m-1z-Xyp+f9",
+      "id": "0015",
+      "name": "assisted parallel close grip pull-up",
+      "target": "lats"
     },
     {
-      "id": 32,
-      "title": "How to Meditate for Students",
-      "description": "Meditating for students can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that students can use, and the best technique for a particular student will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/free-photo/full-shot-man-doing-sukhasana-pose-outdoor_23-2148717221.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "kk",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/7e/b1/5b/7eb15b823dffa8bfab1974fb9d2ab308.gif",
+      "id": "0016",
+      "name": "assisted prone hamstring",
+      "target": "hamstrings"
     },
     {
-      "id": 33,
-      "title": "The Benefits of Meditation for Athletes",
-      "description": "Meditation can be a powerful tool for athletes. It can help them reduce stress, improve focus, and boost their athletic performance. Studies have shown that athletes who meditate regularly have better reaction times, are less likely to get injured, and recover from injuries more quickly.",
-      "poster": "https://img.freepik.com/free-photo/back-view-man-relaxing-beach-outside_23-2148739267.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "upper arms",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/a6/73/4b/a6734b652975d75f98460dd461b3de43.gif",
+      "id": "0019",
+      "name": "assisted triceps dip (kneeling)",
+      "target": "triceps"
     },
     {
-      "id": 34,
-      "title": "How to Meditate for Athletes",
-      "description": "Meditating for athletes can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that athletes can use, and the best technique for a particular athlete will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/free-vector/illustration-international-yoga-day-celebration_52683-114581.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "chest",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/b7/0e/06/b70e06ab9879844b2e9e6eafa05d1889.gif",
+      "id": "2364",
+      "name": "assisted wide-grip chest dip (kneeling)",
+      "target": "pectorals"
     },
     {
-      "id": 35,
-      "title": "The Benefits of Meditation for People with Anxiety and Depression",
-      "description": "Meditation can be a powerful tool for people with anxiety and depression. It can help them reduce stress, improve focus, and boost their mood. Studies have shown that people with anxiety and depression who meditate regularly experience significant reductions in their symptoms.",
-      "poster": "https://img.freepik.com/free-vector/flat-background-international-yoga-day-celebration_23-2150403377.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/0e/06/4f/0e064f76765709c97a46cd491597ac74.gif",
+      "id": "3220",
+      "name": "astride jumps (male)",
+      "target": "cardiovascular system"
     },
     {
-      "id": 36,
-      "title": "How to Practice Self-Care",
-      "description": "Here are some tips on how to practice self-care: Get enough sleep. Eat healthy foods. Exercise regularly. Spend time in nature. Relaxation techniques such as meditation or yoga. Spend time with loved ones. Do things that you enjoy.",
-      "poster": "https://img.freepik.com/free-photo/front-view-woman-meditating-with-incense-candles_23-2148847541.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/34/60/09/3460095fbe400b81a95f456e9f11ef40.gif",
+      "id": "3672",
+      "name": "back and forth step",
+      "target": "cardiovascular system"
     },
     {
-      "id": 37,
-      "title": "The Power of Gratitude",
-      "description": "Gratitude has been shown to have many benefits, including improving mental and physical health, increasing happiness, and boosting relationships.",
-      "poster": "https://img.freepik.com/free-vector/buddha-hand-concept-illustration_114360-8569.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 38,
-      "title": "How to Be More Grateful",
-      "description": "Here are some tips on how to be more grateful: Keep a gratitude journal. Take time each day to reflect on the things you are grateful for. Express your gratitude to others. Practice random acts of kindness.",
-      "poster": "https://img.freepik.com/free-photo/stacked-zen-stones-sand-background-art-balance-concept_53876-128455.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 39,
-      "title": "The Science of Mindfulness",
-      "description": "There is a growing body of scientific research that supports the benefits of mindfulness. Studies have shown that mindfulness can reduce stress, improve sleep, increase focus, and even boost the immune system.",
-      "poster": "https://img.freepik.com/free-vector/international-day-yoga-with-young-women-doing-meditation_1017-38817.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 40,
-      "title": "How Mindfulness Works",
-      "description": "Mindfulness works by changing the way the brain functions. When we meditate, we activate areas of the brain that are associated with relaxation, focus, and compassion. We also deactivate areas of the brain that are associated with stress and anxiety.",
-      "poster": "https://img.freepik.com/free-vector/meditation-illustrated-concept_52683-24620.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 41,
-      "title": "The Benefits of Long-Term Mindfulness",
-      "description": "The benefits of mindfulness are cumulative. The more you meditate, the more you'll experience the benefits. Studies have shown that people who meditate for 20 minutes a day for 6 months or more experience significant reductions in stress, anxiety, and depression.",
-      "poster": "https://img.freepik.com/premium-vector/international-yoga-day-black-female-character-sportswear-meditating_277904-20874.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 42,
-      "title": "The Benefits of Mindfulness for Students",
-      "description": "Meditation can be a powerful tool for students. It can help them reduce stress, improve focus, and boost their academic performance. Studies have shown that students who meditate regularly have higher GPAs and are less likely to experience anxiety and depression.",
-      "poster": "https://img.freepik.com/free-vector/young-man-practicing-yoga-exercises-mental-body-health_74855-20437.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 43,
-      "title": "How to Meditate for Students",
-      "description": "Meditating for students can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that students can use, and the best technique for a particular student will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/free-photo/attractive-girl-with-long-black-hair-dressed-purple-doing-yoga-pose-pigeon-green-park_1268-20290.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 44,
-      "title": "The Benefits of Meditation for Athletes",
-      "description": "Meditation can be a powerful tool for athletes. It can help them reduce stress, improve focus, and boost their athletic performance. Studies have shown that athletes who meditate regularly have better reaction times, are less likely to get injured, and recover from injuries more quickly.",
-      "poster": "https://img.freepik.com/free-photo/back-view-woman-doing-yoga-outdoors_23-2148769551.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 45,
-      "title": "How to Meditate for Athletes",
-      "description": "Meditating for athletes can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that athletes can use, and the best technique for a particular athlete will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/free-vector/abstract-human-meditating_1319-102.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 46,
-      "title": "The Benefits of Meditation for People with Anxiety and Depression",
-      "description": "Meditation can be a powerful tool for people with anxiety and depression. It can help them reduce stress, improve focus, and boost their mood. Studies have shown that people with anxiety and depression who meditate regularly experience significant reductions in their symptoms.",
-      "poster": "https://img.freepik.com/premium-vector/woman-doing-yoga-asana-garudasana-while-sun-rises-her_1343-767.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 47,
-      "title": "How to Think Positively",
-      "description": "Here are some tips on how to think more positively: Focus on the good things in your life. Be grateful for what you have. Challenge negative thoughts. Practice positive affirmations. Surround yourself with positive people.",
-      "poster": "https://img.freepik.com/free-photo/woman-sitting-yoga-pose-beach_1098-1454.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
-    },
-    {
-      "id": 48,
-      "title": "The Benefits of Meditation for People with Anxiety and Depression",
-      "description": "Meditation can be a powerful tool for people with anxiety and depression. It can help them reduce stress, improve focus, and boost their mood. Studies have shown that people with anxiety and depression who meditate regularly experience significant reductions in their symptoms.",
-      "poster": "https://img.freepik.com/free-vector/flat-background-international-yoga-day-celebration_23-2150403377.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
-    },
-    {
-      "id": 49,
-      "title": "How to Meditate for Athletes",
-      "description": "Meditating for athletes can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that athletes can use, and the best technique for a particular athlete will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/premium-photo/international-yoga-day-flexibility-spiritual-relaxation-meditation-sport-spirituality-judaism-buddhism-philosophy-aerobics-stretching-pilates-aesthetic-postures_771426-6369.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 50,
-      "title": "The Benefits of Long-Term Meditation",
-      "description": "The benefits of meditation are cumulative. The more you meditate, the more you'll experience the benefits. Studies have shown that people who meditate for 20 minutes a day for 6 months or more experience significant reductions in stress, anxiety, and depression.",
-      "poster": "https://img.freepik.com/free-vector/silhouette-female-yoga-pose-against-mandala-design_1048-13082.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
-    },
-    {
-      "id": 51,
-      "title": "The Benefits of Long-Term Meditation",
-      "description": "The benefits of meditation are cumulative. The more you meditate, the more you'll experience the benefits. Studies have shown that people who meditate for 20 minutes a day for 6 months or more experience significant reductions in stress, anxiety, and depression.",
-      "poster": "https://img.freepik.com/free-vector/silhouette-female-yoga-pose-against-mandala-design_1048-13082.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
-    },
-    {
-      "id": 52,
-      "title": "How to Meditate for Students",
-      "description": "Meditating for students can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that students can use, and the best technique for a particular student will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/free-photo/full-shot-man-doing-sukhasana-pose-outdoor_23-2148717221.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
-    },
-    {
-      "id": 53,
-      "title": "The Benefits of Meditation for Athletes",
-      "description": "Meditation can be a powerful tool for athletes. It can help them reduce stress, improve focus, and boost their athletic performance. Studies have shown that athletes who meditate regularly have better reaction times, are less likely to get injured, and recover from injuries more quickly.",
-      "poster": "https://img.freepik.com/free-photo/back-view-man-relaxing-beach-outside_23-2148739267.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 54,
-      "title": "How Mindfulness Works",
-      "description": "Mindfulness works by changing the way the brain functions. When we meditate, we activate areas of the brain that are associated with relaxation, focus, and compassion. We also deactivate areas of the brain that are associated with stress and anxiety.",
-      "poster": "https://img.freepik.com/free-vector/meditation-illustrated-concept_52683-24620.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
-    },
-    {
-      "id": 55,
-      "title": "How to Meditate for Athletes",
-      "description": "Meditating for athletes can be as simple as sitting quietly for a few minutes each day and focusing on their breath. There are many different meditation techniques that athletes can use, and the best technique for a particular athlete will depend on their individual needs and preferences.",
-      "poster": "https://img.freepik.com/premium-photo/international-yoga-day-flexibility-spiritual-relaxation-meditation-sport-spirituality-judaism-buddhism-philosophy-aerobics-stretching-pilates-aesthetic-postures_771426-6369.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Abobakr"
-    },
-    {
-      "id": 56,
-      "title": "The Power of Gratitude",
-      "description": "Gratitude has been shown to have many benefits, including improving mental and physical health, increasing happiness, and boosting relationships.",
-      "poster": "https://img.freepik.com/free-vector/buddha-hand-concept-illustration_114360-8569.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Sameh Hammad"
-    },
-    {
-      "id": 57,
-      "title": "How to Be More Grateful",
-      "description": "Here are some tips on how to be more grateful: Keep a gratitude journal. Take time each day to reflect on the things you are grateful for. Express your gratitude to others. Practice random acts of kindness.",
-      "poster": "https://img.freepik.com/free-photo/stacked-zen-stones-sand-background-art-balance-concept_53876-128455.jpg?size=626&ext=jpg&ga=GA1.1.2003327667.1683799827&semt=sph",
-      "author": "Mohammed Kamal"
-    },
-    {
-      "id": 58,
-      "title": "How Mindfulness Works",
-      "description": "Mindfulness works by changing the way the brain functions. When we meditate, we activate areas of the brain that are associated with relaxation, focus, and compassion. We also deactivate areas of the brain that are associated with stress and anxiety.",
-      "poster": "https://img.freepik.com/free-vector/meditation-illustrated-concept_52683-24620.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Zeinab Nabil"
-    },
-    {
-      "id": 59,
-      "title": "The Benefits of Long-Term Mindfulness",
-      "description": "The benefits of mindfulness are cumulative. The more you meditate, the more you'll experience the benefits. Studies have shown that people who meditate for 20 minutes a day for 6 months or more experience significant reductions in stress, anxiety, and depression.",
-      "poster": "https://img.freepik.com/premium-vector/international-yoga-day-black-female-character-sportswear-meditating_277904-20874.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
-      "author": "Ahmed Alayek"
+      "bodyPart": "back",
+      "equipment": "stability ball",
+      "gifUrl": "https://i.pinimg.com/originals/b1/72/e2/b172e2b7128be162f13875ba91b84a17.gif",
+      "id": "1314",
+      "name": "back extension on exercise ball",
+      "target": "spine"
     }
   ]
 }
