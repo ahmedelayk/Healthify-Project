@@ -37,9 +37,9 @@ const Cardio = () => {
           <Col xs={12} md={8} lg={8}>
             <Swiper
               modules={[Pagination, Autoplay]}
-              // autoplay={{
-              //   reverseDirection: true,
-              // }}
+              autoplay={{
+                reverseDirection: true,
+              }}
               speed={2000}
               // pagination={{ clickable: true }}
               spaceBetween={15}
