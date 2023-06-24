@@ -88,7 +88,7 @@ const WorkoutsDetails = () => {
       ) : error ? (
         <div>{error}</div>
       ) : workout ? (
-        <Container id="workouts-details" className="section-padding">
+        <Container id="workouts-details" className="section-padding ltr-direction">
           <h1 className="header1-size">{workout.name}</h1>
           <div className="d-flex pb-3">
             <Rating className="rating-size" value={rating} readOnly />

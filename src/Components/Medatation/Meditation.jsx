@@ -2,7 +2,7 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import MeditationCard from "./MeditationDetails/MeditaionCard";
 
 import { Link } from "react-router-dom";
-
+// Style
 import "./meditation.css";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -26,13 +26,10 @@ const Meditation = () => {
   useEffect(() => {
     dispatch(getInstructors());
     dispatch(getTypes());
-
   }, [dispatch]);
   useEffect(() => {
     setFilterdInst(instructors?.slice(1, instructors.length));
   }, [instructors])
-  
-
   const onInstructorChanged = (event) => {
     if (event.target.value === "All") {
       setFilterdInst(instructors.slice(1, instructors.length));
@@ -42,7 +39,6 @@ const Meditation = () => {
       );
     }
   };
-
   const onTypeChanged = (event) => {
     setFilterdInst(types.filter((ins) => ins.name === event.target.value));
   };
@@ -94,7 +90,7 @@ const Meditation = () => {
             </span>
             {t("Results")}
           </h2>
-          <Row className="Results">
+          <Row className="Results ltr-direction">
             { filterdInst?.length &&
               filterdInst.map((item) =>
                 item.articles.map((i) => (
@@ -109,6 +105,7 @@ const Meditation = () => {
                         description={ i.description }
                         poster={ i.poster }
                         author={ i.author }
+                        
                       />
                     </Link>
                   </Col>

@@ -7,6 +7,7 @@ import m_bodies from "../assets/images/m-bmi-bodies.webp";
 import { useAuth } from "../../Context/AuthContext";
 
 export const BMIResult = () => {
+  const {t} = useAuth();
   const {
     result,
     loadingResult,
@@ -44,7 +45,7 @@ export const BMIResult = () => {
             <>
               <Row>
                   <h5 className="mb-3">
-                    Welcome{" "}
+                    {t("Welcome")}{" "}
                     <span className=" fs-5 color-red text-primary-color">
                       {currentUser
                         ? currentUserData.firstName
@@ -54,22 +55,22 @@ export const BMIResult = () => {
                   </h5>
                 <Col xs={5} className="ms-5">
                   <h6 className="my-5">
-                    BMI Result :{" "}
+                    {t("BMI Result")} :{" "}
                     <span className="boder fs-7 mb-2">{result}</span>
                   </h6>
 
                   <h6 className="mb-5">
-                    Weight : <span className=" fs-7">{weight}</span>
+                    {t("Weight")} : <span className=" fs-7">{weight}</span>
                     {"   "}
-                    kg
+                    {t("kg")}
                   </h6>
                   <h6 className="mb-5">
-                    Height : <span className=" fs-7">{height}</span>
+                    {t("Height")} : <span className=" fs-7">{height}</span>
                     {"   "}
-                    cm
+                    {t("cm")}
                   </h6>
                   <h6 className="mb-5">
-                    Gender : <span className=" fs-7">{gender}</span>
+                    {t("Gender")} : <span className=" fs-7">{gender}</span>
                   </h6>
                 </Col>
                 <Col xs={4}>
@@ -77,14 +78,16 @@ export const BMIResult = () => {
                     src={gender === "Male" ? bodyMaleSrc : bodyFemSrc}
                     width="100"
                     height="100%"
+                    loading="lazy"
+                    alt="bmi"
                   />
                 </Col>
               </Row>
             </>
           ) : (
             <>
-              <h5 className="text-center">Calculate bmi now</h5>
-              <img src={gender === "Male" ? m_bodies : bodies} width="100%" />
+              <h5 className="text-center">{t("Calculate bmi now")}</h5>
+              <img src={gender === "Male" ? m_bodies : bodies} width="100%" alt="bmi" />
             </>
           )}
         </>

@@ -33,3 +33,6 @@
   .workouts-name {
     color: var(--main-color);
   }
+  .ltr-direction {
+    direction: ltr !important;
+  }

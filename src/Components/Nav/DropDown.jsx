@@ -7,6 +7,7 @@ import {
   AiOutlineUser,
   AiFillSetting,
   AiOutlineLogout,
+  AiOutlineLeft,
   AiOutlineRight,
   AiFillProfile,
 } from "react-icons/ai";
@@ -18,16 +19,16 @@ import "./nav.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const DropDown = () => {
-  const { currentUserData, logout, userImage, currentUser, t } = useAuth();
+  const { currentUserData, logout, userImage, currentUser, t, i18n } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   useEffect(() => {
     currentUserData?.firstName != null
       ? setUsername(
-          `${currentUserData?.firstName} ${currentUserData?.lastName}`
-        )
-          : setUsername(currentUser?.displayName);
+        `${currentUserData?.firstName} ${currentUserData?.lastName}`
+      )
+      : setUsername(currentUser?.displayName);
   });
   const handleLogout = async (e) => {
     e.preventDefault();
@@ -41,7 +42,7 @@ const DropDown = () => {
   };
   return (
     <>
-      <div>{error}</div>
+      <div>{ error }</div>
       <div className="dropdown">
         <button
           className="dropdown-btn dropdown-toggle py-0"
@@ -60,12 +61,12 @@ const DropDown = () => {
             <Link className="dropdown-item" type="button" to="/profile">
               <div className=" d-flex gap-2 align-items-center">
                 <img
-                  src={userImage}
+                  src={ userImage }
                   alt="usr"
                   className="avatar-img"
                   loading="lazy"
                 />
-                <h6 className="dropdown-text">{username}</h6>
+                <h6 className="dropdown-text">{ username }</h6>
               </div>
             </Link>
           </li>
@@ -74,10 +75,12 @@ const DropDown = () => {
               <div className="d-flex justify-content-between align-items-center">
                 <div className=" d-flex gap-2 align-items-center">
                   <AiFillProfile className="dropdown-icon" />
-                  <h6 className="dropdown-text">{t("Profile")}</h6>
+                  <h6 className="dropdown-text">{ t("Profile") }</h6>
                 </div>
                 <div>
-                  <AiOutlineRight />
+                  {
+                    i18n.language === "ar" ? <AiOutlineLeft /> : <AiOutlineRight />
+                  }
                 </div>
               </div>
             </Link>
@@ -87,10 +90,12 @@ const DropDown = () => {
               <div className="d-flex justify-content-between align-items-center">
                 <div className=" d-flex gap-2 align-items-center">
                   <AiFillSetting className="dropdown-icon" />
-                  <h6 className="dropdown-text">{t("Settings")}</h6>
+                  <h6 className="dropdown-text">{ t("Settings") }</h6>
                 </div>
                 <div>
-                  <AiOutlineRight />
+                  {
+                    i18n.language === "ar" ? <AiOutlineLeft /> : <AiOutlineRight />
+                  }
                 </div>
               </div>
             </Link>
@@ -100,15 +105,17 @@ const DropDown = () => {
               className="dropdown-item"
               type="button"
               to="/login"
-              onClick={handleLogout}
+              onClick={ handleLogout }
             >
               <div className="d-flex justify-content-between align-items-center">
                 <div className=" d-flex gap-2 align-items-center">
                   <AiOutlineLogout className="dropdown-icon" />
-                  <h6 className="dropdown-text">{t("Logout")}</h6>
+                  <h6 className="dropdown-text">{ t("Logout") }</h6>
                 </div>
                 <div>
-                  <AiOutlineRight />
+                  {
+                    i18n.language === "ar" ? <AiOutlineLeft /> : <AiOutlineRight />
+                  }
                 </div>
               </div>
             </Link>

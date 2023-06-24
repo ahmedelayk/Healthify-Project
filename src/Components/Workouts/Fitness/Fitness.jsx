@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+// styling
+import "./fit.css";
 // uuid
 import { v4 as uuid } from "uuid";
 
@@ -17,8 +19,12 @@ import Subscription from "../CommonComponents/Subscription";
 
 // Data
 import { getAllWorkouts } from "../../../redux/workoutsSlice";
+// Spinner
+import Spinner from "../../Spinner/Spinner";
+import { useAuth } from "../../../Context/AuthContext";
 
 const Fitness = () => {
+  const {t} = useAuth();
   const { fitnesses, isLoading, error } = useSelector(
     (state) => state.workouts
   );
@@ -29,16 +35,13 @@ const Fitness = () => {
   return (
     <div>
       <VideoSection source={gym} header="Fitness Workout" description="Fall in love with fitness" />
-      <VideoSection
-        source={gym}
-        header="Fitness Video Workout"
-        description="Fall in love with fitness"
-      />
-      <Container className="section-padding" data-aos="zoom-in-left">
-        <h1 className="header1-size text-center">Fitness of the day</h1>
+      <Container className="section-padding ltr-direction" data-aos="zoom-in-left">
+        <h1 className="header1-size text-center">{t("Fitness of the day")}</h1>
         <Row className="my-5" data-aos="flip-up">
           {isLoading ? (
-            <div>Loading...</div>
+            <div>
+              <Spinner/>
+            </div>
           ) : error ? (
             <div>{error}</div>
           ) : fitnesses ? (

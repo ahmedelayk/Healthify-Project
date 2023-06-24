@@ -31,12 +31,12 @@ export const getWorkoutByID = createAsyncThunk(
         method: "GET",
         url: `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`,
         headers: {
-          "X-RapidAPI-Key":
-            "5c564f80c6msh82ef64cb866f06ap177fdbjsn87cc9cce4f59",
+          // 'X-RapidAPI-Key': 'a6b7681b21mshe04ba4574112386p1d756ajsn42b981165f59',
           "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
         },
       });
-      console.log(data);
+      
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -52,12 +52,11 @@ export const getAllWorkouts = createAsyncThunk(
         method: "GET",
         url: "https://exercisedb.p.rapidapi.com/exercises",
         headers: {
-          "X-RapidAPI-Key":
-            "5c564f80c6msh82ef64cb866f06ap177fdbjsn87cc9cce4f59",
+          // 'X-RapidAPI-Key': 'a6b7681b21mshe04ba4574112386p1d756ajsn42b981165f59',
           "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
         },
       });
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { BMICalculator } from "./BMICalculator";
 import { BMIResult } from "./BMIResult";
 import { CaloriesTrack } from "./CaloriesTrack";
-import { ProgressTrack } from "./ProgressTrack";
+// import { ProgressTrack } from "./ProgressTrack";
 import { RecomendedRecipies } from "./RecomendedRecipies";
 import { WaterTrack } from "./WaterTrack";
 import MonthGraph from "../Profile/ProfileComponents/MonthGraph"
