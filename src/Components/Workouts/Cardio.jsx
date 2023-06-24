@@ -37,9 +37,9 @@ const Cardio = () => {
           <Col xs={12} md={8} lg={8}>
             <Swiper
               modules={[Pagination, Autoplay]}
-              // autoplay={{
-              //   reverseDirection: true,
-              // }}
+              autoplay={{
+                reverseDirection: true,
+              }}
               speed={2000}
               // pagination={{ clickable: true }}
               spaceBetween={15}
@@ -68,7 +68,7 @@ const Cardio = () => {
                       className="text-decoration-none"
                     >
                       <Card className="workouts-card" data-aos="zoom-in-left">
-                        <Card.Img variant="top" src={cardio.gifUrl} loading="lazy"/>
+                        <Card.Img variant="top" src={cardio.gifUrl} loading="lazy" className="cardd-img"/>
                         <Card.Body>
                           <Card.Title className="header1-size">
                             {cardio.name}
