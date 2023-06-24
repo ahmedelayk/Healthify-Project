@@ -16,11 +16,9 @@ function Navbarr() {
   const [username, setUsername] = useState("Welcome...");
   useEffect(() => {
     currentUserData?.firstName != null
-      ? setUsername(
-        `${currentUserData?.firstName} ${currentUserData?.lastName}`
-      )
+      ? setUsername(`${currentUserData?.firstName} ${currentUserData?.lastName}`)
       : setUsername(currentUser?.displayName);
-  });
+  }, []);
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>
@@ -33,34 +31,53 @@ function Navbarr() {
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
-            <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
-              { t("Nutrition") }
-            </NavLink>
-            <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
-              { t("Meditation") }
-            </NavLink>
-            <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
-              { t("Workouts") }
-            </NavLink>
-          </Nav>
+          {
+            i18n.language === "ar" ?(
+            <Nav className="ms-auto col-6 d-flex justify-content-between nav-collapse">
+              <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
+                { t("Nutrition") }
+              </NavLink>
+              <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
+                { t("Meditation") }
+              </NavLink>
+              <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
+                { t("Workouts") }
+              </NavLink>
+            </Nav>):
+(
+            <Nav className="me-auto col-6 d-flex justify-content-between ms-md-0 nav-collapse">
+              <NavLink to="/nutration" className="navs mx-lg-0 mx-md-0">
+                { t("Nutrition") }
+              </NavLink>
+              <NavLink to="/medatation" className="navs mx-lg-0 mx-md-0">
+                { t("Meditation") }
+              </NavLink>
+              <NavLink to="/workouts" className="navs mb-lg-0 mb-md-0 mb-3 ">
+                { t("Workouts") }
+              </NavLink>
+            </Nav>)
+          }
           {
             currentUser ? (
               <div className='d-flex justify-content-center align-items-center gap-2'>
-                <h6 className=" text-capitalize mb-0  text-main-color">{username}</h6>
+                <h6 className=" text-capitalize mb-0  text-main-color">{ username }</h6>
                 <DropDown />
                 {
                   i18n.language === "en" && (
                     <>
-                      <input type="button" value="عربي" onClick={ () => {
+                      <input type="button" value="Ar" className="lang-btn lang-ar-btn" onClick={ () => {
                         i18n.changeLanguage("ar");
+                        document.body.style.cssText = "font-family: var(--font-family-arabic) !important;direction: rtl;";
+                        localStorage.setItem("lang","ar")
                       } } />
                     </>
                   )
                 }
                 {
-                  i18n.language === "ar" && (<input type="button" value="English" onClick={ () => {
+                  i18n.language === "ar" && (<input type="button" value="En" className="lang-btn lang-en-btn" onClick={ () => {
                     i18n.changeLanguage("en");
+                    document.body.style.cssText = "font-family: var(--font-family2) !important;direction: ltr;";
+                    localStorage.setItem("lang","en")
                   } } />)
                 }
               </div>

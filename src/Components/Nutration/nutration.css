@@ -101,3 +101,10 @@ p {
     width: 100% !important;
   }
 }
+
+.margin-r10 {
+  margin-right: 10px !important;
+}
+.padding-r20 {
+  padding-right: 22px !important;
+}

@@ -1,13 +1,15 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./nutration.css";
+import { useAuth } from "../../Context/AuthContext";
 
 export const CaloriesTrack = () => {
+  const {t, i18n} = useAuth()
   return (
-    <Col xs={12} lg={6} className="card-n mt-0">
+    <Col xs={12} lg={6} className={ `card-n mt-0 ${i18n.language === "ar" ? "padding-r20" : ""}` }>
       <Row className="justify-between mb-2">
         <Col>
-          <h4 className="font-family1 text-paragraph-color">Day1</h4>
+          <h4 className="font-family1 text-paragraph-color">{t("Day1")}</h4>
         </Col>
         <Col>
           <p className="text-end">24/10/2000</p>
@@ -15,7 +17,7 @@ export const CaloriesTrack = () => {
       </Row>
       <Row>
         <Col xs={12} md={6} lg={3}>
-          <h6>Breakfast</h6>
+          <h6>{t("Breakfast")}</h6>
           <Row className="justify-between align-items-center">
             <Col>
               <p className="grey">Eggs</p>
@@ -37,7 +39,7 @@ export const CaloriesTrack = () => {
           </p>
         </Col>
         <Col xs={12} md={6} lg={3}>
-          <h6>Lunch</h6>
+          <h6>{t("Lunch")}</h6>
           <Row className="justify-between align-items-center">
             <Col></Col>
             <Col></Col>
@@ -51,7 +53,7 @@ export const CaloriesTrack = () => {
           </p>
         </Col>
         <Col xs={12} md={6} lg={3}>
-          <h6>Dinner</h6>
+          <h6>{t("Dinner")}</h6>
           <Row className="justify-between align-items-center">
             <Col></Col>
             <Col></Col>
@@ -65,7 +67,7 @@ export const CaloriesTrack = () => {
           </p>
         </Col>
         <Col xs={12} md={6} lg={3}>
-          <h6>Snacks</h6>
+          <h6>{t("Snacks")}</h6>
           <Row className="justify-between align-items-center">
             <Col></Col>
             <Col></Col>
@@ -83,25 +85,25 @@ export const CaloriesTrack = () => {
       <Row>
         <Col xs={6} lg={3}>
           <p className="">
-            Calories
+            {t("Calories")}
             <span className="fs-8 text-primary-color ">&nbsp; 370kj</span>
           </p>
         </Col>
         <Col xs={6} lg={3}>
           <p className="">
-            Carb
+            {t("Carb")}
             <span className="fs-8 text-primary-color ">&nbsp; 33g</span>
           </p>
         </Col>
         <Col xs={6} lg={3}>
           <p className="">
-            Fats
+            {t("Fats")}
             <span className="fs-8 text-primary-color ">&nbsp; 22g</span>
           </p>
         </Col>
         <Col>
           <p className="">
-            Protein
+            {t("Protein")}
             <span className="fs-8 text-primary-color ">&nbsp; 15g</span>
           </p>
         </Col>

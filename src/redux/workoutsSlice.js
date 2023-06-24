@@ -65,6 +65,23 @@ import axios from "axios";
 //
 export const getWorkoutByID = createAsyncThunk(
   "workouts/getWorkoutByID",
+  // async (id, thunkAPI) => {
+  //   const { rejectWithValue } = thunkAPI;
+  //   try {
+  //     const { data } = await axios.request({
+  //       method: "GET",
+  //       url: `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`,
+  //       headers: {
+  //         // 'X-RapidAPI-Key': 'a6b7681b21mshe04ba4574112386p1d756ajsn42b981165f59',
+  //         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+  //       },
+  //     });
+      
+  //     // console.log(data);
+  //     return data;
+  //   } catch (error) {
+  //     return rejectWithValue(error.message);
+  //   }
   async (id) => {
     const res = await axios.get(
       `http://localhost:3002/exercises/${id}`
@@ -75,6 +92,22 @@ export const getWorkoutByID = createAsyncThunk(
 );
 export const getAllWorkouts = createAsyncThunk(
   "workouts/getAllWorkouts",
+  // async (_, thunkAPI) => {
+  //   const { rejectWithValue } = thunkAPI;
+  //   try {
+  //     const { data } = await axios.request({
+  //       method: "GET",
+  //       url: "https://exercisedb.p.rapidapi.com/exercises",
+  //       headers: {
+  //         // 'X-RapidAPI-Key': 'a6b7681b21mshe04ba4574112386p1d756ajsn42b981165f59',
+  //         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+  //       },
+  //     });
+  //     // console.log(data);
+  //     return data;
+  //   } catch (error) {
+  //     return rejectWithValue(error.message);
+  //   }
   async () => {
     const res = await axios.get("http://localhost:3002/exercises");
     const data = res.data;

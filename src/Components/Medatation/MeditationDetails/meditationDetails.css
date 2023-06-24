@@ -23,3 +23,7 @@
   .btns-action {
     cursor: pointer;
   }
+
+.ltr-direction {
+  direction: ltr !important;
+}

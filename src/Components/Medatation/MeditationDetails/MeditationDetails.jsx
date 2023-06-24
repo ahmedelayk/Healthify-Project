@@ -88,7 +88,7 @@ const MeditationDetails = () => {
   const [rating, setRating] = useState(randomRate);
   let randomNum = Math.floor(Math.random() * 3);
   return (
-    <Container id="meditation-details" className="section-padding">
+    <Container id="meditation-details" className="section-padding ltr-direction">
       <h1 className="header1-size">{artDetails?.title}</h1>
       <div className="d-flex pb-3">
         <Rating className="rating-size" value={rating} readOnly />

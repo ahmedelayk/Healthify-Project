@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-
+// styling
+import "../Fitness/fit.css"
 // uuid
 import { v4 as uuid } from "uuid";
 
@@ -38,7 +39,7 @@ const Cardio = () => {
   return (
     <div>
       <VideoSection source={cardio} header="Cardio Workout" description="Fall in love with cardio" />
-      <Container className="section-padding" data-aos="zoom-in-left">
+      <Container className="section-padding ltr-direction" data-aos="zoom-in-left">
         <h1 className="header1-size text-center">{t("Cardio of the day")}</h1>
         <Row className="my-5" data-aos="zoom-in-left">
           {isLoading ? (

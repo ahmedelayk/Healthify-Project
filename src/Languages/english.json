@@ -163,9 +163,46 @@
     "Instructor": "Instructor",
     "All": "All",
     "Filter": "Filter",
-    "Results": "Results"
+    "Results": "Results",
 
+    "workou-page":"------------------------------------------------------------------",
+    "Fitness of the day": "Fitness of the day",
+    
+    "nutrit-page":"------------------------------------------------------------------",
 
+    "Height": "Height",
+    "CM": "CM",
+    "Weight": "Weight",
+    "KG": "KG",
+    "Calculating...": "Calculating...",
+    "Calculate BMI": "Calculate BMI",
+    "Kg": "Kg",
+    "Cm": "Cm",
+    "BMI Calculator": "BMI Calculator",
+
+    "Welcome": "Welcome",
+    "BMI Result": "BMI Result",
+    "kg": "kg",
+    "cm": "cm",
+    "Gender": "Gender",
+    "Calculate bmi now": "Calculate bmi now",
+    "Water": "Water",
+
+    "Day1": "Day1",
+    "Breakfast": "Breakfast",
+    "Lunch": "Lunch",
+    "Dinner": "Dinner",
+    "Snacks": "Snacks",
+    "Calories": "Calories",
+    "Carb": "Carb",
+    "Fats": "Fats",
+    "Protein": "Protein"
+    
+    
+    
+    
+    
+    
 }
 
 
