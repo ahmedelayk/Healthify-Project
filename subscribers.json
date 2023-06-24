@@ -1,0 +1,12 @@
+{
+  "subscribers": [
+    {
+      "email": "dd@gg.cc",
+      "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "id": 2
+    }
+  ]
+}

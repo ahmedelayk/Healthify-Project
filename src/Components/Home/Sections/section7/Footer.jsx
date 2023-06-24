@@ -9,9 +9,60 @@ import { SiMediafire } from "react-icons/si";
 import "./Footer.css";
 // Context
 import { useAuth } from "../../../../Context/AuthContext";
+import { useState } from "react";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 function Footer() {
-  const {t} = useAuth();
+  const [email, setEmail] = useState("");
+
+  const handleValue = async (e) => {
+    e.preventDefault();
+    if (email.includes("@")) {
+      try {
+        const response = await axios.get("http://localhost:3003/subscribers");
+        const subscribers = response.data;
+
+        if (subscribers.some((subscriber) => subscriber.email === email)) {
+          Swal.fire({
+            icon: "info",
+            title: t("Oops!"),
+            text: t("You already subscribed before."),
+            footer: "",
+          });
+        } else {
+          await axios.post("http://localhost:3003/subscribers", { email });
+          Swal.fire(
+            `${t("You have successfully subscribed")}`,
+            ` <b style=color:#0066ff;> ${t("Healthify Team")} </b>`,
+            "success"
+          );
+        }
+        
+        clearInputs();
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: t("Oops!"),
+          text: t("An error occurred. Please try again later."),
+          footer: "",
+        });
+      }
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: t("Oops!"),
+        text: t("Please Enter Your Email Correctly"),
+        footer: "",
+      });
+    }
+  };
+
+  const clearInputs = () => {
+    setEmail("");
+  };
+
+  const { t } = useAuth();
   return (
     <footer id="footer" className="footer-1 ">
       <div className="main-footer widgets-dark typo-light ">
@@ -20,7 +71,8 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget subscribe no-box">
                 <h5 className="widget-title">
-                {t("About Healthify")}<span></span>
+                  {t("About Healthify")}
+                  <span></span>
                 </h5>
                 <p>{t("About us, little description will goes here..")} </p>
               </div>
@@ -29,7 +81,8 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                {t("Quick Links")}<span></span>
+                  {t("Quick Links")}
+                  <span></span>
                 </h5>
                 <ul className="thumbnail-widget">
                   <li>
@@ -49,7 +102,8 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                {t("Follow up")}<span></span>
+                  {t("Follow up")}
+                  <span></span>
                 </h5>
 
                 <BsFacebook className="me-2" />
@@ -69,11 +123,19 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                {t("Contact Us")}<span></span>
+                  {t("Contact Us")}
+                  <span></span>
                 </h5>
                 <p>{t("Subscribe now to be in touch")} </p>
                 <div className="emailfield">
-                  <input className="input-email" type="text" name="email" defaultValue={t("Email")} />
+                  <input
+                    className="input-email"
+                    type="text"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    name="user_email"
+                    defaultValue={t("Email")}
+                  />
                   <input name="uri" type="hidden" value="arabiantheme" />
                   <input name="loc" type="hidden" value="en_US" />
 
@@ -81,6 +143,7 @@ function Footer() {
                     className="submitbutton ripplelink footer-btn"
                     type="submit"
                     value={t("Subscribe")}
+                    onClick={handleValue}
                   />
                 </div>
               </div>
