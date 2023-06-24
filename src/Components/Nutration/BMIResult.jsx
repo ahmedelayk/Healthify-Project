@@ -7,7 +7,6 @@ import m_bodies from "../assets/images/m-bmi-bodies.webp";
 import { useAuth } from "../../Context/AuthContext";
 
 export const BMIResult = () => {
-  const {t} = useAuth();
   const {
     result,
     loadingResult,
@@ -18,14 +17,15 @@ export const BMIResult = () => {
     weight,
     height,
   } = useNutrition();
-  const { currentUser, currentUserData } = useAuth();
+  const { currentUser, currentUserData, t, i18n } = useAuth();
 
   return (
     <Col
       xs={12}
       lg={6}
       className={
-        gender === "Female" ? "f-color card-n result-sec " : "card-n result-sec"
+        `card-n result-sec ${i18n.language === "ar"? "padding-r20":""}
+        ${gender === "Female" ? "f-color" : ""}`
       }
     >
       {loadingResult ? (

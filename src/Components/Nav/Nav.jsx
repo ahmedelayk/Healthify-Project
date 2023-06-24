@@ -65,17 +65,19 @@ function Navbarr() {
                 {
                   i18n.language === "en" && (
                     <>
-                      <input type="button" value="عربي" onClick={ () => {
+                      <input type="button" value="Ar" className="lang-btn lang-ar-btn" onClick={ () => {
                         i18n.changeLanguage("ar");
-                        document.body.style.cssText = "font-family: var(--font-family-arabic) !important;direction: rtl;"
+                        document.body.style.cssText = "font-family: var(--font-family-arabic) !important;direction: rtl;";
+                        localStorage.setItem("lang","ar")
                       } } />
                     </>
                   )
                 }
                 {
-                  i18n.language === "ar" && (<input type="button" value="English" onClick={ () => {
+                  i18n.language === "ar" && (<input type="button" value="En" className="lang-btn lang-en-btn" onClick={ () => {
                     i18n.changeLanguage("en");
-                    document.body.style.cssText = "font-family: var(--font-family2) !important;direction: ltr;"
+                    document.body.style.cssText = "font-family: var(--font-family2) !important;direction: ltr;";
+                    localStorage.setItem("lang","en")
                   } } />)
                 }
               </div>

@@ -8,6 +8,7 @@ import store from "./redux/store";
 import { Provider } from "react-redux";
 // import { Spinner } from "react-bootstrap";
 import Spinner from "./Components/Spinner/Spinner";
+import { useAuth } from "./Context/AuthContext";
 
 // lazy loading
 const Navbarr = lazy(() => import("./Components/Nav/Nav"));
@@ -26,7 +27,15 @@ const SignUp = lazy(() => import("./Components/SignInUp/SignUp"))
 const Footer = lazy(() => import("./Components/Home/Sections/section7/Footer"))
 
 function App() {
+  const {i18n} = useAuth();
   useEffect(() => {
+    if(localStorage.getItem("lang") === "ar"){
+      i18n.changeLanguage("ar");
+      document.body.style.cssText = "font-family: var(--font-family-arabic) !important;direction: rtl;";
+    }else {
+      i18n.changeLanguage("en");
+      document.body.style.cssText = "font-family: var(--font-family2) !important;direction: ltr;";
+    }
     Aos.init();
     Aos.refresh();
   }, []);

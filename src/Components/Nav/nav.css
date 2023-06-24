@@ -80,3 +80,18 @@
 .dropdown-list-item:hover {
   background-color: #DDD;
 }
+.lang-btn {
+  outline: none;
+  border: none;
+  padding: 5px 8px;
+  color: white;
+  border-radius: 8px;
+}
+.lang-en-btn {
+  background-color: rgb(192, 34, 66);
+  font-family: "Geologica", sans-serif;
+}
+.lang-ar-btn {
+  background-color: darkslategrey;
+  
+}

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-
+import "./workout.css"
 // uuid
 import { v4 as uuid } from "uuid";
 
@@ -21,7 +21,7 @@ import { getAllWorkouts } from "../../redux/workoutsSlice";
 import { useAuth } from "../../Context/AuthContext";
 
 const Cardio = () => {
-  const {t} = useAuth();
+  const {t, i18n} = useAuth();
   const { cardios, isLoading, error } = useSelector((state) => state.workouts);
   const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ const Cardio = () => {
   }, []);
 
   return (
-    <div className="section-padding" data-aos="zoom-in-left">
+    <div className={`section-padding ${i18n.language === "ar"? "padding-r20": ""}`} data-aos="zoom-in-left">
       <div className="cardio overflow-hidden" data-aos="flip-left">
         <h1 className="header1-size ps-4 mb-3">{t("Cardio")}</h1>
         <Row className="py-5 pe-5 ps-5 ps-md-0 bg-white">
