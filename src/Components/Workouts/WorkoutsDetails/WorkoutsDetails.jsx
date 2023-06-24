@@ -154,7 +154,7 @@ const WorkoutsDetails = () => {
                         (cardio) =>
                           cardio.equipment === "body weight" && cardio.id !== id
                       )
-                      .slice(0, 5)
+                      .slice(0, 3)
                       .map((cardio) => (
                         <SwiperSlide>
                           <Link

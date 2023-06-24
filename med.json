@@ -876,5 +876,303 @@
       "poster": "https://img.freepik.com/premium-vector/international-yoga-day-black-female-character-sportswear-meditating_277904-20874.jpg?size=626&ext=jpg&ga=GA1.2.2003327667.1683799827&semt=sph",
       "author": "Ahmed Alayek"
     }
+  ],
+  "exercises": [
+    {
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/92/2b/94/922b949a38ec4c875819f54f41795899.gif",
+      "id": "0001",
+      "name": "3/4 sit-up",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/ef/c2/63/efc2639d761621ea2e9646a8096958e3.gif",
+      "id": "0002",
+      "name": "45° side bend",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/53/82/7e/53827e28d0eac694546f4167aed4e8ba.gif",
+      "id": "0003",
+      "name": "air bike",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "upper legs",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/c0/46/88/c046883339ac53eb29cd79b41d3061a7.gif",
+      "id": "1512",
+      "name": "all fours squad stretch",
+      "target": "quads"
+    },
+    {
+      "bodyPart": "back",
+      "equipment": "cable",
+      "gifUrl": "https://i.pinimg.com/originals/ce/01/c0/ce01c076515e8252a4602832e6693319.gif",
+      "id": "0007",
+      "name": "alternate lateral pulldown",
+      "target": "lats"
+    },
+    {
+      "bodyPart": "lower legs",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/1f/32/2d/1f322db369badfe05d525eb2a8ca8fc6.gif",
+      "id": "1368",
+      "name": "ankle circles",
+      "target": "calves"
+    },
+    {
+      "bodyPart": "back",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/f6/62/3c/f6623cd6ebaa3151c03e60ee3ad6822f.gif",
+      "id": "3293",
+      "name": "archer pull up",
+      "target": "lats"
+    },
+    {
+      "bodyPart": "chest",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/25/0a/b2/250ab27099d9921111d59f007df7b322.gif",
+      "id": "3294",
+      "name": "archer push up",
+      "target": "pectorals"
+    },
+    {
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/1b/1c/6a/1b1c6a8d4db85e236bc8f1179db161ae.gif",
+      "id": "2355",
+      "name": "arm slingers hanging bent knee legs",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "waist",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/2e/43/e0/2e43e04410c77c1824e132bc852979fe.gif",
+      "id": "2333",
+      "name": "arm slingers hanging straight legs",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "kk",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/f8/d2/3c/f8d23c133e8b9fc4ca0d124acce19a7b.gif",
+      "id": "1713",
+      "name": "assisted prone lying quads stretch",
+      "target": "quads"
+    },
+    {
+      "bodyPart": "waist",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/f8/d2/3c/f8d23c133e8b9fc4ca0d124acce19a7b.gif",
+      "id": "1714",
+      "name": "assisted prone rectus femoris stretch",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/1b/1c/6a/1b1c6a8d4db85e236bc8f1179db161ae.gif",
+      "id": "0017",
+      "name": "assisted pull-up",
+      "target": "lats"
+    },
+    {
+      "bodyPart": "chest",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/7e/b1/5b/7eb15b823dffa8bfab1974fb9d2ab308.gif",
+      "id": "1716",
+      "name": "assisted seated pectoralis major stretch with stability ball",
+      "target": "pectorals"
+    },
+    {
+      "bodyPart": "kkmk",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/7a/1d/98/7a1d9869d830546227d36f8f7eb4cbaa.gif",
+      "id": "1712",
+      "name": "assisted side lying adductor stretch",
+      "target": "adductors"
+    },
+    {
+      "bodyPart": "waist",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/a5/ea/b5/a5eab570b6d4d937a392d7f26f8a7de5.gif",
+      "id": "1758",
+      "name": "assisted sit-up",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/5b/9b/3f/5b9b3f6d8573099e15d93cc29e730f04.gif",
+      "id": "1431",
+      "name": "assisted standing chin-up",
+      "target": "lats"
+    },
+    {
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/09/70/49/097049349be72fae6f025eece23fb890.gif",
+      "id": "1432",
+      "name": "assisted standing pull-up",
+      "target": "lats"
+    },
+    {
+      "bodyPart": "upper arms",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/56/35/40/563540bbc24b25d30986579a87026019.gif",
+      "id": "0018",
+      "name": "assisted standing triceps extension (with towel)",
+      "target": "triceps"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/b4/bc/7a/b4bc7abb353ab6c24908ca75af57c500.gif",
+      "id": "3214",
+      "name": "arms apart circular toe touch (male)",
+      "target": "glutes"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/15/12/21/151221eaee47f49640cbc59bb52803b9.gif",
+      "id": "3204",
+      "name": "arms overhead full sit-up (male)",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/f0/a5/31/f0a5312f9617ddc8c18a8715eb7e2be4.gif",
+      "id": "0009",
+      "name": "assisted chest dip (kneeling)",
+      "target": "pectorals"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/cc/d8/bb/ccd8bbc35c654dbbc2171f27c44f0048.gif",
+      "id": "0011",
+      "name": "assisted hanging knee raise",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/e6/a0/29/e6a029118aed4f5a7eb4c8791eafcc64.gif",
+      "id": "0010",
+      "name": "assisted hanging knee raise with throw down",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/00/86/72/008672d82cec0f4076eb8c210e9a5c64.gif",
+      "id": "1708",
+      "name": "assisted lying calves stretch",
+      "target": "calves"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/d9/98/04/d99804bc463199cdfcd9108ab5c6204c.gif",
+      "id": "1709",
+      "name": "assisted lying glutes stretch",
+      "target": "glutes"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/ab/14/8d/ab148d126780f9b1dbba182efb5444e9.gif",
+      "id": "1710",
+      "name": "assisted lying gluteus and piriformis stretch",
+      "target": "glutes"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/5c/4d/34/5c4d34bf1995c07c35916b0f92e0d7bc.gif",
+      "id": "0012",
+      "name": "assisted lying leg raise with lateral throw down",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/f8/67/b1/f867b16e1abe608a0301ee8ddb41f5c7.gif",
+      "id": "0013",
+      "name": "assisted lying leg raise with throw down",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "medicine ball",
+      "gifUrl": "https://i.pinimg.com/originals/d8/43/48/d843485305f6e9a8bd59fb042da5fb22.gif",
+      "id": "0014",
+      "name": "assisted motion russian twist",
+      "target": "abs"
+    },
+    {
+      "bodyPart": "back",
+      "equipment": "leverage machine",
+      "gifUrl": "https://edbv2-ff7foj6vca-uc.a.run.app/image/Jy0m-1z-Xyp+f9",
+      "id": "0015",
+      "name": "assisted parallel close grip pull-up",
+      "target": "lats"
+    },
+    {
+      "bodyPart": "kk",
+      "equipment": "assisted",
+      "gifUrl": "https://i.pinimg.com/originals/7e/b1/5b/7eb15b823dffa8bfab1974fb9d2ab308.gif",
+      "id": "0016",
+      "name": "assisted prone hamstring",
+      "target": "hamstrings"
+    },
+    {
+      "bodyPart": "upper arms",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/a6/73/4b/a6734b652975d75f98460dd461b3de43.gif",
+      "id": "0019",
+      "name": "assisted triceps dip (kneeling)",
+      "target": "triceps"
+    },
+    {
+      "bodyPart": "chest",
+      "equipment": "leverage machine",
+      "gifUrl": "https://i.pinimg.com/originals/b7/0e/06/b70e06ab9879844b2e9e6eafa05d1889.gif",
+      "id": "2364",
+      "name": "assisted wide-grip chest dip (kneeling)",
+      "target": "pectorals"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/0e/06/4f/0e064f76765709c97a46cd491597ac74.gif",
+      "id": "3220",
+      "name": "astride jumps (male)",
+      "target": "cardiovascular system"
+    },
+    {
+      "bodyPart": "cardio",
+      "equipment": "body weight",
+      "gifUrl": "https://i.pinimg.com/originals/34/60/09/3460095fbe400b81a95f456e9f11ef40.gif",
+      "id": "3672",
+      "name": "back and forth step",
+      "target": "cardiovascular system"
+    },
+    {
+      "bodyPart": "back",
+      "equipment": "stability ball",
+      "gifUrl": "https://i.pinimg.com/originals/b1/72/e2/b172e2b7128be162f13875ba91b84a17.gif",
+      "id": "1314",
+      "name": "back extension on exercise ball",
+      "target": "spine"
+    }
   ]
 }
