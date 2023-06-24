@@ -115,6 +115,13 @@ const AuthProvider = ({ children }) => {
           gender: gender,
           email: email,
           password: password,
+          notification: {
+            exercise: false,
+            dailyMeditation: false,
+            fitnessGoals: false,
+            personalizedRecomendations: false,
+            weeklyBMI: false,
+          }
         });
       }
     );
