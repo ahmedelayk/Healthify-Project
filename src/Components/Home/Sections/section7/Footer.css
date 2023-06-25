@@ -1,6 +1,6 @@
 footer .main-footer {
   padding: 20px 0;
-  background:var(--paragraph-color);
+  background: var(--paragraph-color);
 }
 footer ul {
   padding-left: 0;
@@ -136,6 +136,18 @@ footer.light .footer-copyright {
   float: right;
   background: #7f7f7f;
 }
+.widget-follow-link {
+  color: white;
+  transition: all ease 0.3s;
+}
+.widget-follow-link:hover {
+  color: var(--main-color);
+  transform: translateY(5px);
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+  -o-transform: translateY(5px);
+}
 
 .typo-light h1,
 .typo-light h2,
@@ -169,7 +181,7 @@ ul.social-footer2 li a {
   text-align: center;
 }
 .footer-btn {
-  background-color:var(--main-color);
+  background-color: var(--main-color);
   color: #fff;
 }
 .btn:hover,

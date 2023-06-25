@@ -125,6 +125,7 @@ function Footer() {
                   href="https://www.fb.com/healhifyITI"
                   target="_blank"
                   rel="noreferrer"
+                  className="widget-follow-link"
                 >
                   <BsFacebook className="me-2" />
                 </a>
@@ -132,6 +133,7 @@ function Footer() {
                   href="https://github.com/ahmedelayk/Healthify-Project"
                   target="_blank"
                   rel="noreferrer"
+                  className="widget-follow-link"
                 >
                   <BsGithub className="me-2" />
                 </a>
@@ -139,6 +141,7 @@ function Footer() {
                   href="https://www.linkedin.com/healhifyITI"
                   target="_blank"
                   rel="noreferrer"
+                  className="widget-follow-link"
                 >
                   <BsLinkedin className="me-2" />
                 </a>
@@ -146,6 +149,7 @@ function Footer() {
                   href="https://www.twitter.com/healhifyITI"
                   target="_blank"
                   rel="noreferrer"
+                  className="widget-follow-link"
                 >
                   <AiFillTwitterCircle className="me-2" />
                 </a>
