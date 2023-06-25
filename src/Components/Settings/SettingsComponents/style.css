@@ -86,3 +86,15 @@
 .no-border {
   border: none !important;
 }
+.help-cont{
+  width: 90%;
+}
+.help-des{
+line-height: 40px;
+letter-spacing: 1px;
+}
+.help-poster{
+  width: 100%;
+  height: 100vh;
+  margin-top: 5vh;
+}

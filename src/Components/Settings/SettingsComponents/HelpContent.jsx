@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useParams } from "react-router-dom";
+import './style.css'
 const HelpContent = () => {
   const [data, setData] = useState([]);
-
+const {id}=useParams()
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3002/help");
+      const response = await axios.get("http://localhost:3002/help/"+id);
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -19,12 +20,11 @@ const HelpContent = () => {
 
   return (
     <div className="container">
-      {data.map((item, index) => (
-        <div key={index} className="item">
-          <h2>{item.header}</h2>
-          <p>{item.description}</p>
+        <div className="item help-cont">
+          <h2 className="text-center m-5">{data.header}</h2>
+              <p className="m-2 help-des">{data.description}</p>
+              <img src={data.poster} alt={data.header } className="help-poster"/>
         </div>
-      ))}
     </div>
   );
 };
