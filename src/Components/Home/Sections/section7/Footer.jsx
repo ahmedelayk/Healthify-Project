@@ -121,11 +121,34 @@ function Footer() {
                   {t("Follow up")}
                   <span></span>
                 </h5>
-
-                <BsFacebook className="me-2" />
-                <BsGithub className="me-2" />
-                <BsLinkedin className="me-2" />
-                <AiFillTwitterCircle className="me-2" />
+                <a
+                  href="https://www.fb.com/healhifyITI"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BsFacebook className="me-2" />
+                </a>
+                <a
+                  href="https://github.com/ahmedelayk/Healthify-Project"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BsGithub className="me-2" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/healhifyITI"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BsLinkedin className="me-2" />
+                </a>
+                <a
+                  href="https://www.twitter.com/healhifyITI"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AiFillTwitterCircle className="me-2" />
+                </a>
               </div>
               <div className="widget no-box">
                 <h6 className="widget-title">{t("Download Healthify App")}</h6>
