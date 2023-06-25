@@ -38,7 +38,7 @@ function Footer() {
             "success"
           );
         }
-        
+
         clearInputs();
       } catch (error) {
         Swal.fire({
@@ -74,7 +74,11 @@ function Footer() {
                   {t("About Healthify")}
                   <span></span>
                 </h5>
-                <p>{t("About us, little description will goes here..")} </p>
+                <p>
+                  {t(
+                    "Comprehensive health and wellness website that helps individuals throughout their journey towards better health!"
+                  )}{" "}
+                </p>
               </div>
             </div>
 
@@ -87,12 +91,24 @@ function Footer() {
                 <ul className="thumbnail-widget">
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">&nbsp;{t("Get Started")}</a>
+                      <a
+                        href="https://www.health.harvard.edu/blog"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        &nbsp;{t("Harvard Health")}
+                      </a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">&nbsp;{t("Top Leaders")}</a>
+                      <a
+                        href="https://www.medicalnewstoday.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        &nbsp;{t("Medical News")}
+                      </a>
                     </div>
                   </li>
                 </ul>
@@ -105,11 +121,38 @@ function Footer() {
                   {t("Follow up")}
                   <span></span>
                 </h5>
-
-                <BsFacebook className="me-2" />
-                <BsGithub className="me-2" />
-                <BsLinkedin className="me-2" />
-                <AiFillTwitterCircle className="me-2" />
+                <a
+                  href="https://www.fb.com/healhifyITI"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="widget-follow-link"
+                >
+                  <BsFacebook className="me-2" />
+                </a>
+                <a
+                  href="https://github.com/ahmedelayk/Healthify-Project"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="widget-follow-link"
+                >
+                  <BsGithub className="me-2" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/healhifyITI"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="widget-follow-link"
+                >
+                  <BsLinkedin className="me-2" />
+                </a>
+                <a
+                  href="https://www.twitter.com/healhifyITI"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="widget-follow-link"
+                >
+                  <AiFillTwitterCircle className="me-2" />
+                </a>
               </div>
               <div className="widget no-box">
                 <h6 className="widget-title">{t("Download Healthify App")}</h6>
