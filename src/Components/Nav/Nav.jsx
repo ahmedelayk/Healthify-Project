@@ -20,7 +20,7 @@ function Navbarr() {
         `${currentUserData?.firstName} ${currentUserData?.lastName}`
       )
       : setUsername(currentUser?.displayName);
-  });
+  }, [currentUser?.displayName, currentUserData?.firstName, currentUserData?.lastName]);
   return (
     <Navbar expand="lg" className="border-bottom navbar">
       <Container>

@@ -13,14 +13,14 @@ const Workouts = () => {
         <h1>{t("Fitness & Cardio")}</h1>
       </div>
       <div
-        data-aos="fade-left"
+        data-aos="zoom-in"
         data-aos-easing="ease-in-cubic"
         data-aos-duration="2000"
       >
         <Fitness />
       </div>
       <div
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
       >

@@ -77,17 +77,20 @@ function App() {
     if (currentUserData?.notification?.exercise) {
       var exerciseTimer = setInterval(() => {
         notifyWith(notificationsArr.exercise[Math.trunc(Math.random()*3)]);
-      }, 3.6e+6);
+      }, 10000);
+      // }, 3.6e+6);
     }
     if (currentUserData?.notification?.dailyMeditation) {
       var dailyMeditationTimer = setInterval(() => {
         notifyWith(notificationsArr.dailyMeditation[Math.trunc(Math.random()*3)]);
       }, 8.64e+7);
+      // }, 8.64e+7);
     }
     if (currentUserData?.notification?.fitnessGoals) {
       var fitnessGoalsTimer = setInterval(() => {
         notifyWith(notificationsArr.fitnessGoals[Math.trunc(Math.random()*3)]);
       }, 1.8e+6);
+      // }, 1.8e+6);
     }
     if (currentUserData?.notification?.personalizedRecommendations) {
       var personalizedRecommendationsTimer = setInterval(() => {
@@ -98,6 +101,7 @@ function App() {
       var weeklyBMITimer = setInterval(() => {
         notifyWith(notificationsArr.weeklyBMI[Math.trunc(Math.random()*3)]);
       }, 6.048e+8);
+      // }, 6.048e+8);
     }
     return ()=>{
       clearInterval(exerciseTimer);

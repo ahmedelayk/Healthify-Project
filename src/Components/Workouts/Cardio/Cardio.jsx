@@ -19,6 +19,7 @@ import MyPagination from "../CommonComponents/Pagination";
 // Data
 import { getAllWorkouts } from "../../../redux/workoutsSlice";
 import { useAuth } from "../../../Context/AuthContext";
+import Spinner from "../../Spinner/Spinner";
 
 const Cardio = () => {
   const {t} = useAuth();
@@ -43,7 +44,9 @@ const Cardio = () => {
         <h1 className="header1-size text-center">{t("Cardio of the day")}</h1>
         <Row className="my-5" data-aos="zoom-in-left">
           {isLoading ? (
-            <div>{t("Loading...")}</div>
+            <div className="page-height">
+              <Spinner />
+            </div>
           ) : error ? (
             <div>{error}</div>
           ) : cardios ? (

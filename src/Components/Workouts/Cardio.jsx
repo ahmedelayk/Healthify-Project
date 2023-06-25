@@ -19,6 +19,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { getAllWorkouts } from "../../redux/workoutsSlice";
 // Context
 import { useAuth } from "../../Context/AuthContext";
+import Spinner from "../Spinner/Spinner";
 
 const Cardio = () => {
   const {t, i18n} = useAuth();
@@ -57,7 +58,9 @@ const Cardio = () => {
               }}
             >
               {isLoading ? (
-                <div>{t("Loading...")}</div>
+                <div className="page-height">
+                  <Spinner />
+                </div>
               ) : error ? (
                 <div>{error}</div>
               ) : cardios ? (
@@ -67,7 +70,7 @@ const Cardio = () => {
                       to={`cardio/${cardio.id}`}
                       className="text-decoration-none"
                     >
-                      <Card className="workouts-card" data-aos="zoom-in-left">
+                      <Card className="workouts-card" data-aos="zoom-in">
                         <Card.Img variant="top" src={cardio.gifUrl} loading="lazy" className="cardd-img"/>
                         <Card.Body>
                           <Card.Title className="header1-size">

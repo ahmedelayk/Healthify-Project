@@ -30,6 +30,7 @@ import { MdAttachMoney } from "react-icons/md";
 
 // Data
 import { getAllWorkouts, getWorkoutByID } from "../../../redux/workoutsSlice";
+import Spinner from "../../Spinner/Spinner";
 
 const WorkoutsDetails = () => {
   const { workout, cardios, fitnesses, isLoading, error } = useSelector(
@@ -83,45 +84,47 @@ const WorkoutsDetails = () => {
   }, [id, dispatch]);
   return (
     <>
-      {isLoading ? (
-        <div>Loading...</div>
+      { isLoading ? (
+        <div className="page-height">
+          <Spinner />
+        </div>
       ) : error ? (
-        <div>{error}</div>
+        <div>{ error }</div>
       ) : workout ? (
         <Container id="workouts-details" className="section-padding ltr-direction">
-          <h1 className="header1-size">{workout.name}</h1>
+          <h1 className="header1-size">{ workout.name }</h1>
           <div className="d-flex pb-3">
-            <Rating className="rating-size" value={rating} readOnly />
+            <Rating className="rating-size" value={ rating } readOnly />
             <span className="color">(3 Reviews)</span>
           </div>
           <Row className="mb-4 d-lg-flex justify-content-lg-center">
             <img
-              src={workout.gifUrl}
+              src={ workout.gifUrl }
               className="workouts-img"
               alt="workouts img"
             />
           </Row>
           <Row className="mb-4">
-            {btns.map((btn) => (
-              <Col className="details-btns" key={uuid()} xs={12} md={6} lg={3}>
+            { btns.map((btn) => (
+              <Col className="details-btns" key={ uuid() } xs={ 12 } md={ 6 } lg={ 3 }>
                 <div
-                  onClick={() => handleBtnsAction(btn.name.toLowerCase())}
+                  onClick={ () => handleBtnsAction(btn.name.toLowerCase()) }
                   className="btns-action d-flex justify-content-between align-items-center p-3 border border-secondary-subtle rounded-5 mb-2"
                 >
-                  <div>{btn.name}</div>
-                  {!btnsAction[btn.name.toLowerCase()] ? btn.icon : btn.icon2}
+                  <div>{ btn.name }</div>
+                  { !btnsAction[btn.name.toLowerCase()] ? btn.icon : btn.icon2 }
                 </div>
               </Col>
-            ))}
+            )) }
           </Row>
           <div className="content mb-5">
             <span
               className="workouts-name"
-              style={{ textTransform: "capitalize" }}
+              style={ { textTransform: "capitalize" } }
             >
-              {workout.name}
-            </span>{" "}
-            is one of the best exercises to target your {workout.target}. It
+              { workout.name }
+            </span>{ " " }
+            is one of the best exercises to target your { workout.target }. It
             will help you improve your mood and gain energy.
           </div>
 
@@ -130,10 +133,10 @@ const WorkoutsDetails = () => {
             <div className="another-workouts">
               <Swiper
                 className="mt-5"
-                modules={[Pagination]}
-                spaceBetween={30}
-                slidesPerView={3}
-                breakpoints={{
+                modules={ [Pagination] }
+                spaceBetween={ 30 }
+                slidesPerView={ 3 }
+                breakpoints={ {
                   0: {
                     slidesPerView: 1,
                   },
@@ -143,34 +146,34 @@ const WorkoutsDetails = () => {
                   991.98: {
                     slidesPerView: 3,
                   },
-                }}
-                pagination={{ clickable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
+                } }
+                pagination={ { clickable: true } }
+                onSwiper={ (swiper) => console.log(swiper) }
+                onSlideChange={ () => console.log("slide change") }
               >
-                {workout.bodyPart === "cardio" && cardios
+                { workout.bodyPart === "cardio" && cardios
                   ? cardios
-                      .filter(
-                        (cardio) =>
-                          cardio.equipment === "body weight" && cardio.id !== id
-                      )
-                      .slice(0, 3)
-                      .map((cardio) => (
-                        <SwiperSlide>
-                          <Link
-                            to={`/workouts/cardio/${cardio.id}`}
-                            className="text-decoration-none"
-                          >
-                            <WorkoutsDetailsCard
-                              name={cardio.name}
-                              img={cardio.gifUrl}
-                              another={cardio.equipment}
-                            />
-                          </Link>
-                        </SwiperSlide>
-                      ))
+                    .filter(
+                      (cardio) =>
+                        cardio.equipment === "body weight" && cardio.id !== id
+                    )
+                    .slice(0, 3)
+                    .map((cardio) => (
+                      <SwiperSlide>
+                        <Link
+                          to={ `/workouts/cardio/${cardio.id}` }
+                          className="text-decoration-none"
+                        >
+                          <WorkoutsDetailsCard
+                            name={ cardio.name }
+                            img={ cardio.gifUrl }
+                            another={ cardio.equipment }
+                          />
+                        </Link>
+                      </SwiperSlide>
+                    ))
                   : fitnesses
-                  ? fitnesses
+                    ? fitnesses
                       .filter(
                         (fitness) =>
                           fitness.bodyPart === workout.bodyPart &&
@@ -180,25 +183,25 @@ const WorkoutsDetails = () => {
                       .map((fitness) => (
                         <SwiperSlide>
                           <Link
-                            to={`/workouts/fitness/${fitness.id}`}
+                            to={ `/workouts/fitness/${fitness.id}` }
                             className="text-decoration-none"
                           >
                             <WorkoutsDetailsCard
-                              name={fitness.name}
-                              img={fitness.gifUrl}
-                              another={fitness.bodyPart}
+                              name={ fitness.name }
+                              img={ fitness.gifUrl }
+                              another={ fitness.bodyPart }
                             />
                           </Link>
                         </SwiperSlide>
                       ))
-                  : ""}
+                    : "" }
               </Swiper>
             </div>
           </div>
         </Container>
       ) : (
         ""
-      )}
+      ) }
     </>
   );
 };
