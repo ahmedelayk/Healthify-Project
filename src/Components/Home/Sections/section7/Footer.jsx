@@ -38,7 +38,7 @@ function Footer() {
             "success"
           );
         }
-        
+
         clearInputs();
       } catch (error) {
         Swal.fire({
@@ -74,7 +74,11 @@ function Footer() {
                   {t("About Healthify")}
                   <span></span>
                 </h5>
-                <p>{t("About us, little description will goes here..")} </p>
+                <p>
+                  {t(
+                    "Comprehensive health and wellness website that helps individuals throughout their journey towards better health!"
+                  )}{" "}
+                </p>
               </div>
             </div>
 
