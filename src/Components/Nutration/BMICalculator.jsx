@@ -1,13 +1,21 @@
-import React from "react";
+// Hooks
+import { useCallback, useEffect } from "react";
+// Components
 import { Button, Col, Row } from "react-bootstrap";
+// icons
 import { MdMale, MdFemale } from "react-icons/md";
 import "toolcool-range-slider";
+// Style
 import "./nutration.css";
+// Context
 import { useNutrition } from "../../Context/NutritionContext";
 import { useAuth } from "../../Context/AuthContext";
+// firebase
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export const BMICalculator = () => {
-  const { t, i18n } = useAuth();
+  const { currentUserData, t, i18n } = useAuth();
   const {
     changeHeight,
     changeWeight,
@@ -20,7 +28,13 @@ export const BMICalculator = () => {
     height,
     weight,
   } = useNutrition();
-
+  // const handleResult = useCallback(async () => {
+  //     const userDoc = doc(db, "users", currentUserData?.userId)
+  //     await updateDoc(userDoc, { nutritionData: { height, weight, bmiResult: result } })
+  //   }, [currentUserData?.userId, height, result, weight])
+  // useEffect(() => {
+  //   handleResult();
+  // }, [handleResult, result])
   return (
     <Col xs={ 12 } lg={ 5 } className={ `card-n ${i18n.language === "ar" ? "padding-r20" : ""}` }>
       <h4 className="font-family1 text-paragraph-color mb-3 bolder">
@@ -140,7 +154,9 @@ export const BMICalculator = () => {
       ) : (
         <Button
           className="mt-5 p-2 w-25 min-w-100 text-center text-white cursor-pointer"
-          onClick={ () => handleCalculate(weight, height) }
+          onClick={ () => {
+            handleCalculate(weight, height)
+          } }
         >
           { t("Calculate BMI") }
         </Button>

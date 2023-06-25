@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { GrNotification } from "react-icons/gr";
 import { FcAbout } from "react-icons/fc";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 // Context
 import { useAuth } from "../../../Context/AuthContext";
+// firebase
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 // style
 import "./style.css"
+import Swal from "sweetalert2";
 
 const Notifications = () => {
   const { t, currentUserData } = useAuth();
@@ -21,9 +23,16 @@ const Notifications = () => {
     weeklyBMI: currentUserData?.notification?.weeklyBMI,
   });
   const handleSubmit = async () => {
-    console.log(currentUserData?.notification)
+    // console.log(currentUserData?.notification)
     const userDoc = doc(db, "users", currentUserData?.userId)
-    await updateDoc(userDoc, {notification: {...notification}})
+    await updateDoc(userDoc, { notification: { ...notification } })
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: t("Saved Successfully"),
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
   return (
     <div className="notifications p-lg-3 p-xs-0" data-aos="zoom-in-left">

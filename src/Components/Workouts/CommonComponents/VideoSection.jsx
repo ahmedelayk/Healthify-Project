@@ -6,7 +6,7 @@ import { Row } from "react-bootstrap";
 
 const VideoSection = ({source, header, description}) => {
     return ( 
-        <Row>
+        <Row className="row-edit">
         <div className="video position-relative">
           <div className="overlay position-absolute top-0 start-0 w-100 h-100 z-2"></div>
           <div className="video-content position-absolute z-3 w-100 h-100 d-flex justify-content-center align-items-center flex-wrap flex-column text-light">

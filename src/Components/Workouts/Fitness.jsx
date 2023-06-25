@@ -30,9 +30,9 @@ const Fitness = () => {
 
   useEffect(() => {
     dispatch(getAllWorkouts());
-  }, []);
+  }, [dispatch]);
   return (
-    <div className={`section-padding ${i18n.language === "ar"? "padding-r20": ""}`} data-aos="zoom-out-left">
+    <div className={`section-padding ${i18n.language === "ar"? "padding-r20": ""}`} data-aos="zoom-in">
       <div className="fitness overflow-hidden">
         <h1 className="header1-size ps-4 mb-3">{t("Fitness")}</h1>
         <Row className="py-5 ps-5 pe-5 pe-md-0 bg-white">
@@ -63,7 +63,7 @@ const Fitness = () => {
               // pagination={{ clickable: true }}
             >
               {isLoading ? (
-                <div className="page-height">
+                <div className="page-spinner">
                   <Spinner />
                 </div>
               ) : error ? (

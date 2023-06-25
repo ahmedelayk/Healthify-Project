@@ -64,7 +64,7 @@ const Subscription = () => {
       <h1 className="header1-size text-center">
         {t("Newsletter Subscription")}
       </h1>
-      <div className="p-3" data-aos="zoom-out">
+      <div className="p-3" data-aos="zoom-in">
         <form
           className="d-flex flex-column flex-lg-row w-75 gap-3 justify-content-center m-auto"
           action="POST"
