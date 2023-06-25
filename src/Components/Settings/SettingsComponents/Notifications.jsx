@@ -14,11 +14,11 @@ const Notifications = () => {
   const { t, currentUserData } = useAuth();
 
   const [notification, setNotification] = useState({
-    exercise: currentUserData?.notification.exercise,
-    dailyMeditation: currentUserData?.notification.dailyMeditation,
-    fitnessGoals: currentUserData?.notification.fitnessGoals,
-    personalizedRecomendations: currentUserData?.notification.personalizedRecomendations,
-    weeklyBMI: currentUserData?.notification.weeklyBMI,
+    exercise: currentUserData?.notification?.exercise,
+    dailyMeditation: currentUserData?.notification?.dailyMeditation,
+    fitnessGoals: currentUserData?.notification?.fitnessGoals,
+    personalizedRecomendations: currentUserData?.notification?.personalizedRecomendations,
+    weeklyBMI: currentUserData?.notification?.weeklyBMI,
   });
   const handleSubmit = async () => {
     console.log(currentUserData?.notification)
