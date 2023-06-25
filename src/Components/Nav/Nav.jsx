@@ -13,10 +13,12 @@ import { useState, useEffect } from "react";
 
 function Navbarr() {
   const { currentUser, currentUserData, t, i18n } = useAuth();
-  const [username, setUsername] = useState("Welcome...");
+  const [username, setUsername] = useState("");
   useEffect(() => {
     currentUserData?.firstName != null
-      ? setUsername(`${currentUserData?.firstName} ${currentUserData?.lastName}`)
+      ? setUsername(
+        `${currentUserData?.firstName} ${currentUserData?.lastName}`
+      )
       : setUsername(currentUser?.displayName);
   }, [currentUser?.displayName, currentUserData?.firstName, currentUserData?.lastName]);
   return (
