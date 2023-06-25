@@ -2,11 +2,35 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./nutration.css";
 import { useAuth } from "../../Context/AuthContext";
+import Popup from "./Popup";
+import "./popup.css";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getRecipes } from "../../redux/recipesSlice";
 
 export const CaloriesTrack = () => {
-  const {t, i18n} = useAuth()
+  const meals = useSelector((state) => state.meals);
+  const [showPopup, setShowPopup] = useState(false);
+  // const [breakfast, setBreakfast] = useState([]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getRecipes());
+  }, []);
+  const togglePopup = (e) => {
+    setShowPopup(!showPopup);
+  };
+  const handleSaveRecipe = () => {
+    togglePopup();
+  };
+  const { t, i18n } = useAuth();
+console.log(meals?.meals?.filter((m) => m.type === "breakfast"))
   return (
-    <Col xs={12} lg={6} className={ `card-n mt-0 ${i18n.language === "ar" ? "padding-r20" : ""}` }>
+    <Col
+      xs={12}
+      lg={6}
+      className={`card-n mt-0 ${i18n.language === "ar" ? "padding-r20" : ""}`}
+    >
       <Row className="justify-between mb-2">
         <Col>
           <h4 className="font-family1 text-paragraph-color">{t("Day1")}</h4>
@@ -34,9 +58,19 @@ export const CaloriesTrack = () => {
               <p className="grey fs-8 text-end">100g</p>
             </Col>
           </Row>
-          <p className="bg-add rounded-pill text-white text-center my-2 cursor-pointer">
+          <p
+            className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
+            onClick={togglePopup}
+          >
             +
           </p>
+          {showPopup ? (
+            <Popup
+              handleSave={handleSaveRecipe}
+              closePopup={togglePopup}
+              breakfast={meals?.meals?.filter((m) => m.type === "breakfast")}
+            />
+          ) : null}{" "}
         </Col>
         <Col xs={12} md={6} lg={3}>
           <h6>{t("Lunch")}</h6>
@@ -48,9 +82,15 @@ export const CaloriesTrack = () => {
             <Col></Col>
             <Col></Col>
           </Row>
-          <p className="bg-add rounded-pill text-white text-center my-2 cursor-pointer">
+          <p
+            className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
+            onClick={togglePopup}
+          >
             +
           </p>
+          {showPopup ? (
+            <Popup handleSave={handleSaveRecipe} closePopup={togglePopup} />
+          ) : null}
         </Col>
         <Col xs={12} md={6} lg={3}>
           <h6>{t("Dinner")}</h6>
@@ -62,9 +102,15 @@ export const CaloriesTrack = () => {
             <Col></Col>
             <Col></Col>
           </Row>
-          <p className="bg-add rounded-pill text-white text-center my-2 cursor-pointer">
+          <p
+            className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
+            onClick={togglePopup}
+          >
             +
           </p>
+          {showPopup ? (
+            <Popup handleSave={handleSaveRecipe} closePopup={togglePopup} />
+          ) : null}
         </Col>
         <Col xs={12} md={6} lg={3}>
           <h6>{t("Snacks")}</h6>
@@ -76,9 +122,15 @@ export const CaloriesTrack = () => {
             <Col></Col>
             <Col></Col>
           </Row>
-          <p className="bg-add rounded-pill text-white text-center my-2 cursor-pointer">
+          <p
+            className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
+            onClick={togglePopup}
+          >
             +
           </p>
+          {showPopup ? (
+            <Popup handleSave={handleSaveRecipe} closePopup={togglePopup} />
+          ) : null}
         </Col>
       </Row>
       <hr />

@@ -6,7 +6,7 @@ import medititionSlice from "./medititionSlice";
 const store = configureStore({
   reducer: {
     workouts: workoutsSlice,
-    recipe: recipesSlice,
+    meals: recipesSlice,
     meditition:medititionSlice,
   },
 });
