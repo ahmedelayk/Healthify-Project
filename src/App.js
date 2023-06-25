@@ -31,6 +31,7 @@ const SignUp = lazy(() => import("./Components/SignInUp/SignUp"))
 const Footer = lazy(() => import("./Components/Home/Sections/section7/Footer"))
 
 function App() {
+  // console.log("🚀 app rendered")
   const notificationsArr = {
     dailyMeditation: [
       "Meditation: Take 10 minutes to meditate",

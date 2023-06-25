@@ -7,6 +7,8 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateEmail,
+  updatePassword
 } from "firebase/auth";
 import { auth, db, fProvider, gProvider } from "../firebase";
 import { collection, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
@@ -71,7 +73,7 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log("context work");
+    // console.log("context work");
 
     fetchAllUsers()
       .then((users) => setUsers(users))
@@ -134,6 +136,14 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth);
   };
+  const updateUserEmail = (email) => {
+    return updateEmail(auth.currentUser, email)
+  }
+  const updateUserPassword = (password) => {
+    return updatePassword(auth.currentUser, password).then(()=>{
+      console.log("password updated")
+    })
+  }
   const googleSignIn = () => {
     signInWithPopup(auth, gProvider)
       .then((result) => {
@@ -165,9 +175,11 @@ const AuthProvider = ({ children }) => {
     i18n,
     googleSignIn,
     facebookSignIn,
+    updateUserEmail,
+    updateUserPassword
   };
 
-  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={ values }>{ children }</AuthContext.Provider>;
 };
 
 export default AuthProvider;
