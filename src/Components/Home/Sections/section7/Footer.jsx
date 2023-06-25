@@ -91,12 +91,24 @@ function Footer() {
                 <ul className="thumbnail-widget">
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">&nbsp;{t("Get Started")}</a>
+                      <a
+                        href="https://www.health.harvard.edu/blog"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        &nbsp;{t("Harvard Health")}
+                      </a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">&nbsp;{t("Top Leaders")}</a>
+                      <a
+                        href="https://www.medicalnewstoday.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        &nbsp;{t("Medical News")}
+                      </a>
                     </div>
                   </li>
                 </ul>
