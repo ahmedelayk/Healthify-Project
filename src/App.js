@@ -12,6 +12,7 @@ import { useAuth } from "./Context/AuthContext";
 // Toastify 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import HelpContent from "./Components/Settings/SettingsComponents/HelpContent";
 
 // lazy loading
 const Navbarr = lazy(() => import("./Components/Nav/Nav"));
@@ -160,6 +161,7 @@ function App() {
               <Route path="/workouts/cardio" element={ <Cardio /> } />
               <Route path="/workouts/cardio/:id" element={ <WorkoutsDetails /> } />
               <Route path="/workouts/fitness/:id" element={ <WorkoutsDetails /> } />
+              <Route path="/help/:id" element={ <HelpContent /> } />
               <Route path="/profile" element={ <Profile /> } />
               <Route path="/settings" element={ <Settings /> } />
               <Route path="/login" element={ <Login /> } />
