@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, NavLink, Row } from "react-bootstrap";
 // style
 import "./settings.css";
@@ -32,10 +32,6 @@ const Settings = () => {
     setSelectedComponent(component);
     setActiveNavLink(navLinkName);
   };
-
-  useEffect(() => {
-    console.log('Settings Mounted')
-  }, [])
 
   return (
     <Row className="settings mx-0">

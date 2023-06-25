@@ -5,26 +5,19 @@ import { useAuth } from "../../Context/AuthContext";
 import Popup from "./Popup";
 import "./popup.css";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getRecipes } from "../../redux/recipesSlice";
 
 export const CaloriesTrack = () => {
-  const meals = useSelector((state) => state.meals);
+
+  // console.log("Calories Track Rendered");
+  const { t, i18n } = useAuth();
   const [showPopup, setShowPopup] = useState(false);
-  // const [breakfast, setBreakfast] = useState([]);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getRecipes());
-  }, []);
   const togglePopup = (e) => {
     setShowPopup(!showPopup);
   };
-  const handleSaveRecipe = () => {
+  const handleSaveRecipe = (rec) => {
     togglePopup();
+    console.log(rec)
   };
-  const { t, i18n } = useAuth();
-console.log(meals?.meals?.filter((m) => m.type === "breakfast"))
   return (
     <Col
       xs={12}
@@ -68,7 +61,7 @@ console.log(meals?.meals?.filter((m) => m.type === "breakfast"))
             <Popup
               handleSave={handleSaveRecipe}
               closePopup={togglePopup}
-              breakfast={meals?.meals?.filter((m) => m.type === "breakfast")}
+              // breakfast={meals?.meals?.filter((m) => m.type === "breakfast")}
             />
           ) : null}{" "}
         </Col>

@@ -12,7 +12,7 @@ import { useAuth } from "../../../Context/AuthContext";
 import Swal from "sweetalert2";
 
 const EditProfile = () => {
-    const { currentUserData, t } = useAuth();
+    const { currentUserData, t, updateUserEmail, updateUserPassword } = useAuth();
     const {
         register,
         handleSubmit,
@@ -33,6 +33,8 @@ const EditProfile = () => {
         const newData = { firstName, lastName, mail, phoneNumber, password }
         const userDoc = doc(db, "users", currentUserData?.userId)
         await updateDoc(userDoc, newData)
+        // updateUserEmail(mail);
+        // updateUserPassword(password).then(()=>{}).catch((error)=>{console.log(error.message)});
         Swal.fire({
             position: 'center',
             icon: 'success',
