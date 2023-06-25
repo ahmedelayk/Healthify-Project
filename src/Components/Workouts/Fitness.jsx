@@ -19,6 +19,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Data
 import { getAllWorkouts } from "../../redux/workoutsSlice";
 import { useAuth } from "../../Context/AuthContext";
+import Spinner from "../Spinner/Spinner";
 
 const Fitness = () => {
   const {t, i18n} = useAuth();
@@ -62,7 +63,9 @@ const Fitness = () => {
               // pagination={{ clickable: true }}
             >
               {isLoading ? (
-                <div>{t("Loading...")}</div>
+                <div className="page-height">
+                  <Spinner />
+                </div>
               ) : error ? (
                 <div>{error}</div>
               ) : (
@@ -71,7 +74,7 @@ const Fitness = () => {
                 fitnesses.slice(0, 10).map((fitness) => (
                   <SwiperSlide key={uuid()}>
                     <Link to={`fitness/${fitness.id}`} className="text-decoration-none">
-                    <Card className="workouts-card" data-aos="zoom-in-left">
+                    <Card className="workouts-card" data-aos="zoom-in">
                       <Card.Img variant="top" src={fitness.gifUrl} loading="lazy"/>
                       <Card.Body>
                         <Card.Title className="header1-size">
