@@ -35,11 +35,11 @@ const Fitness = () => {
   return (
     <div>
       <VideoSection source={gym} header="Fitness Workout" description="Fall in love with fitness" />
-      <Container className="section-padding ltr-direction" data-aos="zoom-in-left">
+      <Container className="section-padding ltr-direction" data-aos="zoom-in">
         <h1 className="header1-size text-center">{t("Fitness of the day")}</h1>
-        <Row className="my-5" data-aos="flip-up">
+        <Row className="my-5" data-aos="">
           {isLoading ? (
-            <div>
+            <div className="page-spinner">
               <Spinner/>
             </div>
           ) : error ? (

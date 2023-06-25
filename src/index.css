@@ -71,3 +71,11 @@ body {
   width: 100vw !important;
   height: 100vh !important;
 }
+.row-edit {
+  --bs-gutter-x: 0 !important;
+}
+
+.page-spinner {
+  width: 100% !important;
+  height: 100vh !important;
+}

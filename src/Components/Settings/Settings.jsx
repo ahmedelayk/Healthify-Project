@@ -38,7 +38,7 @@ const Settings = () => {
   }, [])
 
   return (
-    <Row className="settings ">
+    <Row className="settings mx-0">
       {/* The first settings sidebar */ }
       <Col xs={ 1 } className="first-sidebar" >
         <Row className="icons-row">

@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+// Images
 import body1 from "../Components/assets/images/body1.webp";
 import body2 from "../Components/assets/images/body2.webp";
 import body3 from "../Components/assets/images/body3.webp";
@@ -9,7 +10,7 @@ import m_body2 from "../Components/assets/images/m-body2.webp";
 import m_body3 from "../Components/assets/images/m-body3.webp";
 import m_body4 from "../Components/assets/images/m-body4.webp";
 import m_body5 from "../Components/assets/images/m-body5.webp";
-import { useEffect } from "react";
+
 const NutritionContext = createContext();
 
 const NutritionProvider = ({ children }) => {

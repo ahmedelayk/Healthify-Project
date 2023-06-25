@@ -7,6 +7,8 @@ import Countries from "./Country";
 import { useAuth } from "../../../Context/AuthContext";
 // React form hook
 import { useForm } from "react-hook-form";
+// Sweet alert
+import Swal from "sweetalert2";
 
 const Langueges = () => {
   const { t, i18n } = useAuth();
@@ -15,9 +17,9 @@ const Langueges = () => {
     handleSubmit,
   } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     const {language} = data;
-    console.log(language);
+    // console.log(language);
     if(language === "Arabic"){
       localStorage.setItem("lang", "ar");
       await i18n.changeLanguage("ar");
@@ -27,7 +29,13 @@ const Langueges = () => {
       await i18n.changeLanguage("en");
       document.body.style.cssText = "font-family: var(--font-family2) !important;direction: ltr;";
     }
-
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: t("Saved Successfully"),
+      showConfirmButton: false,
+      timer: 1500
+    })
   };
   return (
     <div className="p-lg-3 p-xs-0" data-aos="zoom-in-left">

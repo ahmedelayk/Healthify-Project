@@ -19,6 +19,7 @@ import MyPagination from "../CommonComponents/Pagination";
 // Data
 import { getAllWorkouts } from "../../../redux/workoutsSlice";
 import { useAuth } from "../../../Context/AuthContext";
+// Spinner
 import Spinner from "../../Spinner/Spinner";
 
 const Cardio = () => {
@@ -40,11 +41,11 @@ const Cardio = () => {
   return (
     <div>
       <VideoSection source={cardio} header="Cardio Workout" description="Fall in love with cardio" />
-      <Container className="section-padding ltr-direction" data-aos="zoom-in-left">
+      <Container className="section-padding ltr-direction" data-aos="zoom-in">
         <h1 className="header1-size text-center">{t("Cardio of the day")}</h1>
-        <Row className="my-5" data-aos="zoom-in-left">
+        <Row className="my-5" data-aos="zoom-in">
           {isLoading ? (
-            <div className="page-height">
+            <div className="page-spinner">
               <Spinner />
             </div>
           ) : error ? (

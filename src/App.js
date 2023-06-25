@@ -77,7 +77,7 @@ function App() {
     if (currentUserData?.notification?.exercise) {
       var exerciseTimer = setInterval(() => {
         notifyWith(notificationsArr.exercise[Math.trunc(Math.random()*3)]);
-      }, 10000);
+      }, 600000);
       // }, 3.6e+6);
     }
     if (currentUserData?.notification?.dailyMeditation) {
@@ -95,7 +95,7 @@ function App() {
     if (currentUserData?.notification?.personalizedRecommendations) {
       var personalizedRecommendationsTimer = setInterval(() => {
         notifyWith(notificationsArr.personalizedRecommendations[Math.trunc(Math.random()*3)]);
-      }, 600000);
+      }, 900000);
     }
     if (currentUserData?.notification?.weeklyBMI) {
       var weeklyBMITimer = setInterval(() => {
@@ -113,9 +113,6 @@ function App() {
   }, [currentUserData?.notification])
 
   useEffect(() => {
-    // const notifyTimer = setInterval(() => {
-    //   notify();
-    // }, 40000);
     if (localStorage.getItem("lang") === "ar") {
       i18n.changeLanguage("ar");
       document.body.style.cssText = "font-family: var(--font-family-arabic) !important;direction: rtl;";
@@ -125,14 +122,11 @@ function App() {
     }
     Aos.init();
     Aos.refresh();
-    return () => {
-      // clearInterval(notifyTimer)
-    }
   }, []);
   return (
     <Suspense fallback={
       <>
-        <div className="d-flex justify-content-center align-items-center page-height">
+        <div className="page-height">
           <Spinner />
         </div>
       </>

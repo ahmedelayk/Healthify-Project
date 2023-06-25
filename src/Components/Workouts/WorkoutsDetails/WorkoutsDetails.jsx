@@ -85,7 +85,7 @@ const WorkoutsDetails = () => {
   return (
     <>
       { isLoading ? (
-        <div className="page-height">
+        <div className="page-spinner">
           <Spinner />
         </div>
       ) : error ? (

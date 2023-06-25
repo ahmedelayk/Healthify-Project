@@ -31,7 +31,7 @@ const Cardio = () => {
   }, []);
 
   return (
-    <div className={`section-padding ${i18n.language === "ar"? "padding-r20": ""}`} data-aos="zoom-in-left">
+    <div className={`section-padding ${i18n.language === "ar"? "padding-r20": ""}`} data-aos="zoom-in">
       <div className="cardio overflow-hidden" data-aos="flip-left">
         <h1 className="header1-size ps-4 mb-3">{t("Cardio")}</h1>
         <Row className="py-5 pe-5 ps-5 ps-md-0 bg-white">
