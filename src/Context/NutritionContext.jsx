@@ -17,11 +17,29 @@ const NutritionProvider = ({ children }) => {
   const [gender, setGender] = useState("Male");
   const [height, setHeight] = useState(150);
   const [weight, setWeight] = useState(50);
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(0);
   const [loadingResult, setLoadingResult] = useState(false);
   const [bodyFemSrc, setBodyFemSrc] = useState();
   const [bodyMaleSrc, setBodyMaleSrc] = useState();
   const [bmiMessage, setBmiMessage] = useState("Clac Bmi Now");
+  const [br, setBr] = useState(false);
+  const [ln, setLn] = useState(false);
+  const [dn, setDn] = useState(false);
+  const handleBrClick = () => {
+    setBr(true);
+    setLn(false);
+    setDn(false);
+  };
+  const handleLnClick = () => {
+    setLn(true);
+    setBr(false);
+    setDn(false);
+  };
+  const handleDnClick = () => {
+    setDn(true);
+    setLn(false);
+    setBr(false);
+  };
 
   const handleMale = () => {
     setGender("Male");
@@ -69,13 +87,23 @@ const NutritionProvider = ({ children }) => {
       setLoadingResult(false);
     }, 2000);
   };
-
+  useEffect(() => {
+    localStorage.setItem("BMIresult", JSON.stringify(result));
+    const BMIresult = localStorage.getItem("BMIresult");
+    setResult(JSON.parse(BMIresult));
+  }, [result]);
   const values = {
     changeHeight,
     changeWeight,
     handleFemale,
     handleCalculate,
     handleMale,
+    handleBrClick,
+    handleLnClick,
+    handleDnClick,
+    br,
+    ln,
+    dn,
     loadingResult,
     gender,
     result,

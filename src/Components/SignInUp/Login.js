@@ -53,7 +53,7 @@ function Login() {
   };
   useEffect(() => {
     if (currentUser != null) {
-      navigate("/settings");
+      navigate("/");
     }
   });
   return (
