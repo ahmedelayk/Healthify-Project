@@ -13,6 +13,7 @@ import { useAuth } from "./Context/AuthContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import HelpContent from "./Components/Settings/SettingsComponents/HelpContent";
+import Error from "./Components/Error/Error";
 
 // lazy loading
 const Navbarr = lazy(() => import("./Components/Nav/Nav"));
@@ -165,6 +166,7 @@ function App() {
               <Route path="/settings" element={ <Settings /> } />
               <Route path="/login" element={ <Login /> } />
               <Route path="/signup" element={ <SignUp /> } />
+              <Route path="*" element={ <Error /> } />
             </Routes>
           </div>
           <Footer />

@@ -1240,6 +1240,7 @@
   ],
   "meals": [
     {
+      "kal":750,
       "id": 1,
       "type": "breakfast",
       "poster": "https://cdn.shopify.com/s/files/1/0583/4866/7049/articles/lxqg9cxof1cc9l9y5aec-934857.jpg?v=1641784706",
@@ -1248,6 +1249,7 @@
       "food3": "Lemon Juice"
     },
     {
+      "kal":550,
       "id": 2,
       "type": "breakfast",
       "poster": "https://mycasualpantry.com/wp-content/uploads/2022/07/Greek-Yogurt-with-Granola-and-Fruit-bowl-1200-%C3%97-1200-px.jpg",
@@ -1256,6 +1258,7 @@
       "food3": "Mixed Berries"
     },
     {
+      "kal":800,
       "id": 3,
       "type": "breakfast",
       "poster": "https://www.wellplated.com/wp-content/uploads/2018/03/Overnight-Steel-Cut-Oats-with-Chia-Seeds-500x375.jpg",
@@ -1264,6 +1267,7 @@
       "food3": "Mixed Berries"
     },
     {
+      "kal":450,
       "id": 4,
       "type": "lunch",
       "poster": "https://shewearsmanyhats.com/wp-content/uploads/2018/09/cucumber-tomato-quinoa-salad-recipe-6-480x360.jpg",
@@ -1271,7 +1275,7 @@
       "food2": "Cucumber",
       "food3": "Cherry Tomatoes"
     },
-    {
+    {"kal":300,
       "id": 5,
       "type": "lunch",
       "poster": "https://149777215.v2.pressablecdn.com/wp-content/uploads/2022/05/dsm-chicken-vegetable-and-hummus-wraps.jpg",
@@ -1280,6 +1284,7 @@
       "food3": "Hummus"
     },
     {
+      "kal":820,
       "id": 6,
       "type": "lunch",
       "poster": "https://www.funfoodfrolic.com/wp-content/uploads/2020/03/Tofu-Stir-Fry-Thumbnail.jpg",
@@ -1288,6 +1293,7 @@
       "food3": "Soy Sauce"
     },
     {
+      "kal":500,
       "id": 7,
       "type": "dinner",
       "poster": "https://images-gmi-pmc.edge-generalmills.com/9c2e6530-e7b0-41ee-94f2-33300b7e1f5e.jpg",
@@ -1296,6 +1302,7 @@
       "food3": "Asparagus"
     },
     {
+      "kal":150,
       "id": 8,
       "type": "dinner",
       "poster": "https://yupitsvegan.com/wp-content/uploads/2017/11/coconut-chickpea-curry-vegan-square-12.jpg",
@@ -1304,6 +1311,7 @@
       "food3": "Curry Powder"
     },
     {
+      "kal":380,
       "id": 9,
       "type": "dinner",
       "poster": "https://www.twopeasandtheirpod.com/wp-content/uploads/2021/01/roasted-vegetables-9.jpg",

@@ -4,27 +4,36 @@ import { Button, Col, Row } from "react-bootstrap";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecipes } from "../../redux/recipesSlice";
+import { useNutrition } from "../../Context/NutritionContext";
 
-const Popup = ({ closePopup, handleSave }) => {
-  console.log("popup rendered")
-  const [selectedRecipie, setSelectedRecipie] = useState(null);
-
-  const [breakfast, setBreakfast] = useState([])
+const Popup = ({ closePopup, handleSave, recipe_type }) => {
+  console.log("popup rendered");
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  console.log(recipe_type);
+  const [breakfast, setBreakfast] = useState([]);
+  const [lunch, setJunch] = useState([]);
+  const [dinner, setDinner] = useState([]);
   const dispatch = useDispatch();
-  const {meals} = useSelector((state) => state.meals);
+  const { meals } = useSelector((state) => state.meals);
   useEffect(() => {
     dispatch(getRecipes());
   }, [dispatch]);
-
+  const { br, ln, dn } = useNutrition();
   useEffect(() => {
-    console.log(meals)
-    setBreakfast(meals?.filter((recipie) => recipie.type === "breakfast"));
+    console.log(meals);
+    if (br === true) {
+      setBreakfast(meals?.filter((recipie) => recipie.type === "breakfast"));
+    } else if (ln === true) {
+      setBreakfast(meals?.filter((recipie) => recipie.type === "lunch"));
+    } else if (dn === true) {
+      setBreakfast(meals?.filter((recipie) => recipie.type === "dinner"));
+    }
   }, [meals]);
 
   const handleSelectColumn = (column) => {
-    setSelectedRecipie(column);
+    setSelectedRecipe(column);
   };
-  
+
   // console.log(breakfast?.map((b) => b.poster));
   // const meals = [
   //   {
@@ -115,38 +124,42 @@ const Popup = ({ closePopup, handleSave }) => {
         <h1 className="popup-header">Choose Your Favorite Recipe</h1>
         <AiFillCloseCircle onClick={closePopup} className="close-btn-popup" />
         <Row className="text-center">
-          {
-            breakfast?.map((rec) => (
-              <Col
-                key={rec.id}
-                xs={3}
-                className={
-                  selectedRecipie === rec
-                    ? "ms-sm-4 border border-primary"
-                    : "ms-sm-4"
-                }
-                onClick={() => handleSelectColumn(rec)}
-              >
-                <div className="cursor-pointer r-cont">
-                  <img src={rec.poster} alt="" width={"100%"} height={90} />
-                  <div className="mt-3 ">
-                    <h5>
-                      <span>{rec.food1}</span>
-                    </h5>
-                    <p className="bolder">+</p>
-                    <h5>
-                      <span>{rec.food2}</span>
-                    </h5>
-                    <p className="bolder">+</p>
-                    <h5>
-                      <span>{rec.food3}</span>
-                    </h5>
-                  </div>
+          {breakfast?.map((rec) => (
+            <Col
+              key={rec.id}
+              xs={3}
+              className={
+                selectedRecipe === rec
+                  ? "ms-sm-4 border border-primary"
+                  : "ms-sm-4"
+              }
+              onClick={() => handleSelectColumn(rec)}
+            >
+              <div className="cursor-pointer r-cont">
+                <img src={rec.poster} alt="" width={"100%"} height={90} />
+                <div className="mt-3 ">
+                  <h5>
+                    <span>{rec.food1}</span>
+                  </h5>
+                  <p className="bolder">+</p>
+                  <h5>
+                    <span>{rec.food2}</span>
+                  </h5>
+                  <p className="bolder">+</p>
+                  <h5>
+                    <span>{rec.food3}</span>
+                  </h5>
                 </div>
-              </Col>
-            ))}
+              </div>
+            </Col>
+          ))}
         </Row>
-        <Button className="my-3" onClick={()=>{handleSave(selectedRecipie)}}>
+        <Button
+          className="my-3"
+          onClick={() => {
+            handleSave(selectedRecipe);
+          }}
+        >
           Add Recipe
         </Button>
       </div>

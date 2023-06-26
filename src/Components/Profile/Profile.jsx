@@ -7,6 +7,7 @@ import MonthGraph from "./ProfileComponents/MonthGraph";
 import WeekGraph from "./ProfileComponents/WeekGraph";
 
 function Profile() {
+ 
   return (
     <Container>
       <Row className="profile">

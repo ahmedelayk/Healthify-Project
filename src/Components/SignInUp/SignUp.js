@@ -50,7 +50,7 @@ function SignUp() {
   };
   useEffect(() => {
     if (currentUser != null) {
-      navigate("/settings");
+      navigate("/");
     }
   });
 

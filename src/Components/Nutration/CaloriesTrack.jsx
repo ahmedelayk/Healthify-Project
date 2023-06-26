@@ -5,19 +5,65 @@ import { useAuth } from "../../Context/AuthContext";
 import Popup from "./Popup";
 import "./popup.css";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useNutrition } from "../../Context/NutritionContext";
 
 export const CaloriesTrack = () => {
-
-  // console.log("Calories Track Rendered");
   const { t, i18n } = useAuth();
   const [showPopup, setShowPopup] = useState(false);
+
+  const [selectedBreakfast, setSelectedBreakfast] = useState();
+  const [selectedLunch, setSelectedLunch] = useState();
+  const [selectedDinner, setSelectedDinner] = useState();
+  const [currentDate, setCurrentDate] = useState("");
+  const [currentWeekday, setCurrentWeekday] = useState("");
+  const { handleBrClick, handleDnClick, handleLnClick, result } =
+    useNutrition();
   const togglePopup = (e) => {
     setShowPopup(!showPopup);
   };
+  useEffect(() => {
+    const date = new Date();
+    setCurrentDate(date.toLocaleDateString());
+    setCurrentWeekday(date.toLocaleDateString("en-US", { weekday: "long" }));
+  }, []);
+  useEffect(() => {
+    console.log(result);
+  }, [result]);
   const handleSaveRecipe = (rec) => {
+    if (rec.type === "breakfast") {
+      localStorage.setItem("selectedBreakfast", JSON.stringify(rec));
+      setSelectedBreakfast(rec);
+    } else if (rec.type === "lunch") {
+      localStorage.setItem("selectedLunch", JSON.stringify(rec));
+      setSelectedLunch(rec);
+    } else if (rec.type === "dinner") {
+      localStorage.setItem("selectedDinner", JSON.stringify(rec));
+      setSelectedDinner(rec);
+    }
+
     togglePopup();
-    console.log(rec)
   };
+
+  const getSavedRecipe = () => {
+    const savedBreakfast = localStorage.getItem("selectedBreakfast");
+    if (savedBreakfast) {
+      setSelectedBreakfast(JSON.parse(savedBreakfast));
+    }
+    const savedLunch = localStorage.getItem("selectedLunch");
+    if (savedLunch) {
+      setSelectedLunch(JSON.parse(savedLunch));
+    }
+    const savedDinner = localStorage.getItem("selectedDinner");
+    if (savedDinner) {
+      setSelectedDinner(JSON.parse(savedDinner));
+    }
+  };
+
+  useEffect(() => {
+    getSavedRecipe();
+  }, []);
+
   return (
     <Col
       xs={12}
@@ -26,34 +72,90 @@ export const CaloriesTrack = () => {
     >
       <Row className="justify-between mb-2">
         <Col>
-          <h4 className="font-family1 text-paragraph-color">{t("Day1")}</h4>
+          <h4 className="font-family1 text-primary-color">{currentWeekday}</h4>
         </Col>
         <Col>
-          <p className="text-end">24/10/2000</p>
+          <p className="text-center text-primary-color">{currentDate}</p>
         </Col>
       </Row>
       <Row>
         <Col xs={12} md={6} lg={3}>
           <h6>{t("Breakfast")}</h6>
           <Row className="justify-between align-items-center">
-            <Col>
-              <p className="grey">Eggs</p>
-            </Col>
-            <Col>
-              <p className="grey fs-8 text-end">2</p>
-            </Col>
+            {selectedBreakfast && (
+              <img
+                src={selectedBreakfast.poster}
+                width={90}
+                height={50}
+                alt="Selected Recipe"
+              />
+            )}
+          </Row>
+          <Row className="justify-between align-items-center">
+            {selectedBreakfast && (
+              <p className="grey">{selectedBreakfast.food1}</p>
+            )}
           </Row>
           <Row className="justify-content-between align-items-center">
-            <Col>
-              <p className="grey m-0 fs-7">Beans</p>
-            </Col>
-            <Col>
-              <p className="grey fs-8 text-end">100g</p>
-            </Col>
+            {selectedBreakfast && (
+              <p className="grey m-0 fs-9">{selectedBreakfast.food2}</p>
+            )}
+          </Row>
+          <Row className="justify-content-between align-items-center">
+            {selectedBreakfast && (
+              <p className="grey m-0 fs-9">{selectedBreakfast.food3}</p>
+            )}
           </Row>
           <p
             className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
-            onClick={togglePopup}
+            onClick={() => {
+              togglePopup();
+              handleBrClick();
+            }}
+            id=""
+          >
+            +
+          </p>
+          {showPopup ? (
+            <Popup
+              handleSave={handleSaveRecipe}
+              closePopup={togglePopup}
+              recipe_type="brakfast"
+              // breakfast={meals?.meals?.filter((m) => m.type === "breakfast")}
+            />
+          ) : null}
+        </Col>{" "}
+        <Col xs={12} md={6} lg={3}>
+          <h6>{t("Lunch")}</h6>
+          <Row className="justify-between align-items-center">
+            {selectedLunch && (
+              <img
+                src={selectedLunch.poster}
+                width={90}
+                height={50}
+                alt="Selected Recipe"
+              />
+            )}
+          </Row>
+          <Row className="justify-between align-items-center">
+            {selectedLunch && <p className="grey">{selectedLunch.food1}</p>}
+          </Row>
+          <Row className="justify-content-between align-items-center">
+            {selectedLunch && (
+              <p className="grey m-0 fs-9">{selectedLunch.food2}</p>
+            )}
+          </Row>
+          <Row className="justify-content-between align-items-center">
+            {selectedLunch && (
+              <p className="grey m-0 fs-9">{selectedLunch.food3}</p>
+            )}
+          </Row>
+          <p
+            className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
+            onClick={() => {
+              togglePopup();
+              handleLnClick();
+            }}
           >
             +
           </p>
@@ -63,66 +165,48 @@ export const CaloriesTrack = () => {
               closePopup={togglePopup}
               // breakfast={meals?.meals?.filter((m) => m.type === "breakfast")}
             />
-          ) : null}{" "}
-        </Col>
-        <Col xs={12} md={6} lg={3}>
-          <h6>{t("Lunch")}</h6>
-          <Row className="justify-between align-items-center">
-            <Col></Col>
-            <Col></Col>
-          </Row>
-          <Row className="justify-content-between align-items-center">
-            <Col></Col>
-            <Col></Col>
-          </Row>
-          <p
-            className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
-            onClick={togglePopup}
-          >
-            +
-          </p>
-          {showPopup ? (
-            <Popup handleSave={handleSaveRecipe} closePopup={togglePopup} />
           ) : null}
         </Col>
         <Col xs={12} md={6} lg={3}>
           <h6>{t("Dinner")}</h6>
           <Row className="justify-between align-items-center">
-            <Col></Col>
-            <Col></Col>
+            {selectedDinner && (
+              <img
+                src={selectedDinner.poster}
+                width={90}
+                height={50}
+                alt="Selected Recipe"
+              />
+            )}
           </Row>
-          <Row className="justify-content-between align-items-center">
-            <Col></Col>
-            <Col></Col>
-          </Row>
-          <p
-            className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
-            onClick={togglePopup}
-          >
-            +
-          </p>
-          {showPopup ? (
-            <Popup handleSave={handleSaveRecipe} closePopup={togglePopup} />
-          ) : null}
-        </Col>
-        <Col xs={12} md={6} lg={3}>
-          <h6>{t("Snacks")}</h6>
           <Row className="justify-between align-items-center">
-            <Col></Col>
-            <Col></Col>
+            {selectedDinner && <p className="grey">{selectedDinner.food1}</p>}
           </Row>
           <Row className="justify-content-between align-items-center">
-            <Col></Col>
-            <Col></Col>
+            {selectedDinner && (
+              <p className="grey m-0 fs-9">{selectedDinner.food2}</p>
+            )}
+          </Row>
+          <Row className="justify-content-between align-items-center">
+            {selectedDinner && (
+              <p className="grey m-0 fs-9">{selectedDinner.food3}</p>
+            )}
           </Row>
           <p
             className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
-            onClick={togglePopup}
+            onClick={() => {
+              togglePopup();
+              handleDnClick();
+            }}
           >
             +
           </p>
           {showPopup ? (
-            <Popup handleSave={handleSaveRecipe} closePopup={togglePopup} />
+            <Popup
+              handleSave={handleSaveRecipe}
+              closePopup={togglePopup}
+              // breakfast={meals?.meals?.filter((m) => m.type === "breakfast")}
+            />
           ) : null}
         </Col>
       </Row>
@@ -131,27 +215,22 @@ export const CaloriesTrack = () => {
         <Col xs={6} lg={3}>
           <p className="">
             {t("Calories")}
-            <span className="fs-8 text-primary-color ">&nbsp; 370kj</span>
+            <span className="fs-8 text-primary-color ">&nbsp; {selectedBreakfast?.kal } kal</span>
           </p>
         </Col>
         <Col xs={6} lg={3}>
           <p className="">
-            {t("Carb")}
-            <span className="fs-8 text-primary-color ">&nbsp; 33g</span>
+            {t("Calories")}
+            <span className="fs-8 text-primary-color ">&nbsp; {selectedLunch?.kal } kal</span>
           </p>
         </Col>
         <Col xs={6} lg={3}>
           <p className="">
-            {t("Fats")}
-            <span className="fs-8 text-primary-color ">&nbsp; 22g</span>
+            {t("Calories")}
+            <span className="fs-8 text-primary-color ">&nbsp; {selectedDinner?.kal } kal</span>
           </p>
         </Col>
-        <Col>
-          <p className="">
-            {t("Protein")}
-            <span className="fs-8 text-primary-color ">&nbsp; 15g</span>
-          </p>
-        </Col>
+  
       </Row>
     </Col>
   );

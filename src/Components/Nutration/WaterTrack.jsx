@@ -1,31 +1,62 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./nutration.css";
-import water from "../assets/images/water.webp";
+import waterImg from "../assets/images/water.webp";
 import { useAuth } from "../../Context/AuthContext";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export const WaterTrack = () => {
-  const {t, i18n} = useAuth();
+  const [water, setWater] = useState(0);
+  const handleWaterPlus = () => {
+    if (water < 4) setWater(water + 0.5);
+    localStorage.setItem("waterRange", JSON.stringify(water));
+  };
+  const handleWaterMinus = () => {
+    if (water > 0) setWater(water - 0.5);
+    localStorage.setItem("waterRange", JSON.stringify(water));
+  };
+  useEffect(() => {
+    const savedWaterRange = localStorage.getItem("waterRange");
+    setWater(JSON.parse(savedWaterRange));
+  }, []);
+  const { t, i18n } = useAuth();
   return (
-    <Col xs={12} md={6} lg={3} className={ `card-n mt-0 ${i18n.language === "ar" ? "padding-r20" : ""}` }>
+    <Col
+      xs={12}
+      md={6}
+      lg={3}
+      className={`card-n mt-0 ${i18n.language === "ar" ? "padding-r20" : ""}`}
+    >
       <h4 className="font-family1 text-paragraph-color mb-2">{t("Water")}</h4>
       <Row className="justify-content-center align-items-center mt-4">
-        <img className="w-25 " src={water} alt="water" loading="lazy"/>
+        <img className="w-25 " src={waterImg} alt="water" loading="lazy" />
       </Row>
       <div className="my-3 progress" style={{ height: "6px" }}>
         <div
           className="progress-bar"
           role="progressbar"
-          style={{ width: "25%" }}
-          aria-valuenow="25"
+          style={{ width: `${(water / 4) * 100}%` }}
+          aria-valuenow="2"
           aria-valuemin="0"
-          aria-valuemax="100"
+          aria-valuemax="4"
         ></div>
       </div>
-      <p className="grey text-center">0.8L / 4L</p>
-      <p className="bg-add rounded-pill text-white text-center my-2 cursor-pointer">
-        +
-      </p>
+      <p className="grey text-center">{water}L / 4L</p>
+      <Row className="d-flex justify-content-evenly ">
+        <p
+          className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
+          onClick={handleWaterPlus}
+        >
+          +
+        </p>
+        <p
+          className="bg-add rounded-pill text-white text-center my-2 cursor-pointer"
+          onClick={handleWaterMinus}
+        >
+          -
+        </p>
+      </Row>
     </Col>
   );
 };
