@@ -1,10 +1,13 @@
-import React from "react";
+// Components
 import { Col, Row, Spinner } from "react-bootstrap";
+// Styling
 import "./nutration.css";
+// Context
 import { useNutrition } from "../../Context/NutritionContext";
+import { useAuth } from "../../Context/AuthContext";
+// Images
 import bodies from "../assets/images/bmi-bodies.webp";
 import m_bodies from "../assets/images/m-bmi-bodies.webp";
-import { useAuth } from "../../Context/AuthContext";
 
 export const BMIResult = () => {
   const {

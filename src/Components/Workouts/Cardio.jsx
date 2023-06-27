@@ -28,7 +28,7 @@ const Cardio = () => {
 
   useEffect(() => {
     dispatch(getAllWorkouts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={`section-padding ${i18n.language === "ar"? "padding-r20": ""}`} data-aos="zoom-in">

@@ -5,6 +5,7 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 import TodayReport from "./ProfileComponents/TodayReport";
 import MonthGraph from "./ProfileComponents/MonthGraph";
 import WeekGraph from "./ProfileComponents/WeekGraph";
+import { Link } from "react-router-dom";
 
 function Profile() {
  
@@ -36,7 +37,6 @@ function Profile() {
             <Button
               variant="primary"
               className="mt-5 ms-5"
-              data-aos="fade-up-left"
             >
               Reset graph
             </Button>
@@ -69,9 +69,9 @@ function Profile() {
             </Col>
           </Row>
 
-          <Row data-aos="fade-down"> 
+          <Row> 
             <Col xs={12}>
-              <Button className="lets-btn" data-aos="fade-up-left">Let's start</Button>
+              <Link to="/workouts"><Button className="lets-btn">Let's start</Button></Link>
             </Col>
           </Row>
         </Col>

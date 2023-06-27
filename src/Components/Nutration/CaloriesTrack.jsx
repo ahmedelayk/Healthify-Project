@@ -1,11 +1,13 @@
-import React from "react";
+// Components
 import { Col, Row } from "react-bootstrap";
-import "./nutration.css";
-import { useAuth } from "../../Context/AuthContext";
 import Popup from "./Popup";
+// Styling
+import "./nutration.css";
 import "./popup.css";
-import { useState } from "react";
-import { useEffect } from "react";
+// Hooks
+import { useState, useEffect } from "react";
+// Context
+import { useAuth } from "../../Context/AuthContext";
 import { useNutrition } from "../../Context/NutritionContext";
 
 export const CaloriesTrack = () => {
@@ -27,9 +29,7 @@ export const CaloriesTrack = () => {
     setCurrentDate(date.toLocaleDateString());
     setCurrentWeekday(date.toLocaleDateString("en-US", { weekday: "long" }));
   }, []);
-  useEffect(() => {
-    console.log(result);
-  }, [result]);
+
   const handleSaveRecipe = (rec) => {
     if (rec.type === "breakfast") {
       localStorage.setItem("selectedBreakfast", JSON.stringify(rec));

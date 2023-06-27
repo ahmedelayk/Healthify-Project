@@ -176,7 +176,7 @@ function Footer() {
                     type="text"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
-                    placeholder="Enter your Email"
+                    placeholder={t("Enter your Email")}
                     name="user_email"
                   />
                   <input name="uri" type="hidden" value="arabiantheme" />

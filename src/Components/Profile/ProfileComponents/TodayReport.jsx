@@ -11,11 +11,7 @@ const TodayReport = () => {
   const [selectedBreakfast, setSelectedBreakfast] = useState();
   const [selectedLunch, setSelectedLunch] = useState();
   const [selectedDinner, setSelectedDinner] = useState();
-  // const meals = useSelector((state) => state.meals);
-  // const dispatch=useDispatch()
-  // useEffect(() => {
-  //   dispatch(getRecipes())
-  // },)
+
   const getSavedRecipe = () => {
     const savedBreakfast = localStorage.getItem("selectedBreakfast");
     if (savedBreakfast) {

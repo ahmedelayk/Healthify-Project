@@ -1,6 +1,8 @@
-import React from "react";
+// Components
 import { Col, Row } from "react-bootstrap";
+// Styling
 import "./nutration.css";
+// Images
 import progress from "../assets/images/Healthy options-amico 1.webp";
 
 export const ProgressTrack = () => {

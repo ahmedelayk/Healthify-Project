@@ -1,33 +1,23 @@
-import React from "react";
+// Routing
 import { Link } from "react-router-dom";
+// Styling
 import "./error.css"; // Import the CSS file
+// Context
+import { useAuth } from "../../Context/AuthContext";
 
 const Error = () => {
+  const {t} = useAuth()
   return (
     <div className="error-container">
-      <h1 className="error-image">Oops!</h1>
-      <h1 className="error-heading">404 Error: Page Not Found</h1>
+      <h1 className="error-image">{t("Oops!")}</h1>
+      <h1 className="error-heading">{t("404 Error: Page Not Found")}</h1>
       <p className="error-message">
-        The page you are looking for might have been removed had its name
-        changed or is temporarily unavailable.
+        {t("The page you are looking for might have been removed had its name changed or is temporarily unavailable.")}
       </p>
       <Link to="/" className="error-link">
-        Go to Home
+        {t("Go to Home")}
       </Link>
     </div>
   );
 };
-<div id="notfound">
-  <div class="notfound">
-    <div class="notfound-404">
-      <h1>Oops!</h1>
-    </div>
-    <h2>404 - Page not found</h2>
-    <p>
-      The page you are looking for might have been removed had its name changed
-      or is temporarily unavailable.
-    </p>
-    <a href="#">Go To Homepage</a>
-  </div>
-</div>;
 export default Error;

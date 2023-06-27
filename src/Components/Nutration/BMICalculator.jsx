@@ -1,5 +1,3 @@
-// Hooks
-import { useCallback, useEffect } from "react";
 // Components
 import { Button, Col, Row } from "react-bootstrap";
 // icons
@@ -10,12 +8,9 @@ import "./nutration.css";
 // Context
 import { useNutrition } from "../../Context/NutritionContext";
 import { useAuth } from "../../Context/AuthContext";
-// firebase
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../firebase";
 
 export const BMICalculator = () => {
-  const { currentUserData, t, i18n } = useAuth();
+  const { t, i18n } = useAuth();
   const {
     changeHeight,
     changeWeight,
@@ -24,17 +19,10 @@ export const BMICalculator = () => {
     handleMale,
     gender,
     loadingResult,
-    result,
     height,
     weight,
   } = useNutrition();
-  // const handleResult = useCallback(async () => {
-  //     const userDoc = doc(db, "users", currentUserData?.userId)
-  //     await updateDoc(userDoc, { nutritionData: { height, weight, bmiResult: result } })
-  //   }, [currentUserData?.userId, height, result, weight])
-  // useEffect(() => {
-  //   handleResult();
-  // }, [handleResult, result])
+  
   return (
     <Col xs={ 12 } lg={ 5 } className={ `card-n ${i18n.language === "ar" ? "padding-r20" : ""}` }>
       <h4 className="font-family1 text-paragraph-color mb-3 bolder">
@@ -145,7 +133,7 @@ export const BMICalculator = () => {
           onClick={ () => handleCalculate(weight, height) }
         >
           <span
-            class="spinner-grow spinner-grow-sm"
+            className="spinner-grow spinner-grow-sm"
             role="status"
             aria-hidden="true"
           ></span>
