@@ -26,7 +26,7 @@ function SignUp() {
     formState: { errors },
     trigger,
   } = useForm();
-  const { login, googleSignIn, facebookSignIn, currentUser, t, signup } =
+  const { googleSignIn, facebookSignIn, currentUser, t, signup } =
     useAuth();
   const navigate = useNavigate();
   const onSubmit = async (data) => {
@@ -224,13 +224,13 @@ function SignUp() {
             <Row className="text-center">
               <Col xs={12}>
                 <p className="mt-2 paragraph-size d-inline ">
-                  Try To Sign Up With &nbsp;
+                  {t("Try To Sign Up With")} &nbsp;
                 </p>
                 <FcGoogle
                   className="social-icons"
                   onClick={handleGoogleSignIn}
                 />
-                <p className="mt-2 paragraph-size d-inline ">Or</p>
+                <p className="mt-2 paragraph-size d-inline ">{t("Or")}</p>
                 <BsFacebook
                   className="social-icons"
                   onClick={handleFacebookSignIn}

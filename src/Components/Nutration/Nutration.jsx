@@ -1,9 +1,8 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+// Comonents
+import { Container, Row } from "react-bootstrap";
 import { BMICalculator } from "./BMICalculator";
 import { BMIResult } from "./BMIResult";
 import { CaloriesTrack } from "./CaloriesTrack";
-// import { ProgressTrack } from "./ProgressTrack";
 import { RecomendedRecipies } from "./RecomendedRecipies";
 import { WaterTrack } from "./WaterTrack";
 import MonthGraph from "../Profile/ProfileComponents/MonthGraph"
@@ -13,12 +12,9 @@ const Nutration = () => {
     <Container>
       <Row className="justify-content-between">
         <BMICalculator />
-        {/* <Col lg={1} className="padding"></Col> */}
         <BMIResult />
         <CaloriesTrack />
-        {/* <Col lg={1} className="padding"></Col> */}
         <WaterTrack />
-        {/* <Col lg={1} className="padding"></Col> */}
         <MonthGraph />
         <RecomendedRecipies />
       </Row>

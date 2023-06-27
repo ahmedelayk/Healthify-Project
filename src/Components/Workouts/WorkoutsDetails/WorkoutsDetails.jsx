@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-
+// uuid
+import { v4 as uuid } from "uuid"
 // Style
 import "./workoutsDetails.css";
-
-// uuid
-import { v4 as uuid } from "uuid";
-
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import { Rating } from "@smastrom/react-rating";
@@ -159,7 +156,7 @@ const WorkoutsDetails = () => {
                     )
                     .slice(0, 3)
                     .map((cardio) => (
-                      <SwiperSlide>
+                      <SwiperSlide key={ uuid() }>
                         <Link
                           to={ `/workouts/cardio/${cardio.id}` }
                           className="text-decoration-none"
@@ -181,7 +178,7 @@ const WorkoutsDetails = () => {
                       )
                       .slice(0, 5)
                       .map((fitness) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={ uuid() }>
                           <Link
                             to={ `/workouts/fitness/${fitness.id}` }
                             className="text-decoration-none"

@@ -1,6 +1,9 @@
-import React, { Fragment } from "react";
+// Components
+import { Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
+// Styling
 import "./nutration.css";
+// Images
 import RR1 from "../assets/images/RR1.webp";
 import RR2 from "../assets/images/RR2.webp";
 import RR3 from "../assets/images/RR3.webp";

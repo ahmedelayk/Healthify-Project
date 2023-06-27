@@ -1,10 +1,13 @@
-import React from "react";
+// Hooks
+import { useState, useEffect } from "react";
+// Components
 import { Col, Row } from "react-bootstrap";
+// Styling
 import "./nutration.css";
+// Image
 import waterImg from "../assets/images/water.webp";
+// Context
 import { useAuth } from "../../Context/AuthContext";
-import { useState } from "react";
-import { useEffect } from "react";
 
 export const WaterTrack = () => {
   const [water, setWater] = useState(0);

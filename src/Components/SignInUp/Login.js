@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+// Hooks
+import { useEffect, useState } from "react";
+// Routing
 import { Link, useNavigate } from "react-router-dom";
 // style
 import "./signInUp.css";
@@ -9,7 +11,7 @@ import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-
+// Context
 import { useAuth } from "../../Context/AuthContext";
 // react hook form
 import { useForm } from "react-hook-form";
@@ -22,33 +24,31 @@ function Login() {
     formState: { errors },
     trigger,
   } = useForm();
-
   const [error, setError] = useState("");
-  const { login, googleSignIn, facebookSignIn, currentUser } = useAuth();
+  const { login, googleSignIn, facebookSignIn, currentUser, t } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     // console.log(data);
-    console.log(data);
-    const { mail, password, remember } = data;
+    const { mail, password } = data;
     try {
       await login(mail, password);
     } catch (error) {
-      setError("Incorrect email or password.");
+      setError(t("Incorrect email or password."));
     }
   };
   const handleGoogleSignIn = () => {
     try {
       googleSignIn();
     } catch (error) {
-      setError("unable to sign with Google.");
+      setError(t("unable to sign with Google."));
     }
   };
   const handleFacebookSignIn = () => {
     try {
       facebookSignIn();
     } catch (error) {
-      setError("unable to sign with Facebook.");
+      setError(t("unable to sign with Facebook."));
     }
   };
   useEffect(() => {
@@ -77,7 +77,7 @@ function Login() {
           data-aos-anchor-placement="top-bottom"
         >
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h2 className="text-start mb-4">Sign In</h2>
+            <h2 className="text-start mb-4">{t("Sign In")}</h2>
             <div
               className="mb-2 inputDiv"
               data-aos="fade-up"
@@ -85,14 +85,14 @@ function Login() {
             >
               <input
                 type="email"
-                placeholder="Enter Email"
+                placeholder={t("Enter Email")}
                 className="form-control form-control-login"
                 {...register("mail", {
-                  required: "Enter your Email",
+                  required: t("Enter your Email"),
                   pattern: {
                     value:
                       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gi,
-                    message: "invalid email",
+                    message: t("invalid email"),
                   },
                 })}
                 onKeyUp={() => {
@@ -112,13 +112,13 @@ function Login() {
             >
               <input
                 type="password"
-                placeholder="Enter Password"
+                placeholder={t("Enter Password")}
                 className="form-control form-control-login"
                 {...register("password", {
-                  required: "Enter your password",
+                  required: t("Enter your password"),
                   pattern: {
                     value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/gi,
-                    message: "check your password",
+                    message: t("check your password"),
                   },
                 })}
                 onKeyUp={() => {
@@ -133,8 +133,8 @@ function Login() {
             )}
             {error && <p className="text-danger">{error}</p>}
             <p className="text-start mt-2 paragraph-size">
-              <a href="#" className="text-decoration-none ">
-                Forgot Password?
+              <a href="#a" className="text-decoration-none ">
+                {t("Forgot Password?")}
               </a>
             </p>
             <div
@@ -149,7 +149,7 @@ function Login() {
                 {...register("remember")}
               />
               <label htmlFor="check" className="custom-input-label ms-2">
-                Remember me
+                {t("Remember me")}
               </label>
             </div>
             <div
@@ -157,25 +157,25 @@ function Login() {
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
             >
-              <button className="btn btn-primary">Sign in</button>
+              <button className="btn btn-primary">{t("Sign in")}</button>
             </div>
             <p className="mt-2 paragraph-size ">
-              Don't have an account?&nbsp;
+              {t("Don't have an account?")}&nbsp;
               <Link to="/signup" className="text-decoration-none">
-                Register Now!
+                {t("Register Now!")}
               </Link>
             </p>
 
             <Row className="text-center mt-2">
               <Col xs={12}>
                 <p className="mt-2 paragraph-size d-inline ">
-                  Try To Log In With &nbsp;
+                  {t("Try To Log In With")} &nbsp;
                 </p>
                 <FcGoogle
                   className="social-icons"
                   onClick={handleGoogleSignIn}
                 />
-                <p className="mt-2 paragraph-size d-inline " >Or</p>
+                <p className="mt-2 paragraph-size d-inline " >{t("Or")}</p>
                 <BsFacebook className="social-icons" onClick={handleFacebookSignIn}/>
               </Col>
             </Row>

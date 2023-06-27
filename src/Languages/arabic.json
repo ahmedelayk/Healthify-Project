@@ -191,5 +191,19 @@
   "Carb": "كربوهيدرات",
   "Fats": "دهون",
   "Protein": "بروتين",
-  "Saved Successfully": "تم الحفظ بنجاح"
+  "Saved Successfully": "تم الحفظ بنجاح",
+
+  "404 Error: Page Not Found": "خطأ 404 , الصفحة ليست موجودة",
+  "Go to Home": "عودة الى الصفحة الرئيسية",
+  "The page you are looking for might have been removed had its name changed or is temporarily unavailable.": "ربما تمت إزالة الصفحة التي تبحث عنها إذا تم تغيير اسمها أو أنها غير متاحة مؤقتًا.",
+  "Comprehensive health and wellness website that helps individuals throughout their journey towards better health!": "موقع شامل للصحة والعافية يساعد الأفراد طوال رحلتهم نحو صحة أفضل!",
+  "Harvard Health": "هارفارد هيلث",
+  "Medical News": "أخبار طبية",
+  "Incorrect email or password.": "بريدك الالكتروني أو كلمة المرور غير صحيحة.",
+  "unable to sign with Google.": "غير قادر على التوقيع مع جوجل",
+  "unable to sign with Facebook.": "غير قادر على التوقيع مع فيسبوك",
+  "Try To Log In With": "حاول ان تسجل الدخول عن طريق",
+  "Or": "أو",
+  "Try To Sign Up With": "حاول ان تسجل الدخول عن طريق"
+
 }

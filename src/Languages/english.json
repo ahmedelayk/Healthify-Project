@@ -201,5 +201,18 @@
   "Carb": "Carb",
   "Fats": "Fats",
   "Protein": "Protein",
-  "Saved Successfully": "Saved Successfully"
+  "Saved Successfully": "Saved Successfully",
+
+  "404 Error: Page Not Found": "404 Error: Page Not Found",
+  "Go to Home": "Go to Home",
+  "The page you are looking for might have been removed had its name changed or is temporarily unavailable.": "The page you are looking for might have been removed had its name changed or is temporarily unavailable.",
+  "Comprehensive health and wellness website that helps individuals throughout their journey towards better health!" : "Comprehensive health and wellness website that helps individuals throughout their journey towards better health!",
+  "Harvard Health": "Harvard Health",
+  "Medical News": "Medical News",
+  "Incorrect email or password.": "Incorrect email or password.",
+  "unable to sign with Google.": "unable to sign with Google.",
+  "unable to sign with Facebook.": "unable to sign with Facebook.",
+  "Try To Log In With": "Try To Log In With",
+  "Or": "Or",
+  "Try To Sign Up With": "Try To Sign Up With"
 }

@@ -1,7 +1,5 @@
 import React from "react";
 import "../profile.css";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
 import { Col, Row } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -10,11 +8,7 @@ function Datepicker() {
   const [selectedBreakfast, setSelectedBreakfast] = useState();
   const [selectedLunch, setSelectedLunch] = useState();
   const [selectedDinner, setSelectedDinner] = useState();
-  // const meals = useSelector((state) => state.meals);
-  // const dispatch=useDispatch()
-  // useEffect(() => {
-  //   dispatch(getRecipes())
-  // },)
+
   const getSavedRecipe = () => {
     const savedBreakfast = localStorage.getItem("selectedBreakfast");
     if (savedBreakfast) {
@@ -33,7 +27,7 @@ function Datepicker() {
   useEffect(() => {
     getSavedRecipe();
   }, []);
-  const { t, i18n } = useAuth();
+  const { t } = useAuth();
 
   return (
     <div className="col-12 row " data-aos="flip-left">

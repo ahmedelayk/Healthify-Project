@@ -1,7 +1,7 @@
 // video section
 // import VideoSection from "../../../Workouts/CommonComponents/VideoSection";
 // import homeVideo from '../../../assets/videos/fitness.mp4';
-// 
+
 import { NavLink } from "react-router-dom";
 // Components
 import { Button } from "react-bootstrap";
@@ -11,7 +11,7 @@ import './Section0.css';
 import { useAuth } from "../../../../Context/AuthContext"
 
 export default function Section0() {
-    const { currentUser, t, i18n } = useAuth();
+    const { currentUser, t } = useAuth();
     return (
         <>
             {/* <div className="position-relative">
