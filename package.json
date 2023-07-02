@@ -19,7 +19,6 @@
     "json-server": "^0.17.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
-    "react-bootstrap-country-select": "^1.0.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.0",
     "react-i18next": "^13.0.0",
