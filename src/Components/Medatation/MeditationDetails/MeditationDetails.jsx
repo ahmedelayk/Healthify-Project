@@ -131,7 +131,7 @@ const MeditationDetails = () => {
             {types?.length &&
               types.map((item) =>
                 item.articles?.slice(randomNum, randomNum + 1).map((i) => (
-                  <Col xs={12} md={6} lg={4} data-aos="flip-right">
+                  <Col xs={12} md={6} lg={4} data-aos="flip-right" key={uuid()}>
                     <Link
                       to={`/medatation/details/${i.id}`}
                       className="text-decoration-none"

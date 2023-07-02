@@ -7,7 +7,7 @@ import { getRecipes } from "../../redux/recipesSlice";
 import { useNutrition } from "../../Context/NutritionContext";
 
 const Popup = ({ closePopup, handleSave, recipe_type }) => {
-  console.log("popup rendered");
+  // console.log("popup rendered");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [breakfast, setBreakfast] = useState([]);
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const Popup = ({ closePopup, handleSave, recipe_type }) => {
   }, [dispatch]);
   const { br, ln, dn } = useNutrition();
   useEffect(() => {
-    console.log(meals);
+    // console.log(meals);
     if (br === true) {
       setBreakfast(meals?.filter((recipie) => recipie.type === "breakfast"));
     } else if (ln === true) {
@@ -35,7 +35,7 @@ const Popup = ({ closePopup, handleSave, recipe_type }) => {
       <div className="popup_inner text-center">
         <h1 className="popup-header">Choose Your Favorite Recipe</h1>
         <AiFillCloseCircle onClick={closePopup} className="close-btn-popup" />
-        <Row className="text-center">
+        <Row className="text-center d-flex justify-content-center">
           {breakfast?.map((rec) => (
             <Col
               key={rec.id}
@@ -53,11 +53,9 @@ const Popup = ({ closePopup, handleSave, recipe_type }) => {
                   <h5>
                     <span>{rec.food1}</span>
                   </h5>
-                  <p className="bolder">+</p>
                   <h5>
                     <span>{rec.food2}</span>
                   </h5>
-                  <p className="bolder">+</p>
                   <h5>
                     <span>{rec.food3}</span>
                   </h5>
