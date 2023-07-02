@@ -1,8 +1,6 @@
 import React from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import { LuLanguages } from "react-icons/lu";
-import Lang from "./Lang";
-import Countries from "./Country";
 // Context
 import { useAuth } from "../../../Context/AuthContext";
 // React form hook
@@ -49,13 +47,7 @@ const Langueges = () => {
       </Row>
       <Form className="mt-5" onSubmit={ handleSubmit(onSubmit) }>
         <Row className="mb-3">
-          <Col md={ 6 } className="mt-5">
-            <Form.Group controlId="firstName ">
-              <Form.Label>{ t("Select Country") }</Form.Label>
-              <Countries />
-            </Form.Group>
-          </Col>
-          <Col md={ 6 } className="mt-5">
+          <div className="mt-5 offset-2 col-md-8">
             <Form.Group controlId="lastName">
               <Form.Label>{ t("Select Language") }</Form.Label>
               <div style={ { display: "flex", flexWrap: "wrap" } } data-aos="zoom-in-left">
@@ -78,7 +70,7 @@ const Langueges = () => {
                 </select>
               </div>
             </Form.Group>
-          </Col>
+          </div>
         </Row>
         <Row className="mt-5 text-center d-flex justify-content-center">
           <Col xs={ 4 } md={ 3 } lg={ 2 }>
