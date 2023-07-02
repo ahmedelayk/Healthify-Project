@@ -84,7 +84,7 @@ export const getWorkoutByID = createAsyncThunk(
   //   }
   async (id) => {
     const res = await axios.get(
-      `http://localhost:3002/exercises/${id}`
+      `https://healthify-pei4.onrender.com/exercises/${id}`
     );
     const data = res.data;
     return data;
@@ -109,7 +109,7 @@ export const getAllWorkouts = createAsyncThunk(
   //     return rejectWithValue(error.message);
   //   }
   async () => {
-    const res = await axios.get("http://localhost:3002/exercises");
+    const res = await axios.get("https://healthify-pei4.onrender.com/exercises");
     const data = res.data;
     return data;
   }

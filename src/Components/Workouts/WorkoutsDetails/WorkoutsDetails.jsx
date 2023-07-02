@@ -74,7 +74,7 @@ const WorkoutsDetails = () => {
 
   useEffect(() => {
     dispatch(getAllWorkouts());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getWorkoutByID(id));

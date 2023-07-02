@@ -11,7 +11,7 @@ const {id}=useParams()
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3002/help/"+id);
+      const response = await axios.get("https://healthify-pei4.onrender.com/help/"+id);
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
