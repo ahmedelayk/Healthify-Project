@@ -13,13 +13,12 @@ import { useNutrition } from "../../Context/NutritionContext";
 export const CaloriesTrack = () => {
   const { t, i18n } = useAuth();
   const [showPopup, setShowPopup] = useState(false);
-
   const [selectedBreakfast, setSelectedBreakfast] = useState();
   const [selectedLunch, setSelectedLunch] = useState();
   const [selectedDinner, setSelectedDinner] = useState();
   const [currentDate, setCurrentDate] = useState("");
   const [currentWeekday, setCurrentWeekday] = useState("");
-  const { handleBrClick, handleDnClick, handleLnClick, result } =
+  const { handleBrClick, handleDnClick, handleLnClick } =
     useNutrition();
   const togglePopup = (e) => {
     setShowPopup(!showPopup);

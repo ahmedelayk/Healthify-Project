@@ -28,7 +28,7 @@ import axios from "axios";
 //   }
 // );
 export const getRecipes = createAsyncThunk("recipes/getRecipes", async () => {
-  const res = await axios.get("http://localhost:3002/meals");
+  const res = await axios.get("https://healthify-pei4.onrender.com/meals");
   const data = res.data;
   return data;
 });

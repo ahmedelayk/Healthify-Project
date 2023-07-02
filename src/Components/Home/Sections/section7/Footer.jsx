@@ -20,7 +20,7 @@ function Footer() {
     e.preventDefault();
     if (email.includes("@")) {
       try {
-        const response = await axios.get("http://localhost:3003/subscribers");
+        const response = await axios.get("https://healthify-pei4.onrender.com/subscribers");
         const subscribers = response.data;
 
         if (subscribers.some((subscriber) => subscriber.email === email)) {
@@ -31,7 +31,7 @@ function Footer() {
             footer: "",
           });
         } else {
-          await axios.post("http://localhost:3003/subscribers", { email });
+          await axios.post("https://healthify-pei4.onrender.com/subscribers", { email });
           Swal.fire(
             `${t("You have successfully subscribed")}`,
             ` <b style=color:#0066ff;> ${t("Healthify Team")} </b>`,

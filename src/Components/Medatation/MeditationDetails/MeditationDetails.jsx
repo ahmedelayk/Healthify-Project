@@ -46,7 +46,7 @@ const MeditationDetails = () => {
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get(`http://localhost:3002/articles/${id}`)
+        .get(`https://healthify-pei4.onrender.com/articles/${id}`)
         .then(function (response) {
           setArtDetails(response.data);
         });
