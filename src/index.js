@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.css"; // or include from a CDN
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import "react-bootstrap-country-select/dist/react-bootstrap-country-select.css";
 import "./index.css";
 // ContextAPI
 import AuthProvider from "./Context/AuthContext";
